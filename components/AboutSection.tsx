@@ -55,7 +55,7 @@ export default function AboutSection() {
           <div>
             <span
               style={{
-                color: '#CC1414',
+                color: '#E51D24',
                 fontWeight: 700,
                 fontSize: '12px',
                 letterSpacing: '0.15em',
@@ -64,7 +64,7 @@ export default function AboutSection() {
                 marginBottom: '16px',
               }}
             >
-              ◆ About Us
+              ✦ About Top Sleep
             </span>
             <h2
               style={{
@@ -76,9 +76,9 @@ export default function AboutSection() {
                 letterSpacing: '-0.02em',
               }}
             >
-              25 Years of Crafting
+              Enjoy The Real
               <br />
-              <span style={{ color: '#CC1414' }}>Perfect Sleep</span>
+              <span style={{ color: '#E51D24' }}>Comfort Every Night</span>
             </h2>
           </div>
 
@@ -92,32 +92,32 @@ export default function AboutSection() {
                 marginBottom: '20px',
               }}
             >
-              At TopSleep, we've dedicated over two decades to the science and art of sleep. Founded in 1999, we combine cutting-edge sleep research with premium materials to create mattresses that don't just feel good — they transform the way you rest.
+              Part of <strong>Top Global Group</strong> (www.topglobalgroup.com), Top Sleep Mattress is dedicated to the science and craftsmanship of restorative rest. Combining high-density rebonded foam, premium memory foam, and zero-partner-disturbance spring systems, our mattresses transform the way you sleep.
             </p>
             <p style={{ color: '#6B6B6B', fontSize: '16px', lineHeight: 1.8 }}>
-              Our team of sleep engineers, ergonomics specialists, and material scientists work tirelessly to ensure that every TopSleep product is a masterpiece of comfort, support, and durability.
+              Every mattress is specifically engineered to relieve back pain and support the spine, enveloped in imported knitted fabric that is scientifically treated against fungus, bacteria, and house dust mites.
             </p>
 
             {/* CTA */}
             <a
-              href="#contact"
+              href="#products"
               style={{
                 display: 'inline-flex',
                 alignItems: 'center',
                 gap: '8px',
                 marginTop: '32px',
-                color: '#CC1414',
+                color: '#E51D24',
                 fontWeight: 700,
                 fontSize: '15px',
                 textDecoration: 'none',
-                borderBottom: '2px solid #CC1414',
+                borderBottom: '2px solid #E51D24',
                 paddingBottom: '2px',
                 transition: 'gap 0.2s',
               }}
               onMouseEnter={(e) => { ;(e.currentTarget as HTMLElement).style.gap = '14px' }}
               onMouseLeave={(e) => { ;(e.currentTarget as HTMLElement).style.gap = '8px' }}
             >
-              Get in Touch →
+              Explore Official Brochure Range →
             </a>
           </div>
         </div>
@@ -138,7 +138,7 @@ export default function AboutSection() {
             <div
               key={m.year}
               style={{
-                background: i % 2 === 0 ? '#fff' : '#CC1414',
+                background: i % 2 === 0 ? '#fff' : '#E51D24',
                 color: i % 2 === 0 ? '#1A1A1A' : '#fff',
                 padding: '40px 32px',
                 opacity: visible ? 1 : 0,
@@ -153,7 +153,7 @@ export default function AboutSection() {
                   fontWeight: 700,
                   lineHeight: 1,
                   marginBottom: '8px',
-                  color: i % 2 === 0 ? '#CC1414' : 'rgba(255,255,255,0.5)',
+                  color: i % 2 === 0 ? '#E51D24' : 'rgba(255,255,255,0.5)',
                 }}
               >
                 {m.year}

@@ -4,9 +4,28 @@ import Image from 'next/image'
 
 export default function Footer() {
   const links = {
-    Products: ['OrthoElite Pro', 'CoolMem Luxe', 'NaturLatex Supreme', 'DualComfort Flip', 'CloudSoft Pillow Top', 'SmartSleep Hybrid'],
-    Company: ['About Us', 'Our Story', 'Careers', 'Press', 'Blog', 'Contact'],
-    Support: ['Track Order', 'FAQ', 'Return Policy', '100-Night Trial', 'Warranty', 'Store Locator'],
+    Products: [
+      'Elegant (Medicated)',
+      'Luxury Plus',
+      'Luxury',
+      'Deluxe Spring',
+      'Classic Orthopaedic',
+      'Custom Sizing',
+    ],
+    Company: [
+      'About Top Sleep',
+      'Top Global Group',
+      'Manufacturing Quality',
+      'Warranty Registration',
+      'Contact Us',
+    ],
+    Support: [
+      'Brochure Pricing',
+      '100-Night Trial',
+      'Back Pain Consultation',
+      'Care & Cleaning Guide',
+      'Store Locator',
+    ],
   }
 
   return (
@@ -38,17 +57,17 @@ export default function Footer() {
                 }}
               />
             </div>
-            <p style={{ color: '#888', fontSize: '14px', lineHeight: 1.8, maxWidth: '280px', marginBottom: '28px' }}>
-              Crafting premium sleep experiences since 1999. Engineered comfort, built to last — enjoy the real comfort.
+            <p style={{ color: '#888', fontSize: '14px', lineHeight: 1.8, maxWidth: '300px', marginBottom: '24px' }}>
+              Part of <strong>Top Global Group</strong> (www.topglobalgroup.com). Dedicated to high-density rebonded foam, memory foam, and luxury spring systems &mdash; enjoy the real comfort.
             </p>
-            {/* Awards */}
-            <div style={{ display: 'flex', gap: '12px', flexWrap: 'wrap' }}>
-              {['🏆 Best Mattress 2024', '⭐ ISO Certified', '🌿 Eco Friendly'].map((a) => (
+            {/* Awards & Certifications from Brochure */}
+            <div style={{ display: 'flex', gap: '8px', flexWrap: 'wrap' }}>
+              {['🛡️ Up to 7 Yrs Warranty', '🔬 Anti-Dust Mite', '🛏️ Zero Partner Disturbance', '🌿 ISO Certified'].map((a) => (
                 <span
                   key={a}
                   style={{
                     background: 'rgba(255,255,255,0.06)',
-                    border: '1px solid rgba(255,255,255,0.10)',
+                    border: '1px solid rgba(255,255,255,0.12)',
                     color: '#ccc',
                     fontSize: '11px',
                     padding: '5px 10px',
@@ -81,14 +100,14 @@ export default function Footer() {
                 {items.map((item) => (
                   <li key={item} style={{ marginBottom: '10px' }}>
                     <a
-                      href="#"
+                      href="#products"
                       style={{
                         color: '#888',
                         textDecoration: 'none',
                         fontSize: '14px',
                         transition: 'color 0.2s',
                       }}
-                      onMouseEnter={(e) => { ;(e.currentTarget as HTMLElement).style.color = '#D85B5B' }}
+                      onMouseEnter={(e) => { ;(e.currentTarget as HTMLElement).style.color = '#E51D24' }}
                       onMouseLeave={(e) => { ;(e.currentTarget as HTMLElement).style.color = '#888' }}
                     >
                       {item}
@@ -103,8 +122,8 @@ export default function Footer() {
         {/* Newsletter strip */}
         <div
           style={{
-            background: 'rgba(204,20,20,0.12)',
-            border: '1px solid rgba(204,20,20,0.25)',
+            background: 'rgba(229,29,36,0.08)',
+            border: '1px solid rgba(229,29,36,0.25)',
             borderRadius: '16px',
             padding: '28px 32px',
             display: 'flex',
@@ -117,9 +136,9 @@ export default function Footer() {
         >
           <div>
             <div style={{ fontWeight: 700, fontSize: '16px', color: '#fff', marginBottom: '4px' }}>
-              Get sleep tips & exclusive offers
+              Download Top Sleep E-Brochure & Price Lists
             </div>
-            <div style={{ color: '#888', fontSize: '13px' }}>Join 50,000+ subscribers. No spam, ever.</div>
+            <div style={{ color: '#888', fontSize: '13px' }}>Join our subscriber list for exclusive dealer and retail pricing updates.</div>
           </div>
           <div style={{ display: 'flex', gap: '8px', flex: '0 0 auto' }}>
             <input
@@ -141,7 +160,7 @@ export default function Footer() {
               id="newsletter-subscribe-btn"
               style={{
                 padding: '11px 22px',
-                background: '#D85B5B',
+                background: '#E51D24',
                 color: '#fff',
                 border: 'none',
                 borderRadius: '8px',
@@ -149,9 +168,12 @@ export default function Footer() {
                 fontSize: '14px',
                 cursor: 'pointer',
                 whiteSpace: 'nowrap',
+                transition: 'background 0.2s',
               }}
+              onMouseEnter={(e) => { ;(e.currentTarget as HTMLElement).style.background = '#C8161D' }}
+              onMouseLeave={(e) => { ;(e.currentTarget as HTMLElement).style.background = '#E51D24' }}
             >
-              Subscribe
+              Get Brochure
             </button>
           </div>
         </div>
@@ -169,15 +191,15 @@ export default function Footer() {
           }}
         >
           <span style={{ color: '#666', fontSize: '13px' }}>
-            © 2024 TopSleep. All rights reserved.
+            © 2024 Top Sleep Mattress &bull; Top Global Group (<a href="http://www.topglobalgroup.com" target="_blank" rel="noopener noreferrer" style={{ color: '#888', textDecoration: 'none' }}>www.topglobalgroup.com</a>). All rights reserved.
           </span>
           <div style={{ display: 'flex', gap: '24px' }}>
-            {['Privacy Policy', 'Terms of Service', 'Sitemap'].map((l) => (
+            {['Privacy Policy', 'Terms of Service', 'Warranty Policy', 'Sitemap'].map((l) => (
               <a
                 key={l}
                 href="#"
                 style={{ color: '#666', textDecoration: 'none', fontSize: '13px', transition: 'color 0.2s' }}
-                onMouseEnter={(e) => { ;(e.currentTarget as HTMLElement).style.color = '#D85B5B' }}
+                onMouseEnter={(e) => { ;(e.currentTarget as HTMLElement).style.color = '#E51D24' }}
                 onMouseLeave={(e) => { ;(e.currentTarget as HTMLElement).style.color = '#666' }}
               >
                 {l}

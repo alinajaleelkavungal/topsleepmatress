@@ -184,11 +184,12 @@ export default function Hero() {
           </div>
 
           {/* Trust badges */}
-          <div style={{ display: 'flex', gap: '24px', marginTop: '48px', flexWrap: 'wrap' }}>
+          <div style={{ display: 'flex', gap: '20px', marginTop: '44px', flexWrap: 'wrap' }}>
             {[
-              { icon: '🚚', text: 'Free Delivery' },
-              { icon: '🔄', text: '100-Night Trial' },
-              { icon: '🛡️', text: '10-Year Warranty' },
+              { icon: '🛡️', text: 'Up to 7 Years Warranty' },
+              { icon: '🔬', text: 'Anti-Fungus & Dust Mite Protected' },
+              { icon: '💤', text: 'Zero Partner Disturbance' },
+              { icon: '🚚', text: 'Free Doorstep Delivery' },
             ].map((badge) => (
               <div
                 key={badge.text}
@@ -199,9 +200,13 @@ export default function Hero() {
                   color: '#4A4A4A',
                   fontSize: '13px',
                   fontWeight: 600,
+                  background: 'rgba(0,0,0,0.03)',
+                  padding: '6px 14px',
+                  borderRadius: '30px',
+                  border: '1px solid rgba(0,0,0,0.06)',
                 }}
               >
-                <span style={{ fontSize: '18px' }}>{badge.icon}</span>
+                <span style={{ fontSize: '16px' }}>{badge.icon}</span>
                 {badge.text}
               </div>
             ))}
@@ -226,7 +231,7 @@ export default function Hero() {
               position: 'absolute',
               inset: '-20px',
               borderRadius: '50%',
-              background: 'radial-gradient(circle, rgba(216,91,91,0.12) 0%, transparent 70%)',
+              background: 'radial-gradient(circle, rgba(229,29,36,0.12) 0%, transparent 70%)',
               pointerEvents: 'none',
             }}
           />
@@ -239,35 +244,55 @@ export default function Hero() {
               overflow: 'hidden',
               boxShadow: '0 32px 80px rgba(0,0,0,0.12)',
               position: 'relative',
-              border: '2px solid rgba(216,91,91,0.12)',
+              border: '2px solid rgba(229,29,36,0.15)',
             }}
           >
             <Image
               src="/images/hero.png"
-              alt="Woman sleeping peacefully on a TopSleep premium mattress"
+              alt="TopSleep Premium Luxury Mattress"
               fill
               style={{ objectFit: 'cover' }}
               priority
             />
-            {/* Overlay badge */}
+            {/* Overlay badge 1: Top badge */}
+            <div
+              style={{
+                position: 'absolute',
+                top: '20px',
+                right: '20px',
+                background: 'rgba(229,29,36,0.92)',
+                backdropFilter: 'blur(8px)',
+                borderRadius: '12px',
+                padding: '8px 14px',
+                color: '#fff',
+                fontSize: '12px',
+                fontWeight: 700,
+                boxShadow: '0 4px 16px rgba(0,0,0,0.2)',
+              }}
+            >
+              ★ 7 Years Full Warranty
+            </div>
+            {/* Overlay badge 2: Bottom badge */}
             <div
               style={{
                 position: 'absolute',
                 bottom: '20px',
                 left: '20px',
-                background: 'rgba(255,255,255,0.95)',
+                background: 'rgba(255,255,255,0.96)',
+                backdropFilter: 'blur(8px)',
                 borderRadius: '14px',
                 padding: '12px 18px',
                 display: 'flex',
                 alignItems: 'center',
-                gap: '10px',
+                gap: '12px',
                 boxShadow: '0 8px 24px rgba(0,0,0,0.15)',
+                border: '1px solid rgba(229,29,36,0.15)',
               }}
             >
               <span style={{ fontSize: '28px' }}>😴</span>
               <div>
-                <div style={{ fontWeight: 700, color: '#1A1A1A', fontSize: '14px' }}>Sleep Score</div>
-                <div style={{ color: '#E51D24', fontWeight: 800, fontSize: '20px', lineHeight: 1 }}>98 / 100</div>
+                <div style={{ fontWeight: 700, color: '#1A1A1A', fontSize: '13px' }}>Medical & Orthopaedic</div>
+                <div style={{ color: '#E51D24', fontWeight: 800, fontSize: '16px', lineHeight: 1.2 }}>Certified Back Pain Relief</div>
               </div>
             </div>
           </div>

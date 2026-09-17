@@ -20,44 +20,44 @@ const services = [
   {
     icon: '🛏️',
     title: 'Custom Size Mattresses',
-    desc: 'Every body is different. We craft mattresses in any dimension — single to king, standard or bespoke — tailored to your bed frame and sleeping style.',
+    desc: 'Every bed frame is unique. We manufacture mattresses in any custom dimension — 72x36, 75x36, 72x48, 72x60, 75x60, 72x72, 75x72 or bespoke cuts tailored to your space.',
     tag: 'Made to Order',
-    accent: '#D85B5B',
-  },
-  {
-    icon: '🚚',
-    title: 'Free Home Delivery',
-    desc: "White-glove delivery to your doorstep. Our trained crew sets up your mattress, removes old bedding, and ensures you're satisfied before leaving.",
-    tag: 'Pan-India',
-    accent: '#D85B5B',
-  },
-  {
-    icon: '🔬',
-    title: 'Sleep Consultation',
-    desc: 'Not sure which mattress is right for you? Our certified sleep experts analyze your posture, weight, and sleeping habits to recommend the perfect match.',
-    tag: 'Expert Advice',
-    accent: '#D85B5B',
-  },
-  {
-    icon: '🔄',
-    title: '100-Night Free Trial',
-    desc: "We're so confident you'll love it that we give you 100 nights to decide. If it's not for you, we pick it up and refund you — no questions asked.",
-    tag: 'Risk Free',
-    accent: '#D85B5B',
+    accent: '#E51D24',
   },
   {
     icon: '🛡️',
-    title: 'Extended Warranty',
-    desc: 'Every TopSleep mattress comes with up to 10 years of comprehensive warranty. Sleep easy knowing your investment is fully protected.',
-    tag: 'Up to 10 Years',
-    accent: '#D85B5B',
+    title: 'Up to 7 Years Warranty',
+    desc: 'Top Sleep mattresses come with official manufacturer warranty (up to 7 Years on Elegant, Luxury Plus, and Luxury models; 5 Years on Deluxe; 3 Years on Classic).',
+    tag: 'Official Warranty',
+    accent: '#E51D24',
   },
   {
-    icon: '♻️',
-    title: 'Old Mattress Pickup',
-    desc: "When you upgrade to TopSleep, we handle your old mattress responsibly — donating or recycling it so it doesn't end up in a landfill.",
-    tag: 'Eco Friendly',
-    accent: '#D85B5B',
+    icon: '🔬',
+    title: 'Medical & Ortho Consultation',
+    desc: 'Specially engineered for persistent back pain relief. Our specialists guide you on high-density rebonded foam, memory foam contouring, and spinal ergonomics.',
+    tag: 'Back Pain Relief',
+    accent: '#E51D24',
+  },
+  {
+    icon: '✨',
+    title: 'Anti-Dust Mite & Fungus Shield',
+    desc: 'All our top-layer knitted fabrics are certified and chemically treated against fungus, bacteria, and house dust mites for long-lasting hygienic sleep.',
+    tag: 'Certified Protection',
+    accent: '#E51D24',
+  },
+  {
+    icon: '🚚',
+    title: 'Direct Doorstep Delivery',
+    desc: 'Reliable and safe delivery directly from Top Global Group manufacturing facilities to your home, ensuring your mattress arrives in pristine condition.',
+    tag: 'Doorstep Care',
+    accent: '#E51D24',
+  },
+  {
+    icon: '💤',
+    title: 'Zero Partner Disturbance',
+    desc: 'Our Deluxe pocketed spring line isolates localized weight transfers completely, allowing you and your partner uninterrupted, peaceful rest.',
+    tag: 'Pocketed Springs',
+    accent: '#E51D24',
   },
 ]
 
@@ -87,7 +87,7 @@ export default function ServicesSection() {
         >
           <span
             style={{
-              color: '#D85B5B',
+              color: '#E51D24',
               fontWeight: 700,
               fontSize: '12px',
               letterSpacing: '0.15em',
@@ -96,7 +96,7 @@ export default function ServicesSection() {
               marginBottom: '14px',
             }}
           >
-            ◆ What We Offer
+            ✦ Engineered For Your Well-Being
           </span>
           <h2
             style={{
@@ -109,10 +109,10 @@ export default function ServicesSection() {
               marginBottom: '16px',
             }}
           >
-            Services Built Around <span style={{ color: '#D85B5B' }}>Your Sleep</span>
+            Services Built Around <span style={{ color: '#E51D24' }}>Your Sleep</span>
           </h2>
-          <p style={{ color: '#6B6B6B', fontSize: '17px', maxWidth: '520px', margin: '0 auto', lineHeight: 1.7 }}>
-            From custom craftsmanship to post-purchase care — we go the extra mile so you can rest.
+          <p style={{ color: '#6B6B6B', fontSize: '17px', maxWidth: '540px', margin: '0 auto', lineHeight: 1.7 }}>
+            From custom dimensions to certified anti-allergen treatments &mdash; engineered by Top Global Group so you enjoy the real comfort.
           </p>
         </div>
 
@@ -153,22 +153,22 @@ function ServiceCard({
   visible: boolean
 }) {
   const [hovered, setHovered] = useState(false)
-  const isFeatured = index === 0 || index === 4
+  const isFeatured = index === 0 || index === 1
 
   return (
     <div
       onMouseEnter={() => setHovered(true)}
       onMouseLeave={() => setHovered(false)}
       style={{
-        background: hovered ? '#D85B5B' : isFeatured ? '#FCF0F0' : '#fff',
-        border: `1.5px solid ${hovered ? '#D85B5B' : '#EBEBEB'}`,
+        background: hovered ? '#E51D24' : isFeatured ? '#FFF8F8' : '#fff',
+        border: `1.5px solid ${hovered ? '#E51D24' : '#EBEBEB'}`,
         borderRadius: '20px',
         padding: '36px 32px',
         cursor: 'default',
         transition: 'all 0.35s cubic-bezier(0.16, 1, 0.3, 1)',
         transitionDelay: `${index * 0.07}s`,
         transform: hovered ? 'translateY(-6px)' : 'translateY(0)',
-        boxShadow: hovered ? '0 20px 60px rgba(204,20,20,0.20)' : '0 2px 12px rgba(0,0,0,0.04)',
+        boxShadow: hovered ? '0 20px 60px rgba(229,29,36,0.20)' : '0 2px 12px rgba(0,0,0,0.04)',
         opacity: visible ? 1 : 0,
         position: 'relative',
         overflow: 'hidden',
@@ -178,8 +178,8 @@ function ServiceCard({
       <span
         style={{
           display: 'inline-block',
-          background: hovered ? 'rgba(255,255,255,0.20)' : 'rgba(204,20,20,0.10)',
-          color: hovered ? '#fff' : '#D85B5B',
+          background: hovered ? 'rgba(255,255,255,0.20)' : 'rgba(229,29,36,0.10)',
+          color: hovered ? '#fff' : '#E51D24',
           fontSize: '11px',
           fontWeight: 700,
           letterSpacing: '0.1em',
@@ -198,8 +198,6 @@ function ServiceCard({
           fontSize: '40px',
           marginBottom: '16px',
           lineHeight: 1,
-          filter: hovered ? 'brightness(1.2)' : 'none',
-          transition: 'all 0.3s',
         }}
       >
         {service.icon}
@@ -208,12 +206,11 @@ function ServiceCard({
       {/* Title */}
       <h3
         style={{
-          fontSize: '19px',
+          fontSize: '20px',
           fontWeight: 700,
           color: hovered ? '#fff' : '#1A1A1A',
           marginBottom: '12px',
-          transition: 'color 0.3s',
-          fontFamily: "'Inter', sans-serif",
+          transition: 'color 0.2s',
         }}
       >
         {service.title}
@@ -223,9 +220,9 @@ function ServiceCard({
       <p
         style={{
           fontSize: '14px',
-          lineHeight: 1.75,
           color: hovered ? 'rgba(255,255,255,0.85)' : '#6B6B6B',
-          transition: 'color 0.3s',
+          lineHeight: 1.7,
+          transition: 'color 0.2s',
         }}
       >
         {service.desc}
@@ -240,7 +237,7 @@ function ServiceCard({
           gap: '6px',
           fontSize: '13px',
           fontWeight: 600,
-          color: hovered ? 'rgba(255,255,255,0.90)' : '#D85B5B',
+          color: hovered ? 'rgba(255,255,255,0.90)' : '#E51D24',
           transition: 'all 0.3s',
         }}
       >
