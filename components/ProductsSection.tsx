@@ -27,7 +27,7 @@ export interface StyleOption {
 
 // Business WhatsApp Configuration
 // Note: Replace this placeholder number with your actual Business WhatsApp number (including country code, no '+' or spaces, e.g. '919876543210')
-export const BUSINESS_WHATSAPP_NUMBER = '910000000000'
+export const BUSINESS_WHATSAPP_NUMBER = '919061612539'
 
 export function getProductWhatsAppUrl(productName: string, configDetails?: string) {
   const text = configDetails

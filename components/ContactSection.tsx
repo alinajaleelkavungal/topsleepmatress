@@ -125,7 +125,7 @@ export default function ContactSection() {
             {[
               { icon: '🌐', title: 'Official Website', detail: 'www.topglobalgroup.com' },
               { icon: '📍', title: 'Corporate Office', detail: 'Top Global Group Headquarters, India' },
-              { icon: '📞', title: 'Phone & WhatsApp', detail: '+91 80 4567 8900 / +91 98450 12345' },
+              { icon: '📞', title: 'Phone & WhatsApp', detail: '+91 9061612539' },
               { icon: '✉️', title: 'Email Support', detail: 'info@topglobalgroup.com / contact@topsleep.in' },
               { icon: '🛡️', title: 'Warranty & Claims', detail: 'Up to 7-Year Replacement Warranty Support' },
             ].map((item) => (
