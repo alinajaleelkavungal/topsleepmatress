@@ -47,9 +47,30 @@ export default function Navbar() {
           fontWeight: 500,
           letterSpacing: '0.02em',
           borderBottom: '1px solid rgba(255,255,255,0.1)',
+          display: 'flex',
+          justifyContent: 'center',
+          alignItems: 'center',
+          flexWrap: 'wrap',
+          gap: '8px',
         }}
       >
-        🛏️ &nbsp;Free Shipping on all orders above ₹5,999 &nbsp;|&nbsp; 100-Night Free Trial
+        <span>🛏️ Free Shipping on all orders above ₹5,999 &nbsp;|&nbsp; 100-Night Free Trial</span>
+        <span style={{ opacity: 0.6 }}>|</span>
+        <a
+          href="tel:+919847317211"
+          style={{
+            color: '#fff',
+            textDecoration: 'none',
+            fontWeight: 600,
+            display: 'inline-flex',
+            alignItems: 'center',
+            gap: '4px',
+          }}
+          onMouseEnter={(e) => { ;(e.currentTarget as HTMLElement).style.textDecoration = 'underline' }}
+          onMouseLeave={(e) => { ;(e.currentTarget as HTMLElement).style.textDecoration = 'none' }}
+        >
+          <span>📞 Call: +91 98473 17211</span>
+        </a>
       </div>
 
       <nav

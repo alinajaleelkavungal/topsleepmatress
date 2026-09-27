@@ -91,14 +91,24 @@ export default function Footer() {
                 <span>✉️</span> <span>topglobalgroup1@gmail.com</span>
               </a>
               <a
-                href="https://wa.me/919061612539"
-                target="_blank"
-                rel="noopener noreferrer"
+                href="tel:+919847317211"
+                id="footer-call-link"
                 style={{ color: '#aaa', textDecoration: 'none', display: 'flex', alignItems: 'center', gap: '8px', transition: 'color 0.2s' }}
                 onMouseEnter={(e) => { ;(e.currentTarget as HTMLElement).style.color = '#fff' }}
                 onMouseLeave={(e) => { ;(e.currentTarget as HTMLElement).style.color = '#aaa' }}
               >
-                <span>📞</span> <span>+91 9061612539 (WhatsApp)</span>
+                <span>📞</span> <span>+91 98473 17211 (Direct Call)</span>
+              </a>
+              <a
+                href="https://wa.me/919061612539"
+                target="_blank"
+                rel="noopener noreferrer"
+                id="footer-whatsapp-link"
+                style={{ color: '#aaa', textDecoration: 'none', display: 'flex', alignItems: 'center', gap: '8px', transition: 'color 0.2s' }}
+                onMouseEnter={(e) => { ;(e.currentTarget as HTMLElement).style.color = '#fff' }}
+                onMouseLeave={(e) => { ;(e.currentTarget as HTMLElement).style.color = '#aaa' }}
+              >
+                <span>💬</span> <span>+91 9061612539 (WhatsApp)</span>
               </a>
             </div>
           </div>
