@@ -25,6 +25,31 @@ export interface StyleOption {
   prices: Record<string, Record<string, number>>
 }
 
+// Business WhatsApp Configuration
+// Note: Replace this placeholder number with your actual Business WhatsApp number (including country code, no '+' or spaces, e.g. '919876543210')
+export const BUSINESS_WHATSAPP_NUMBER = '910000000000'
+
+export function getProductWhatsAppUrl(productName: string, configDetails?: string) {
+  const text = configDetails
+    ? `Hello TopSleep, I would like to get the price details and availability for *${productName}* (${configDetails}).`
+    : `Hello TopSleep, I would like to get the price details for *${productName}*.`
+  return `https://wa.me/${BUSINESS_WHATSAPP_NUMBER}?text=${encodeURIComponent(text)}`
+}
+
+export function WhatsAppIcon({ size = 16, color = 'currentColor' }: { size?: number; color?: string }) {
+  return (
+    <svg
+      width={size}
+      height={size}
+      viewBox="0 0 24 24"
+      fill={color}
+      style={{ display: 'inline-block', verticalAlign: 'middle', flexShrink: 0 }}
+    >
+      <path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.245 2.248 3.481 5.236 3.48 8.414-.003 6.557-5.338 11.892-11.893 11.892-1.99-.001-3.951-.5-5.688-1.448l-6.305 1.654zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884-.001 2.225.651 3.891 1.746 5.634l-.999 3.648 3.742-.981zm11.387-5.464c-.074-.124-.272-.198-.57-.347-.297-.149-1.758-.868-2.031-.967-.272-.099-.47-.149-.669.149-.198.297-.768.967-.941 1.165-.173.198-.347.223-.644.074-.297-.149-1.255-.462-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.297-.347.446-.521.151-.172.2-.296.3-.495.099-.198.05-.372-.025-.521-.075-.148-.669-1.611-.916-2.206-.242-.579-.487-.501-.669-.51l-.57-.01c-.198 0-.52.074-.792.372s-1.04 1.016-1.04 2.479 1.065 2.876 1.213 3.074c.149.198 2.095 3.2 5.076 4.487.709.306 1.263.489 1.694.626.712.226 1.36.194 1.872.118.571-.085 1.758-.719 2.006-1.413.248-.695.248-1.29.173-1.414z"/>
+    </svg>
+  )
+}
+
 export interface Product {
   id: string
   name: string
@@ -593,26 +618,41 @@ export default function ProductsSection() {
                 </p>
               </div>
 
-              <button
-                id="toggle-brochure-table-btn"
-                onClick={() => setShowPriceTable(!showPriceTable)}
+              <a
+                href={getProductWhatsAppUrl(
+                  selectedProduct.name,
+                  `Style: ${activeStyle.name}, Size: ${selectedSize}", Thickness: ${selectedThickness}`
+                )}
+                target="_blank"
+                rel="noopener noreferrer"
+                id="header-whatsapp-quote-btn"
                 style={{
-                  background: showPriceTable ? '#1A1A1A' : '#E51D24',
+                  background: '#25D366',
                   color: '#fff',
                   border: 'none',
                   borderRadius: '50px',
                   padding: '12px 24px',
-                  fontWeight: 600,
+                  fontWeight: 700,
                   fontSize: '14px',
-                  cursor: 'pointer',
+                  textDecoration: 'none',
                   display: 'inline-flex',
                   alignItems: 'center',
                   gap: '8px',
-                  transition: 'all 0.2s',
+                  boxShadow: '0 4px 14px rgba(37, 211, 102, 0.25)',
+                  transition: 'all 0.2s ease',
+                }}
+                onMouseEnter={(e) => {
+                  ;(e.currentTarget as HTMLElement).style.background = '#20BA5A'
+                  ;(e.currentTarget as HTMLElement).style.transform = 'translateY(-1px)'
+                }}
+                onMouseLeave={(e) => {
+                  ;(e.currentTarget as HTMLElement).style.background = '#25D366'
+                  ;(e.currentTarget as HTMLElement).style.transform = 'translateY(0)'
                 }}
               >
-                📊 {showPriceTable ? 'Hide Brochure Price Table' : 'View Full Brochure Price Table'}
-              </button>
+                <WhatsAppIcon size={18} />
+                <span>Price Details on WhatsApp</span>
+              </a>
             </div>
 
             {/* Main Interactive Grid: Left Image & Specs, Right Price Calculator */}
@@ -684,7 +724,7 @@ export default function ProductsSection() {
               {/* Right Column: Size, Style, Thickness Selectors & Live Price */}
               <div>
                 <h4 style={{ fontSize: '18px', fontWeight: 700, color: '#1A1A1A', marginBottom: '16px' }}>
-                  Configure Your Mattress (Brochure MRP Calculator)
+                  Select Dimensions &amp; Construction Style
                 </h4>
 
                 {/* Step 1: Select Style (Standard, Euro Top, Pillow Top) */}
@@ -788,159 +828,123 @@ export default function ProductsSection() {
                   </div>
                 </div>
 
-                {/* Price Display Card */}
+                {/* Price Inquiry Card */}
                 <div
                   style={{
-                    background: 'linear-gradient(135deg, #1A1A1A 0%, #2A2A2A 100%)',
+                    background: 'linear-gradient(135deg, #111827 0%, #1F2937 100%)',
                     color: '#fff',
-                    borderRadius: '16px',
+                    borderRadius: '18px',
                     padding: '24px',
                     display: 'flex',
                     alignItems: 'center',
                     justifyContent: 'space-between',
                     flexWrap: 'wrap',
-                    gap: '16px',
+                    gap: '20px',
+                    border: '1px solid rgba(255,255,255,0.08)',
+                    boxShadow: '0 10px 30px rgba(0,0,0,0.15)',
                   }}
                 >
                   <div>
-                    <div style={{ color: '#AAA', fontSize: '12px', textTransform: 'uppercase', letterSpacing: '0.08em', marginBottom: '4px' }}>
-                      Official Brochure MRP (Incl. of All Taxes)
+                    <div style={{ color: '#9CA3AF', fontSize: '11px', fontWeight: 700, textTransform: 'uppercase', letterSpacing: '0.1em', marginBottom: '6px' }}>
+                      Official Brochure Pricing
                     </div>
-                    <div style={{ display: 'flex', alignItems: 'baseline', gap: '10px' }}>
-                      <span style={{ fontSize: '36px', fontWeight: 800, color: '#fff' }}>
-                        ₹{currentPrice.toLocaleString()}
+                    <div style={{ display: 'flex', alignItems: 'center', gap: '10px', marginBottom: '6px' }}>
+                      <span style={{ fontSize: '24px', fontWeight: 800, color: '#fff' }}>
+                        Price Details on Request
                       </span>
-                      <span style={{ color: '#4ADE80', fontSize: '13px', fontWeight: 600 }}>
+                      <span style={{ background: 'rgba(37, 211, 102, 0.15)', color: '#4ADE80', border: '1px solid rgba(74, 222, 128, 0.3)', fontSize: '11px', fontWeight: 700, padding: '3px 8px', borderRadius: '20px' }}>
                         ✓ {selectedProduct.warranty}
                       </span>
                     </div>
-                    <div style={{ color: '#bbb', fontSize: '13px', marginTop: '4px' }}>
-                      Selected: <strong>{activeStyle.name}</strong> &bull; <strong>{selectedSize}&quot;</strong> &bull; <strong>{selectedThickness}</strong>
+                    <div style={{ color: '#D1D5DB', fontSize: '13px', lineHeight: 1.5 }}>
+                      Selected: <strong style={{ color: '#fff' }}>{activeStyle.name}</strong> &bull; <strong style={{ color: '#fff' }}>{selectedSize}&quot;</strong> &bull; <strong style={{ color: '#fff' }}>{selectedThickness}</strong>
                     </div>
                   </div>
 
-                  <div style={{ display: 'flex', gap: '10px' }}>
-                    <a
-                      href="#contact"
-                      style={{
-                        background: '#E51D24',
-                        color: '#fff',
-                        padding: '12px 24px',
-                        borderRadius: '50px',
-                        fontWeight: 700,
-                        fontSize: '14px',
-                        textDecoration: 'none',
-                        transition: 'all 0.2s',
-                        display: 'inline-block',
-                      }}
-                      onMouseEnter={(e) => {
-                        ;(e.currentTarget as HTMLElement).style.background = '#C8161D'
-                      }}
-                      onMouseLeave={(e) => {
-                        ;(e.currentTarget as HTMLElement).style.background = '#E51D24'
-                      }}
-                    >
-                      Enquire / Order Now →
-                    </a>
-                  </div>
+                  <a
+                    href={getProductWhatsAppUrl(
+                      selectedProduct.name,
+                      `Style: ${activeStyle.name}, Size: ${selectedSize}", Thickness: ${selectedThickness}`
+                    )}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    id="configurator-whatsapp-btn"
+                    style={{
+                      background: '#25D366',
+                      color: '#fff',
+                      padding: '14px 28px',
+                      borderRadius: '50px',
+                      fontWeight: 700,
+                      fontSize: '14px',
+                      textDecoration: 'none',
+                      transition: 'all 0.2s ease',
+                      display: 'inline-flex',
+                      alignItems: 'center',
+                      gap: '8px',
+                      boxShadow: '0 6px 20px rgba(37, 211, 102, 0.35)',
+                    }}
+                    onMouseEnter={(e) => {
+                      ;(e.currentTarget as HTMLElement).style.background = '#20BA5A'
+                      ;(e.currentTarget as HTMLElement).style.transform = 'translateY(-2px)'
+                    }}
+                    onMouseLeave={(e) => {
+                      ;(e.currentTarget as HTMLElement).style.background = '#25D366'
+                      ;(e.currentTarget as HTMLElement).style.transform = 'translateY(0)'
+                    }}
+                  >
+                    <WhatsAppIcon size={18} />
+                    <span>Get Price Details on WhatsApp</span>
+                  </a>
                 </div>
               </div>
             </div>
 
-            {/* Collapsible Full Brochure MRP Price Table */}
-            {showPriceTable && (
-              <div
+            {/* WhatsApp Catalog Inquiry Box */}
+            <div
+              style={{
+                marginTop: '32px',
+                background: 'linear-gradient(135deg, #F0FDF4 0%, #FFFFFF 100%)',
+                border: '1.5px solid #BBF7D0',
+                borderRadius: '16px',
+                padding: '24px 28px',
+                display: 'flex',
+                alignItems: 'center',
+                justifyContent: 'space-between',
+                flexWrap: 'wrap',
+                gap: '16px',
+              }}
+            >
+              <div>
+                <h4 style={{ fontSize: '16px', fontWeight: 700, color: '#14532D', marginBottom: '4px', display: 'flex', alignItems: 'center', gap: '8px' }}>
+                  <span>📲</span> Looking for Complete Brochure &amp; Custom Size Quotations?
+                </h4>
+                <p style={{ fontSize: '13px', color: '#166534', margin: 0, lineHeight: 1.5 }}>
+                  Chat directly with our official TopSleep sales team on WhatsApp for wholesale pricing, bespoke dimensions, and current promotions.
+                </p>
+              </div>
+              <a
+                href={getProductWhatsAppUrl(selectedProduct.name, 'Full Brochure & Custom Size Quotation')}
+                target="_blank"
+                rel="noopener noreferrer"
                 style={{
-                  marginTop: '40px',
-                  borderTop: '2px dashed #E0E0E0',
-                  paddingTop: '32px',
+                  background: '#16A34A',
+                  color: '#fff',
+                  padding: '10px 20px',
+                  borderRadius: '50px',
+                  fontWeight: 700,
+                  fontSize: '13px',
+                  textDecoration: 'none',
+                  display: 'inline-flex',
+                  alignItems: 'center',
+                  gap: '6px',
+                  boxShadow: '0 4px 12px rgba(22, 163, 74, 0.25)',
+                  transition: 'all 0.2s',
                 }}
               >
-                <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', marginBottom: '16px' }}>
-                  <h4 style={{ fontSize: '20px', fontWeight: 700, color: '#1A1A1A' }}>
-                    Official Maximum Retail Price (MRP) Table &mdash; {selectedProduct.name}
-                  </h4>
-                  <span style={{ fontSize: '13px', color: '#666' }}>All amounts in Indian Rupees (₹) Inclusive of All Taxes</span>
-                </div>
-
-                <div style={{ overflowX: 'auto' }}>
-                  <table
-                    style={{
-                      width: '100%',
-                      borderCollapse: 'collapse',
-                      fontSize: '13px',
-                      textAlign: 'center',
-                    }}
-                  >
-                    <thead>
-                      <tr style={{ background: '#1A1A1A', color: '#fff' }}>
-                        <th style={{ padding: '12px 8px', border: '1px solid #333' }}>SIZE</th>
-                        {selectedProduct.styles.map((st) => (
-                          <th
-                            key={st.name}
-                            colSpan={st.thicknesses.length}
-                            style={{
-                              padding: '12px 8px',
-                              border: '1px solid #333',
-                              background: '#E51D24',
-                            }}
-                          >
-                            {st.name.toUpperCase()}
-                          </th>
-                        ))}
-                      </tr>
-                      <tr style={{ background: '#F2F2F2', color: '#333', fontWeight: 700 }}>
-                        <th style={{ padding: '10px 8px', border: '1px solid #E0E0E0' }}>Length x Width</th>
-                        {selectedProduct.styles.map((st) =>
-                          st.thicknesses.map((th) => (
-                            <th key={st.name + th} style={{ padding: '10px 8px', border: '1px solid #E0E0E0' }}>
-                              {th}
-                            </th>
-                          ))
-                        )}
-                      </tr>
-                    </thead>
-                    <tbody>
-                      {selectedProduct.sizes.map((sz, rowIdx) => (
-                        <tr
-                          key={sz}
-                          style={{
-                            background: rowIdx % 2 === 0 ? '#fff' : '#FBFBFB',
-                          }}
-                        >
-                          <td style={{ padding: '10px 8px', fontWeight: 700, border: '1px solid #E0E0E0', background: '#F7F7F7' }}>
-                            {sz}
-                          </td>
-                          {selectedProduct.styles.map((st) =>
-                            st.thicknesses.map((th) => {
-                              const p = st.prices[sz]?.[th]
-                              const isHighlighted =
-                                selectedSize === sz &&
-                                activeStyle.name === st.name &&
-                                selectedThickness === th
-                              return (
-                                <td
-                                  key={st.name + th}
-                                  style={{
-                                    padding: '10px 8px',
-                                    border: '1px solid #E0E0E0',
-                                    fontWeight: isHighlighted ? 800 : 500,
-                                    color: isHighlighted ? '#fff' : '#1A1A1A',
-                                    background: isHighlighted ? '#E51D24' : 'transparent',
-                                  }}
-                                >
-                                  {p ? `₹${p.toLocaleString()}` : '—'}
-                                </td>
-                              )
-                            })
-                          )}
-                        </tr>
-                      ))}
-                    </tbody>
-                  </table>
-                </div>
-              </div>
-            )}
+                <WhatsAppIcon size={16} />
+                <span>Chat on WhatsApp</span>
+              </a>
+            </div>
           </div>
         </div>
       </div>
@@ -1075,37 +1079,85 @@ function ProductCard({
           ))}
         </ul>
 
-        {/* Price & Action */}
+        {/* Price on Request & Action */}
         <div style={{ marginTop: 'auto', paddingTop: '14px', borderTop: '1px solid #F0F0F0' }}>
-          <div style={{ display: 'flex', alignItems: 'baseline', justifyContent: 'space-between', marginBottom: '14px' }}>
-            <div>
-              <span style={{ fontSize: '11px', color: '#888', display: 'block' }}>Starting from</span>
-              <span style={{ fontSize: '22px', fontWeight: 800, color: '#E51D24' }}>
-                ₹{product.basePrice.toLocaleString()}
-              </span>
-            </div>
+          <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', marginBottom: '14px' }}>
+            <span
+              style={{
+                display: 'inline-flex',
+                alignItems: 'center',
+                gap: '5px',
+                fontSize: '12px',
+                fontWeight: 600,
+                color: '#166534',
+                background: '#F0FDF4',
+                padding: '4px 10px',
+                borderRadius: '20px',
+                border: '1px solid #DCFCE7',
+              }}
+            >
+              <span>🏷️</span> Price on Request
+            </span>
             <span style={{ fontSize: '12px', color: '#666', background: '#F5F5F5', padding: '3px 8px', borderRadius: '6px' }}>
               {product.styles.length} Styles Available
             </span>
           </div>
 
-          <button
-            id={`configure-${product.id}`}
-            style={{
-              width: '100%',
-              padding: '11px',
-              background: selected ? '#E51D24' : '#FFF0F0',
-              color: selected ? '#fff' : '#E51D24',
-              border: `1.5px solid ${selected ? '#E51D24' : 'rgba(229,29,36,0.3)'}`,
-              borderRadius: '10px',
-              fontWeight: 700,
-              fontSize: '13px',
-              cursor: 'pointer',
-              transition: 'all 0.2s',
-            }}
-          >
-            {selected ? '✓ Configuring Options' : 'Configure & View Price List'}
-          </button>
+          <div style={{ display: 'flex', gap: '8px' }}>
+            <a
+              href={getProductWhatsAppUrl(product.name, product.tagline)}
+              target="_blank"
+              rel="noopener noreferrer"
+              id={`price-details-${product.id}`}
+              onClick={(e) => e.stopPropagation()}
+              style={{
+                flex: 1,
+                padding: '11px 14px',
+                background: '#25D366',
+                color: '#fff',
+                borderRadius: '10px',
+                fontWeight: 700,
+                fontSize: '13px',
+                textDecoration: 'none',
+                display: 'inline-flex',
+                alignItems: 'center',
+                justifyContent: 'center',
+                gap: '7px',
+                boxShadow: '0 4px 14px rgba(37, 211, 102, 0.25)',
+                transition: 'all 0.2s ease',
+              }}
+              onMouseEnter={(e) => {
+                ;(e.currentTarget as HTMLElement).style.background = '#20BA5A'
+                ;(e.currentTarget as HTMLElement).style.transform = 'translateY(-1px)'
+              }}
+              onMouseLeave={(e) => {
+                ;(e.currentTarget as HTMLElement).style.background = '#25D366'
+                ;(e.currentTarget as HTMLElement).style.transform = 'translateY(0)'
+              }}
+            >
+              <WhatsAppIcon size={16} />
+              <span>Price Details</span>
+            </a>
+
+            <button
+              id={`configure-${product.id}`}
+              onClick={() => onSelect()}
+              style={{
+                padding: '11px 14px',
+                background: selected ? '#FFF0F0' : '#FAFAFA',
+                color: selected ? '#E51D24' : '#4B5563',
+                border: `1.5px solid ${selected ? '#E51D24' : '#E5E7EB'}`,
+                borderRadius: '10px',
+                fontWeight: 600,
+                fontSize: '12px',
+                cursor: 'pointer',
+                transition: 'all 0.2s',
+                whiteSpace: 'nowrap',
+              }}
+            >
+              {selected ? '✓ Sizes' : 'View Sizes'}
+            </button>
+          </div>
         </div>
       </div>
     </div>
