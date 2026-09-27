@@ -123,10 +123,10 @@ export default function ContactSection() {
             </p>
 
             {[
-              { icon: '🌐', title: 'Official Website', detail: 'www.topglobalgroup.com' },
+              { icon: '🌐', title: 'Official Website', detail: 'www.topglobalgroup.com', href: 'http://www.topglobalgroup.com' },
               { icon: '📍', title: 'Corporate Office', detail: 'Top Global Group Headquarters, India' },
-              { icon: '📞', title: 'Phone & WhatsApp', detail: '+91 9061612539' },
-              { icon: '✉️', title: 'Email Support', detail: 'info@topglobalgroup.com / contact@topsleep.in' },
+              { icon: '📞', title: 'Phone & WhatsApp', detail: '+91 9061612539', href: 'https://wa.me/919061612539' },
+              { icon: '✉️', title: 'Email Support', detail: 'topglobalgroup1@gmail.com', href: 'mailto:topglobalgroup1@gmail.com' },
               { icon: '🛡️', title: 'Warranty & Claims', detail: 'Up to 7-Year Replacement Warranty Support' },
             ].map((item) => (
               <div key={item.title} style={{ display: 'flex', gap: '16px', marginBottom: '24px' }}>
@@ -149,35 +149,82 @@ export default function ContactSection() {
                   <div style={{ fontWeight: 600, fontSize: '11px', color: 'rgba(255,255,255,0.70)', marginBottom: '2px', textTransform: 'uppercase', letterSpacing: '0.08em' }}>
                     {item.title}
                   </div>
-                  <div style={{ fontSize: '14px', color: '#fff', fontWeight: 500 }}>{item.detail}</div>
+                  {item.href ? (
+                    <a
+                      href={item.href}
+                      target={item.href.startsWith('http') ? '_blank' : undefined}
+                      rel={item.href.startsWith('http') ? 'noopener noreferrer' : undefined}
+                      style={{ fontSize: '14px', color: '#fff', fontWeight: 500, textDecoration: 'none', transition: 'opacity 0.2s' }}
+                      onMouseEnter={(e) => { ;(e.currentTarget as HTMLElement).style.opacity = '0.85' }}
+                      onMouseLeave={(e) => { ;(e.currentTarget as HTMLElement).style.opacity = '1' }}
+                    >
+                      {item.detail}
+                    </a>
+                  ) : (
+                    <div style={{ fontSize: '14px', color: '#fff', fontWeight: 500 }}>{item.detail}</div>
+                  )}
                 </div>
               </div>
             ))}
 
-            {/* Social */}
-            <div style={{ display: 'flex', gap: '10px', marginTop: '24px' }}>
-              {['Official Website', 'Instagram', 'WhatsApp'].map((soc) => (
-                <a
-                  key={soc}
-                  href="http://www.topglobalgroup.com"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  style={{
-                    background: 'rgba(255,255,255,0.18)',
-                    color: '#fff',
-                    padding: '8px 14px',
-                    borderRadius: '8px',
-                    fontSize: '12px',
-                    fontWeight: 600,
-                    textDecoration: 'none',
-                    transition: 'background 0.2s',
-                  }}
-                  onMouseEnter={(e) => { ;(e.currentTarget as HTMLElement).style.background = 'rgba(255,255,255,0.30)' }}
-                  onMouseLeave={(e) => { ;(e.currentTarget as HTMLElement).style.background = 'rgba(255,255,255,0.18)' }}
-                >
-                  {soc}
-                </a>
-              ))}
+            {/* Direct Connect Quick Links */}
+            <div style={{ display: 'flex', gap: '10px', marginTop: '24px', flexWrap: 'wrap' }}>
+              <a
+                href="http://www.topglobalgroup.com"
+                target="_blank"
+                rel="noopener noreferrer"
+                style={{
+                  background: 'rgba(255,255,255,0.18)',
+                  color: '#fff',
+                  padding: '8px 14px',
+                  borderRadius: '8px',
+                  fontSize: '12px',
+                  fontWeight: 600,
+                  textDecoration: 'none',
+                  transition: 'background 0.2s',
+                }}
+                onMouseEnter={(e) => { ;(e.currentTarget as HTMLElement).style.background = 'rgba(255,255,255,0.30)' }}
+                onMouseLeave={(e) => { ;(e.currentTarget as HTMLElement).style.background = 'rgba(255,255,255,0.18)' }}
+              >
+                🌐 Website
+              </a>
+              <a
+                href="https://wa.me/919061612539"
+                target="_blank"
+                rel="noopener noreferrer"
+                style={{
+                  background: 'rgba(37, 211, 102, 0.35)',
+                  border: '1px solid rgba(37, 211, 102, 0.6)',
+                  color: '#fff',
+                  padding: '8px 14px',
+                  borderRadius: '8px',
+                  fontSize: '12px',
+                  fontWeight: 700,
+                  textDecoration: 'none',
+                  transition: 'background 0.2s',
+                }}
+                onMouseEnter={(e) => { ;(e.currentTarget as HTMLElement).style.background = '#25D366' }}
+                onMouseLeave={(e) => { ;(e.currentTarget as HTMLElement).style.background = 'rgba(37, 211, 102, 0.35)' }}
+              >
+                💬 WhatsApp
+              </a>
+              <a
+                href="mailto:topglobalgroup1@gmail.com"
+                style={{
+                  background: 'rgba(255,255,255,0.18)',
+                  color: '#fff',
+                  padding: '8px 14px',
+                  borderRadius: '8px',
+                  fontSize: '12px',
+                  fontWeight: 600,
+                  textDecoration: 'none',
+                  transition: 'background 0.2s',
+                }}
+                onMouseEnter={(e) => { ;(e.currentTarget as HTMLElement).style.background = 'rgba(255,255,255,0.30)' }}
+                onMouseLeave={(e) => { ;(e.currentTarget as HTMLElement).style.background = 'rgba(255,255,255,0.18)' }}
+              >
+                ✉️ Email Us
+              </a>
             </div>
           </div>
 

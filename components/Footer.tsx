@@ -79,6 +79,28 @@ export default function Footer() {
                 </span>
               ))}
             </div>
+
+            {/* Contact details */}
+            <div style={{ marginTop: '20px', display: 'flex', flexDirection: 'column', gap: '8px', fontSize: '13px' }}>
+              <a
+                href="mailto:topglobalgroup1@gmail.com"
+                style={{ color: '#aaa', textDecoration: 'none', display: 'flex', alignItems: 'center', gap: '8px', transition: 'color 0.2s' }}
+                onMouseEnter={(e) => { ;(e.currentTarget as HTMLElement).style.color = '#fff' }}
+                onMouseLeave={(e) => { ;(e.currentTarget as HTMLElement).style.color = '#aaa' }}
+              >
+                <span>✉️</span> <span>topglobalgroup1@gmail.com</span>
+              </a>
+              <a
+                href="https://wa.me/919061612539"
+                target="_blank"
+                rel="noopener noreferrer"
+                style={{ color: '#aaa', textDecoration: 'none', display: 'flex', alignItems: 'center', gap: '8px', transition: 'color 0.2s' }}
+                onMouseEnter={(e) => { ;(e.currentTarget as HTMLElement).style.color = '#fff' }}
+                onMouseLeave={(e) => { ;(e.currentTarget as HTMLElement).style.color = '#aaa' }}
+              >
+                <span>📞</span> <span>+91 9061612539 (WhatsApp)</span>
+              </a>
+            </div>
           </div>
 
           {/* Link columns */}
