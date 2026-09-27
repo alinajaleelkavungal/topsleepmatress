@@ -246,28 +246,28 @@ export default function Hero() {
               fontWeight: 700,
               letterSpacing: '0.12em',
               textTransform: 'uppercase',
-              marginBottom: '16px',
+              marginBottom: '14px',
               border: '1px solid rgba(229,29,36,0.20)',
               boxShadow: '0 2px 8px rgba(229,29,36,0.04)',
             }}
           >
             <span style={{ fontSize: '12px' }}>✦</span>
-            <span>Enjoy The Real Comfort</span>
+            <span>Luxury Mattress Collection</span>
           </div>
 
-          {/* Main Title */}
+          {/* Main Title: Top Sleep with Big Font */}
           <h1
             style={{
               fontFamily: "'Playfair Display', Georgia, serif",
-              fontSize: 'clamp(38px, 4.4vw, 62px)',
-              fontWeight: 700,
+              fontSize: 'clamp(52px, 6.4vw, 84px)',
+              fontWeight: 800,
               color: '#141414',
-              lineHeight: 1.12,
-              marginBottom: '18px',
-              letterSpacing: '-0.025em',
+              lineHeight: 1.02,
+              marginBottom: '12px',
+              letterSpacing: '-0.03em',
             }}
           >
-            Enjoy The Real{' '}
+            Top{' '}
             <span
               style={{
                 fontStyle: 'italic',
@@ -276,9 +276,42 @@ export default function Hero() {
                 display: 'inline-block',
               }}
             >
-              Comfort.
+              Sleep
             </span>
           </h1>
+
+          {/* Minimized Caption: Enjoy The Real Comfort */}
+          <div
+            className="hero-caption"
+            style={{
+              display: 'flex',
+              alignItems: 'center',
+              gap: '10px',
+              marginBottom: '20px',
+            }}
+          >
+            <span
+              style={{
+                width: '24px',
+                height: '2px',
+                background: '#E51D24',
+                borderRadius: '2px',
+                flexShrink: 0,
+              }}
+            />
+            <span
+              style={{
+                fontFamily: "'Playfair Display', Georgia, serif",
+                fontSize: 'clamp(18px, 2.2vw, 24px)',
+                fontWeight: 600,
+                color: '#2D3748',
+                letterSpacing: '-0.01em',
+              }}
+            >
+              Enjoy The Real{' '}
+              <em style={{ fontStyle: 'italic', color: '#E51D24' }}>Comfort.</em>
+            </span>
+          </div>
 
           {/* Description */}
           <p
@@ -487,6 +520,9 @@ export default function Hero() {
           .hero-text-col p {
             margin-left: auto;
             margin-right: auto;
+          }
+          .hero-caption {
+            justify-content: center !important;
           }
           .hero-buttons-row {
             justify-content: center;
