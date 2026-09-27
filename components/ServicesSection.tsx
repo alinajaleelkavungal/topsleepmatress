@@ -36,7 +36,7 @@ const services = [
     title: 'Medical & Ortho Consultation',
     desc: 'Specially engineered for persistent back pain relief. Our specialists guide you on high-density rebonded foam, memory foam contouring, and spinal ergonomics.',
     tag: 'Back Pain Relief',
-    accent: '#E51D24',
+    accent: '#1D4ED8',
   },
   {
     icon: '✨',
@@ -178,8 +178,21 @@ function ServiceCard({
       <span
         style={{
           display: 'inline-block',
-          background: hovered ? 'rgba(255,255,255,0.20)' : 'rgba(229,29,36,0.10)',
-          color: hovered ? '#fff' : '#E51D24',
+          background: hovered
+            ? 'rgba(255,255,255,0.20)'
+            : service.accent === '#1D4ED8'
+            ? 'rgba(29, 78, 216, 0.08)'
+            : 'rgba(229,29,36,0.10)',
+          color: hovered
+            ? '#fff'
+            : service.accent === '#1D4ED8'
+            ? '#1D4ED8'
+            : '#E51D24',
+          border: hovered
+            ? 'none'
+            : service.accent === '#1D4ED8'
+            ? '1px solid rgba(29, 78, 216, 0.22)'
+            : 'none',
           fontSize: '11px',
           fontWeight: 700,
           letterSpacing: '0.1em',

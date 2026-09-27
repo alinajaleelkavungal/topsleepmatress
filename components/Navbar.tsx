@@ -39,13 +39,14 @@ export default function Navbar() {
       {/* Top notice bar */}
       <div
         style={{
-          background: '#E51D24',
+          background: 'linear-gradient(90deg, #0B2545 0%, #133E87 50%, #0B2545 100%)',
           color: '#fff',
           textAlign: 'center',
           padding: '8px 24px',
           fontSize: '13px',
           fontWeight: 500,
           letterSpacing: '0.02em',
+          borderBottom: '1px solid rgba(255,255,255,0.1)',
         }}
       >
         🛏️ &nbsp;Free Shipping on all orders above ₹5,999 &nbsp;|&nbsp; 100-Night Free Trial

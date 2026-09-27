@@ -11,10 +11,10 @@ const stats = [
 ]
 
 const trustBadges = [
-  { icon: '🛡️', title: 'Up to 7 Years Warranty', sub: 'Comprehensive coverage' },
-  { icon: '🔬', title: 'Anti-Dust Mite & Fungus', sub: 'Hypoallergenic certified' },
-  { icon: '💤', title: 'Zero Disturbance', sub: 'Independent pocket springs' },
-  { icon: '🚚', title: 'Free Doorstep Delivery', sub: 'Across all major cities' },
+  { icon: '🛡️', title: 'Up to 7 Years Warranty', sub: 'Comprehensive coverage', iconBg: '#F0F7FF' },
+  { icon: '🔬', title: 'Anti-Dust Mite & Fungus', sub: 'Hypoallergenic certified', iconBg: '#F0F9FF' },
+  { icon: '💤', title: 'Zero Disturbance', sub: 'Independent pocket springs', iconBg: '#FFF5F5' },
+  { icon: '🚚', title: 'Free Doorstep Delivery', sub: 'Across all major cities', iconBg: '#F8FAFC' },
 ]
 
 export default function Hero() {
@@ -60,7 +60,7 @@ export default function Hero() {
           width: '480px',
           height: '480px',
           borderRadius: '50%',
-          background: 'radial-gradient(circle, rgba(229, 29, 36, 0.04) 0%, transparent 70%)',
+          background: 'radial-gradient(circle, rgba(19, 62, 135, 0.06) 0%, transparent 70%)',
           filter: 'blur(50px)',
           pointerEvents: 'none',
         }}
@@ -199,9 +199,9 @@ export default function Hero() {
 
               <div
                 style={{
-                  background: '#F0FFF4',
-                  border: '1px solid #B8E8C5',
-                  color: '#166534',
+                  background: '#EFF6FF',
+                  border: '1px solid #BFDBFE',
+                  color: '#1D4ED8',
                   fontSize: '11px',
                   fontWeight: 700,
                   padding: '4px 10px',
@@ -212,7 +212,7 @@ export default function Hero() {
                   whiteSpace: 'nowrap',
                 }}
               >
-                <span>✓</span>
+                <span style={{ color: '#2563EB' }}>✓</span>
                 <span>Doctor Tested</span>
               </div>
             </div>
@@ -382,7 +382,21 @@ export default function Hero() {
                   transition: 'all 0.2s ease',
                 }}
               >
-                <span style={{ fontSize: '18px' }}>{badge.icon}</span>
+                <div
+                  style={{
+                    width: '32px',
+                    height: '32px',
+                    borderRadius: '8px',
+                    background: badge.iconBg,
+                    display: 'flex',
+                    alignItems: 'center',
+                    justifyContent: 'center',
+                    fontSize: '16px',
+                    flexShrink: 0,
+                  }}
+                >
+                  {badge.icon}
+                </div>
                 <div>
                   <div style={{ color: '#1A1A1A', fontSize: '12px', fontWeight: 700, lineHeight: 1.25 }}>
                     {badge.title}

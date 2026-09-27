@@ -134,51 +134,65 @@ export default function AboutSection() {
           }}
           className="milestone-grid"
         >
-          {milestones.map((m, i) => (
-            <div
-              key={m.year}
-              style={{
-                background: i % 2 === 0 ? '#fff' : '#E51D24',
-                color: i % 2 === 0 ? '#1A1A1A' : '#fff',
-                padding: '40px 32px',
-                opacity: visible ? 1 : 0,
-                transform: visible ? 'translateY(0)' : 'translateY(30px)',
-                transition: `all 0.7s cubic-bezier(0.16, 1, 0.3, 1) ${0.1 + i * 0.12}s`,
-              }}
-            >
+          {milestones.map((m, i) => {
+            const isSmartTech = i === 3
+            const bg = isSmartTech
+              ? 'linear-gradient(135deg, #0B2545 0%, #133E87 100%)'
+              : i % 2 === 0
+              ? '#fff'
+              : '#E51D24'
+            const numColor = isSmartTech
+              ? 'rgba(147, 197, 253, 0.7)'
+              : i % 2 === 0
+              ? '#E51D24'
+              : 'rgba(255,255,255,0.5)'
+
+            return (
               <div
+                key={m.year}
                 style={{
-                  fontFamily: "'Playfair Display', Georgia, serif",
-                  fontSize: '42px',
-                  fontWeight: 700,
-                  lineHeight: 1,
-                  marginBottom: '8px',
-                  color: i % 2 === 0 ? '#E51D24' : 'rgba(255,255,255,0.5)',
-                }}
-              >
-                {m.year}
-              </div>
-              <div
-                style={{
-                  fontWeight: 700,
-                  fontSize: '17px',
-                  marginBottom: '12px',
+                  background: bg,
                   color: i % 2 === 0 ? '#1A1A1A' : '#fff',
+                  padding: '40px 32px',
+                  opacity: visible ? 1 : 0,
+                  transform: visible ? 'translateY(0)' : 'translateY(30px)',
+                  transition: `all 0.7s cubic-bezier(0.16, 1, 0.3, 1) ${0.1 + i * 0.12}s`,
                 }}
               >
-                {m.title}
+                <div
+                  style={{
+                    fontFamily: "'Playfair Display', Georgia, serif",
+                    fontSize: '42px',
+                    fontWeight: 700,
+                    lineHeight: 1,
+                    marginBottom: '8px',
+                    color: numColor,
+                  }}
+                >
+                  {m.year}
+                </div>
+                <div
+                  style={{
+                    fontWeight: 700,
+                    fontSize: '17px',
+                    marginBottom: '12px',
+                    color: i % 2 === 0 ? '#1A1A1A' : '#fff',
+                  }}
+                >
+                  {m.title}
+                </div>
+                <div
+                  style={{
+                    fontSize: '14px',
+                    lineHeight: 1.7,
+                    color: i % 2 === 0 ? '#6B6B6B' : 'rgba(255,255,255,0.80)',
+                  }}
+                >
+                  {m.desc}
+                </div>
               </div>
-              <div
-                style={{
-                  fontSize: '14px',
-                  lineHeight: 1.7,
-                  color: i % 2 === 0 ? '#6B6B6B' : 'rgba(255,255,255,0.80)',
-                }}
-              >
-                {m.desc}
-              </div>
-            </div>
-          ))}
+            )
+          })}
         </div>
       </div>
 
