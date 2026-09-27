@@ -10,11 +10,18 @@ const stats = [
   { value: '4.8★', label: 'Average Rating' },
 ]
 
+const trustBadges = [
+  { icon: '🛡️', title: 'Up to 7 Years Warranty', sub: 'Comprehensive coverage' },
+  { icon: '🔬', title: 'Anti-Dust Mite & Fungus', sub: 'Hypoallergenic certified' },
+  { icon: '💤', title: 'Zero Disturbance', sub: 'Independent pocket springs' },
+  { icon: '🚚', title: 'Free Doorstep Delivery', sub: 'Across all major cities' },
+]
+
 export default function Hero() {
   const [visible, setVisible] = useState(false)
 
   useEffect(() => {
-    const t = setTimeout(() => setVisible(true), 100)
+    const t = setTimeout(() => setVisible(true), 80)
     return () => clearTimeout(t)
   }, [])
 
@@ -26,37 +33,40 @@ export default function Hero() {
         minHeight: '100vh',
         display: 'flex',
         flexDirection: 'column',
+        justifyContent: 'space-between',
         overflow: 'hidden',
-        background: '#FAFAFA',
+        background: 'linear-gradient(180deg, #FFFFFF 0%, #FAFAFA 55%, #F4F4F5 100%)',
       }}
     >
-      {/* Decorative circle blobs */}
+      {/* Decorative ambient glowing auras */}
       <div
         style={{
           position: 'absolute',
-          top: '-80px',
-          right: '-80px',
-          width: '500px',
-          height: '500px',
+          top: '8%',
+          left: '-4%',
+          width: '540px',
+          height: '540px',
           borderRadius: '50%',
-          background: 'rgba(216,91,91,0.05)',
+          background: 'radial-gradient(circle, rgba(229, 29, 36, 0.08) 0%, rgba(229, 29, 36, 0.01) 65%, transparent 75%)',
+          filter: 'blur(40px)',
           pointerEvents: 'none',
         }}
       />
       <div
         style={{
           position: 'absolute',
-          bottom: '80px',
-          left: '-120px',
-          width: '400px',
-          height: '400px',
+          top: '15%',
+          right: '-4%',
+          width: '480px',
+          height: '480px',
           borderRadius: '50%',
-          background: 'rgba(216,91,91,0.04)',
+          background: 'radial-gradient(circle, rgba(229, 29, 36, 0.04) 0%, transparent 70%)',
+          filter: 'blur(50px)',
           pointerEvents: 'none',
         }}
       />
 
-      {/* Main content */}
+      {/* Main Hero Container */}
       <div
         style={{
           flex: 1,
@@ -65,74 +75,236 @@ export default function Hero() {
           maxWidth: '1280px',
           margin: '0 auto',
           width: '100%',
-          padding: '140px 32px 60px',
-          gap: '60px',
+          padding: '125px 36px 40px',
+          gap: '52px',
           alignItems: 'center',
+          position: 'relative',
+          zIndex: 2,
         }}
         className="hero-grid"
       >
-        {/* Left: text */}
+        {/* LEFT: Image Showcase */}
         <div
+          className="hero-image-col"
           style={{
+            position: 'relative',
             opacity: visible ? 1 : 0,
-            transform: visible ? 'translateY(0)' : 'translateY(30px)',
-            transition: 'all 0.8s cubic-bezier(0.16, 1, 0.3, 1)',
+            transform: visible ? 'translateX(0) scale(1)' : 'translateX(-24px) scale(0.97)',
+            transition: 'all 0.9s cubic-bezier(0.16, 1, 0.3, 1) 0.1s',
+            display: 'flex',
+            alignItems: 'center',
+            justifyContent: 'center',
           }}
         >
-          <span
+          {/* Subtle architectural halo accent */}
+          <div
             style={{
-              display: 'inline-block',
-              background: 'rgba(229,29,36,0.08)',
+              position: 'absolute',
+              inset: '-10px',
+              borderRadius: '30px',
+              background: 'linear-gradient(135deg, rgba(229, 29, 36, 0.07) 0%, rgba(229, 29, 36, 0.02) 100%)',
+              border: '1px solid rgba(229, 29, 36, 0.14)',
+              pointerEvents: 'none',
+            }}
+          />
+
+          {/* Main Image Frame */}
+          <div
+            style={{
+              width: '100%',
+              maxWidth: '540px',
+              aspectRatio: '4/3',
+              borderRadius: '24px',
+              overflow: 'hidden',
+              boxShadow: '0 25px 60px -12px rgba(0,0,0,0.13), 0 10px 25px -6px rgba(229,29,36,0.10)',
+              position: 'relative',
+              border: '1px solid rgba(229, 29, 36, 0.16)',
+              background: '#fff',
+            }}
+          >
+            <Image
+              src="/images/hero.png"
+              alt="TopSleep Premium Luxury Mattress"
+              fill
+              style={{ objectFit: 'cover' }}
+              priority
+            />
+
+            {/* Overlay badge 1: Top Right Warranty Pill */}
+            <div
+              style={{
+                position: 'absolute',
+                top: '16px',
+                right: '16px',
+                background: 'linear-gradient(135deg, rgba(229,29,36,0.94) 0%, rgba(185,18,24,0.94) 100%)',
+                backdropFilter: 'blur(10px)',
+                borderRadius: '50px',
+                padding: '7px 15px',
+                color: '#fff',
+                fontSize: '12px',
+                fontWeight: 700,
+                letterSpacing: '0.02em',
+                boxShadow: '0 4px 16px rgba(229,29,36,0.35)',
+                display: 'flex',
+                alignItems: 'center',
+                gap: '6px',
+              }}
+            >
+              <span style={{ fontSize: '12px' }}>★</span>
+              <span>7 Years Full Warranty</span>
+            </div>
+
+            {/* Overlay badge 2: Bottom Orthopaedic Glass Card */}
+            <div
+              style={{
+                position: 'absolute',
+                bottom: '16px',
+                left: '16px',
+                right: '16px',
+                background: 'rgba(255, 255, 255, 0.94)',
+                backdropFilter: 'blur(14px)',
+                borderRadius: '16px',
+                padding: '11px 16px',
+                display: 'flex',
+                alignItems: 'center',
+                justifyContent: 'space-between',
+                boxShadow: '0 10px 28px rgba(0, 0, 0, 0.12)',
+                border: '1px solid rgba(229, 29, 36, 0.14)',
+              }}
+            >
+              <div style={{ display: 'flex', alignItems: 'center', gap: '10px' }}>
+                <div
+                  style={{
+                    width: '36px',
+                    height: '36px',
+                    borderRadius: '10px',
+                    background: 'rgba(229,29,36,0.08)',
+                    display: 'flex',
+                    alignItems: 'center',
+                    justifyContent: 'center',
+                    fontSize: '18px',
+                  }}
+                >
+                  😴
+                </div>
+                <div>
+                  <div style={{ fontWeight: 700, color: '#1A1A1A', fontSize: '13px', lineHeight: 1.2 }}>
+                    Medical &amp; Orthopaedic
+                  </div>
+                  <div style={{ color: '#E51D24', fontWeight: 800, fontSize: '14px', lineHeight: 1.2 }}>
+                    Certified Back Pain Relief
+                  </div>
+                </div>
+              </div>
+
+              <div
+                style={{
+                  background: '#F0FFF4',
+                  border: '1px solid #B8E8C5',
+                  color: '#166534',
+                  fontSize: '11px',
+                  fontWeight: 700,
+                  padding: '4px 10px',
+                  borderRadius: '20px',
+                  display: 'flex',
+                  alignItems: 'center',
+                  gap: '4px',
+                  whiteSpace: 'nowrap',
+                }}
+              >
+                <span>✓</span>
+                <span>Doctor Tested</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        {/* RIGHT: Writings & Call to Action */}
+        <div
+          className="hero-text-col"
+          style={{
+            opacity: visible ? 1 : 0,
+            transform: visible ? 'translateX(0)' : 'translateX(24px)',
+            transition: 'all 0.9s cubic-bezier(0.16, 1, 0.3, 1) 0.1s',
+            display: 'flex',
+            flexDirection: 'column',
+            alignItems: 'flex-start',
+            justifyContent: 'center',
+          }}
+        >
+          {/* Eyebrow Badge */}
+          <div
+            style={{
+              display: 'inline-flex',
+              alignItems: 'center',
+              gap: '8px',
+              background: 'rgba(229,29,36,0.06)',
               color: '#E51D24',
-              padding: '6px 18px',
+              padding: '6px 16px',
               borderRadius: '50px',
               fontSize: '12px',
               fontWeight: 700,
               letterSpacing: '0.12em',
               textTransform: 'uppercase',
-              marginBottom: '24px',
-              border: '1px solid rgba(229,29,36,0.2)',
+              marginBottom: '16px',
+              border: '1px solid rgba(229,29,36,0.20)',
+              boxShadow: '0 2px 8px rgba(229,29,36,0.04)',
             }}
           >
-            ✦ Enjoy The Real Comfort
-          </span>
+            <span style={{ fontSize: '12px' }}>✦</span>
+            <span>Enjoy The Real Comfort</span>
+          </div>
 
+          {/* Main Title */}
           <h1
             style={{
               fontFamily: "'Playfair Display', Georgia, serif",
-              fontSize: 'clamp(42px, 6vw, 76px)',
+              fontSize: 'clamp(38px, 4.4vw, 62px)',
               fontWeight: 700,
-              color: '#1A1A1A',
-              lineHeight: 1.08,
-              marginBottom: '24px',
-              letterSpacing: '-0.02em',
+              color: '#141414',
+              lineHeight: 1.12,
+              marginBottom: '18px',
+              letterSpacing: '-0.025em',
             }}
           >
-            Enjoy The Real
-            <br />
-            <em style={{ fontStyle: 'italic', color: '#E51D24' }}>Comfort.</em>
+            Enjoy The Real{' '}
+            <span
+              style={{
+                fontStyle: 'italic',
+                color: '#E51D24',
+                position: 'relative',
+                display: 'inline-block',
+              }}
+            >
+              Comfort.
+            </span>
           </h1>
 
+          {/* Description */}
           <p
             style={{
-              color: '#4A4A4A',
-              fontSize: '18px',
+              color: '#4B5563',
+              fontSize: '16px',
               lineHeight: 1.7,
-              maxWidth: '480px',
-              marginBottom: '40px',
+              maxWidth: '500px',
+              marginBottom: '26px',
             }}
           >
             Discover mattresses and sleep solutions engineered with decades of expertise — crafted to give you the deepest, most restorative rest and the real comfort you deserve.
           </p>
 
-          <div style={{ display: 'flex', gap: '16px', flexWrap: 'wrap' }}>
+          {/* Call to Action Buttons */}
+          <div
+            className="hero-buttons-row"
+            style={{ display: 'flex', gap: '14px', flexWrap: 'wrap', marginBottom: '32px' }}
+          >
             <a
               href="#products"
               id="hero-shop-btn"
               style={{
-                background: '#E51D24',
+                background: 'linear-gradient(135deg, #E51D24 0%, #C8161D 100%)',
                 color: '#fff',
-                padding: '15px 36px',
+                padding: '14px 34px',
                 borderRadius: '50px',
                 fontWeight: 700,
                 fontSize: '15px',
@@ -140,18 +312,16 @@ export default function Hero() {
                 display: 'inline-flex',
                 alignItems: 'center',
                 gap: '8px',
-                transition: 'all 0.25s',
-                boxShadow: '0 8px 32px rgba(229,29,36,0.25)',
+                transition: 'all 0.25s ease',
+                boxShadow: '0 8px 24px rgba(229,29,36,0.28)',
               }}
               onMouseEnter={(e) => {
                 ;(e.currentTarget as HTMLElement).style.transform = 'translateY(-2px)'
-                ;(e.currentTarget as HTMLElement).style.boxShadow = '0 16px 40px rgba(229,29,36,0.35)'
-                ;(e.currentTarget as HTMLElement).style.background = '#C8161D'
+                ;(e.currentTarget as HTMLElement).style.boxShadow = '0 14px 32px rgba(229,29,36,0.38)'
               }}
               onMouseLeave={(e) => {
                 ;(e.currentTarget as HTMLElement).style.transform = 'translateY(0)'
-                ;(e.currentTarget as HTMLElement).style.boxShadow = '0 8px 32px rgba(229,29,36,0.25)'
-                ;(e.currentTarget as HTMLElement).style.background = '#E51D24'
+                ;(e.currentTarget as HTMLElement).style.boxShadow = '0 8px 24px rgba(229,29,36,0.28)'
               }}
             >
               Explore Products →
@@ -162,7 +332,8 @@ export default function Hero() {
               style={{
                 border: '2px solid #E51D24',
                 color: '#E51D24',
-                padding: '15px 36px',
+                background: 'transparent',
+                padding: '13px 32px',
                 borderRadius: '50px',
                 fontWeight: 600,
                 fontSize: '15px',
@@ -170,131 +341,58 @@ export default function Hero() {
                 display: 'inline-flex',
                 alignItems: 'center',
                 gap: '8px',
-                transition: 'all 0.25s',
+                transition: 'all 0.25s ease',
               }}
               onMouseEnter={(e) => {
-                ;(e.currentTarget as HTMLElement).style.background = 'rgba(229,29,36,0.08)'
+                ;(e.currentTarget as HTMLElement).style.background = 'rgba(229,29,36,0.06)'
+                ;(e.currentTarget as HTMLElement).style.transform = 'translateY(-2px)'
               }}
               onMouseLeave={(e) => {
                 ;(e.currentTarget as HTMLElement).style.background = 'transparent'
+                ;(e.currentTarget as HTMLElement).style.transform = 'translateY(0)'
               }}
             >
               Learn More
             </a>
           </div>
 
-          {/* Trust badges */}
-          <div style={{ display: 'flex', gap: '20px', marginTop: '44px', flexWrap: 'wrap' }}>
-            {[
-              { icon: '🛡️', text: 'Up to 7 Years Warranty' },
-              { icon: '🔬', text: 'Anti-Fungus & Dust Mite Protected' },
-              { icon: '💤', text: 'Zero Partner Disturbance' },
-              { icon: '🚚', text: 'Free Doorstep Delivery' },
-            ].map((badge) => (
+          {/* Structured Trust Badges (2x2 Grid) */}
+          <div
+            className="hero-trust-grid"
+            style={{
+              display: 'grid',
+              gridTemplateColumns: 'repeat(2, 1fr)',
+              gap: '10px',
+              width: '100%',
+              maxWidth: '500px',
+            }}
+          >
+            {trustBadges.map((badge) => (
               <div
-                key={badge.text}
+                key={badge.title}
                 style={{
                   display: 'flex',
                   alignItems: 'center',
-                  gap: '8px',
-                  color: '#4A4A4A',
-                  fontSize: '13px',
-                  fontWeight: 600,
-                  background: 'rgba(0,0,0,0.03)',
-                  padding: '6px 14px',
-                  borderRadius: '30px',
-                  border: '1px solid rgba(0,0,0,0.06)',
+                  gap: '10px',
+                  background: 'rgba(255, 255, 255, 0.90)',
+                  padding: '9px 12px',
+                  borderRadius: '12px',
+                  border: '1px solid #EAEAEA',
+                  boxShadow: '0 2px 6px rgba(0,0,0,0.02)',
+                  transition: 'all 0.2s ease',
                 }}
               >
-                <span style={{ fontSize: '16px' }}>{badge.icon}</span>
-                {badge.text}
+                <span style={{ fontSize: '18px' }}>{badge.icon}</span>
+                <div>
+                  <div style={{ color: '#1A1A1A', fontSize: '12px', fontWeight: 700, lineHeight: 1.25 }}>
+                    {badge.title}
+                  </div>
+                  <div style={{ color: '#71717A', fontSize: '11px', fontWeight: 500, lineHeight: 1.2 }}>
+                    {badge.sub}
+                  </div>
+                </div>
               </div>
             ))}
-          </div>
-        </div>
-
-        {/* Right: image */}
-        <div
-          style={{
-            position: 'relative',
-            opacity: visible ? 1 : 0,
-            transform: visible ? 'translateX(0) scale(1)' : 'translateX(40px) scale(0.95)',
-            transition: 'all 1s cubic-bezier(0.16, 1, 0.3, 1) 0.2s',
-            display: 'flex',
-            alignItems: 'center',
-            justifyContent: 'center',
-          }}
-        >
-          {/* Glow ring */}
-          <div
-            style={{
-              position: 'absolute',
-              inset: '-20px',
-              borderRadius: '50%',
-              background: 'radial-gradient(circle, rgba(229,29,36,0.12) 0%, transparent 70%)',
-              pointerEvents: 'none',
-            }}
-          />
-          <div
-            style={{
-              width: '100%',
-              maxWidth: '540px',
-              aspectRatio: '4/3',
-              borderRadius: '28px',
-              overflow: 'hidden',
-              boxShadow: '0 32px 80px rgba(0,0,0,0.12)',
-              position: 'relative',
-              border: '2px solid rgba(229,29,36,0.15)',
-            }}
-          >
-            <Image
-              src="/images/hero.png"
-              alt="TopSleep Premium Luxury Mattress"
-              fill
-              style={{ objectFit: 'cover' }}
-              priority
-            />
-            {/* Overlay badge 1: Top badge */}
-            <div
-              style={{
-                position: 'absolute',
-                top: '20px',
-                right: '20px',
-                background: 'rgba(229,29,36,0.92)',
-                backdropFilter: 'blur(8px)',
-                borderRadius: '12px',
-                padding: '8px 14px',
-                color: '#fff',
-                fontSize: '12px',
-                fontWeight: 700,
-                boxShadow: '0 4px 16px rgba(0,0,0,0.2)',
-              }}
-            >
-              ★ 7 Years Full Warranty
-            </div>
-            {/* Overlay badge 2: Bottom badge */}
-            <div
-              style={{
-                position: 'absolute',
-                bottom: '20px',
-                left: '20px',
-                background: 'rgba(255,255,255,0.96)',
-                backdropFilter: 'blur(8px)',
-                borderRadius: '14px',
-                padding: '12px 18px',
-                display: 'flex',
-                alignItems: 'center',
-                gap: '12px',
-                boxShadow: '0 8px 24px rgba(0,0,0,0.15)',
-                border: '1px solid rgba(229,29,36,0.15)',
-              }}
-            >
-              <span style={{ fontSize: '28px' }}>😴</span>
-              <div>
-                <div style={{ fontWeight: 700, color: '#1A1A1A', fontSize: '13px' }}>Medical & Orthopaedic</div>
-                <div style={{ color: '#E51D24', fontWeight: 800, fontSize: '16px', lineHeight: 1.2 }}>Certified Back Pain Relief</div>
-              </div>
-            </div>
           </div>
         </div>
       </div>
@@ -304,6 +402,8 @@ export default function Hero() {
         style={{
           borderTop: '1px solid #E8E8E8',
           background: '#fff',
+          position: 'relative',
+          zIndex: 2,
         }}
       >
         <div
@@ -320,7 +420,7 @@ export default function Hero() {
             <div
               key={stat.label}
               style={{
-                padding: '28px 24px',
+                padding: '22px 18px',
                 textAlign: 'center',
                 borderRight: i < stats.length - 1 ? '1px solid #E8E8E8' : 'none',
               }}
@@ -328,7 +428,7 @@ export default function Hero() {
               <div
                 style={{
                   fontFamily: "'Playfair Display', Georgia, serif",
-                  fontSize: '36px',
+                  fontSize: '32px',
                   fontWeight: 700,
                   color: '#1A1A1A',
                   lineHeight: 1,
@@ -336,7 +436,16 @@ export default function Hero() {
               >
                 {stat.value}
               </div>
-              <div style={{ color: '#6B6B6B', fontSize: '13px', marginTop: '6px', fontWeight: 600 }}>
+              <div
+                style={{
+                  color: '#6B6B6B',
+                  fontSize: '12px',
+                  marginTop: '6px',
+                  fontWeight: 600,
+                  textTransform: 'uppercase',
+                  letterSpacing: '0.04em',
+                }}
+              >
                 {stat.label}
               </div>
             </div>
@@ -345,19 +454,32 @@ export default function Hero() {
       </div>
 
       <style>{`
-        @media (max-width: 900px) {
+        @media (max-width: 990px) {
           .hero-grid {
             grid-template-columns: 1fr !important;
-            padding-top: 120px !important;
-            text-align: center;
+            padding-top: 130px !important;
+            padding-bottom: 36px !important;
+            gap: 36px !important;
           }
-          .hero-grid > div:first-child {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
+          .hero-image-col {
+            order: 1;
+            width: 100%;
           }
-          .hero-grid > div:last-child {
-            display: none !important;
+          .hero-text-col {
+            order: 2;
+            align-items: center !important;
+            text-align: center !important;
+          }
+          .hero-text-col p {
+            margin-left: auto;
+            margin-right: auto;
+          }
+          .hero-buttons-row {
+            justify-content: center;
+          }
+          .hero-trust-grid {
+            grid-template-columns: 1fr 1fr !important;
+            margin: 0 auto;
           }
           .stats-grid {
             grid-template-columns: repeat(2, 1fr) !important;
@@ -367,8 +489,15 @@ export default function Hero() {
             border-bottom: 1px solid #E8E8E8;
           }
         }
+
+        @media (max-width: 580px) {
+          .hero-trust-grid {
+            grid-template-columns: 1fr !important;
+          }
+        }
       `}</style>
     </section>
   )
 }
+
 
