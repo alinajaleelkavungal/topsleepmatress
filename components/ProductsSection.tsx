@@ -514,9 +514,237 @@ export const products: Product[] = [
       'Exceptional pressure redistribution and certified durability for restorative rest',
     ],
   },
+  {
+    id: 'helixa-memory',
+    name: 'Helixa Memory',
+    category: 'Helixa Memory',
+    tagline: 'Contouring Memory Foam with Aerated Helixa & Bamboo Fabric',
+    description:
+      'Crafted with body-contouring Memory Foam that adapts dynamically to your posture, supported by a high-resilience aerated Helixa Foam core and encased in naturally breathable, eco-friendly Bamboo Fabric.',
+    seriesBadge: 'Bamboo Memory Foam',
+    warranty: '7 Years Warranty',
+    warrantyBadgeColor: '#2B8A3E',
+    image: '/images/products/helixa_memory.jpg',
+    basePrice: 12900,
+    sizes: ['72x36', '75x36', '72x48', '72x60', '75x60', '72x72', '75x72'],
+    styles: [
+      {
+        name: 'Standard',
+        thicknesses: ['6 Inch', '8 Inch', '10 Inch'],
+        prices: {
+          '72x36': { '6 Inch': 12900, '8 Inch': 14800, '10 Inch': 17200 },
+          '75x36': { '6 Inch': 13200, '8 Inch': 15200, '10 Inch': 17600 },
+          '72x48': { '6 Inch': 15600, '8 Inch': 18200, '10 Inch': 21500 },
+          '72x60': { '6 Inch': 18500, '8 Inch': 21900, '10 Inch': 25400 },
+          '75x60': { '6 Inch': 19200, '8 Inch': 22600, '10 Inch': 26200 },
+          '72x72': { '6 Inch': 21500, '8 Inch': 25400, '10 Inch': 29500 },
+          '75x72': { '6 Inch': 22200, '8 Inch': 26200, '10 Inch': 30400 },
+        },
+      },
+      {
+        name: 'Euro Top',
+        thicknesses: ['8 Inch', '10 Inch'],
+        prices: {
+          '72x36': { '8 Inch': 16400, '10 Inch': 18800 },
+          '75x36': { '8 Inch': 16800, '10 Inch': 19200 },
+          '72x48': { '8 Inch': 19800, '10 Inch': 22800 },
+          '72x60': { '8 Inch': 23800, '10 Inch': 27200 },
+          '75x60': { '8 Inch': 24500, '10 Inch': 28100 },
+          '72x72': { '8 Inch': 27600, '10 Inch': 31500 },
+          '75x72': { '8 Inch': 28400, '10 Inch': 32500 },
+        },
+      },
+      {
+        name: 'Pillow Top',
+        thicknesses: ['8 Inch', '10 Inch'],
+        prices: {
+          '72x36': { '8 Inch': 18200, '10 Inch': 20800 },
+          '75x36': { '8 Inch': 18600, '10 Inch': 21200 },
+          '72x48': { '8 Inch': 21800, '10 Inch': 25200 },
+          '72x60': { '8 Inch': 25900, '10 Inch': 29800 },
+          '75x60': { '8 Inch': 26800, '10 Inch': 30800 },
+          '72x72': { '8 Inch': 30200, '10 Inch': 34600 },
+          '75x72': { '8 Inch': 31100, '10 Inch': 35600 },
+        },
+      },
+    ],
+    materials: [
+      {
+        name: 'Bamboo Fabric',
+        desc: 'Naturally breathable and soft. Keeps you cool and fresh.',
+      },
+      {
+        name: 'Memory Foam',
+        desc: 'Adapts to your body, relieves pressure points and ensures a restful sleep.',
+      },
+      {
+        name: 'Helixa Foam',
+        desc: 'High-resilience foam for strong support; durability and long-lasting comfort.',
+      },
+    ],
+    features: [
+      'Visco-elastic Memory Foam adapts to your unique body contour and relieves pressure points',
+      'High-resilience Helixa Foam core provides strong orthopaedic support and durability',
+      'Naturally breathable Bamboo Fabric cover keeps the sleeping surface cool and fresh',
+      'Dual-layer pressure-relief system prevents tossing and turning for deep restful sleep',
+      'Hypoallergenic, anti-dust mite, and antimicrobial natural sleep environment',
+    ],
+  },
+  {
+    id: 'helixa-latex',
+    name: 'Helixa Latex',
+    category: 'Helixa Latex',
+    tagline: 'Natural Pin-Core Latex with High-Resilience Helixa Support',
+    description:
+      'Combining pin-core responsive natural latex with a high-resilience Helixa foam core and breathable bamboo fabric cover for buoyant spinal alignment, supreme pressure distribution, and organic comfort.',
+    seriesBadge: 'Natural Latex Core',
+    warranty: '7 Years Warranty',
+    warrantyBadgeColor: '#15803D',
+    image: '/images/products/helixa_latex.jpg',
+    basePrice: 13800,
+    sizes: ['72x36', '75x36', '72x48', '72x60', '75x60', '72x72', '75x72'],
+    styles: [
+      {
+        name: 'Standard',
+        thicknesses: ['6 Inch', '8 Inch', '10 Inch'],
+        prices: {
+          '72x36': { '6 Inch': 13800, '8 Inch': 15900, '10 Inch': 18500 },
+          '75x36': { '6 Inch': 14200, '8 Inch': 16400, '10 Inch': 18900 },
+          '72x48': { '6 Inch': 16800, '8 Inch': 19600, '10 Inch': 22900 },
+          '72x60': { '6 Inch': 19900, '8 Inch': 23500, '10 Inch': 27200 },
+          '75x60': { '6 Inch': 20600, '8 Inch': 24200, '10 Inch': 28100 },
+          '72x72': { '6 Inch': 23100, '8 Inch': 27200, '10 Inch': 31600 },
+          '75x72': { '6 Inch': 23800, '8 Inch': 28100, '10 Inch': 32500 },
+        },
+      },
+      {
+        name: 'Euro Top',
+        thicknesses: ['8 Inch', '10 Inch'],
+        prices: {
+          '72x36': { '8 Inch': 17500, '10 Inch': 19900 },
+          '75x36': { '8 Inch': 17900, '10 Inch': 20400 },
+          '72x48': { '8 Inch': 21200, '10 Inch': 24400 },
+          '72x60': { '8 Inch': 25400, '10 Inch': 28900 },
+          '75x60': { '8 Inch': 26200, '10 Inch': 29900 },
+          '72x72': { '8 Inch': 29500, '10 Inch': 33600 },
+          '75x72': { '8 Inch': 30400, '10 Inch': 34700 },
+        },
+      },
+      {
+        name: 'Pillow Top',
+        thicknesses: ['8 Inch', '10 Inch'],
+        prices: {
+          '72x36': { '8 Inch': 19500, '10 Inch': 22200 },
+          '75x36': { '8 Inch': 19900, '10 Inch': 22700 },
+          '72x48': { '8 Inch': 23400, '10 Inch': 26900 },
+          '72x60': { '8 Inch': 27800, '10 Inch': 31800 },
+          '75x60': { '8 Inch': 28700, '10 Inch': 32900 },
+          '72x72': { '8 Inch': 32400, '10 Inch': 36900 },
+          '75x72': { '8 Inch': 33300, '10 Inch': 37900 },
+        },
+      },
+    ],
+    materials: [
+      {
+        name: 'Bamboo Fabric',
+        desc: 'Naturally breathable and soft fabric made from bamboo fibres. Keeps you cool and fresh.',
+      },
+      {
+        name: 'Latex',
+        desc: 'Responsive and resilient natural latex for superior comfort, pressure relief and breathability.',
+      },
+      {
+        name: 'Helixa Foam',
+        desc: 'High-resilience Helixa foam for strong support, durability and long-lasting comfort.',
+      },
+    ],
+    features: [
+      'Pin-core responsive natural latex layer delivers buoyant, ergonomic spine support',
+      'High-resilience Helixa foam base ensures heavy-duty structural stability and durability',
+      'Eco-friendly Bamboo Fabric made from natural bamboo fibres keeps you cool and fresh',
+      'Perforated latex pin-holes promote continuous active airflow and temperature control',
+      'Naturally hypoallergenic, dust-mite resistant, and antimicrobial sleeping surface',
+    ],
+  },
+  {
+    id: 'medicated-memory',
+    name: 'Medicated Memory',
+    category: 'Medicated Memory',
+    tagline: 'High-Density Rebonded Core with Contouring Memory Foam',
+    description:
+      'Engineered for advanced orthopaedic spinal posture and body relief, pairing a high-density rebonded foam foundation with an adaptive memory foam layer that contours to pressure points, wrapped in breathable, skin-friendly Bamboo Fabric.',
+    seriesBadge: 'Orthopaedic Memory',
+    warranty: '7 Years Warranty',
+    warrantyBadgeColor: '#1E40AF',
+    image: '/images/products/medicated_memory.jpg',
+    basePrice: 14200,
+    sizes: ['72x36', '75x36', '72x48', '72x60', '75x60', '72x72', '75x72'],
+    styles: [
+      {
+        name: 'Standard',
+        thicknesses: ['6 Inch', '8 Inch', '10 Inch'],
+        prices: {
+          '72x36': { '6 Inch': 14200, '8 Inch': 16300, '10 Inch': 18900 },
+          '75x36': { '6 Inch': 14600, '8 Inch': 16800, '10 Inch': 19400 },
+          '72x48': { '6 Inch': 17200, '8 Inch': 20200, '10 Inch': 23500 },
+          '72x60': { '6 Inch': 20500, '8 Inch': 24200, '10 Inch': 27900 },
+          '75x60': { '6 Inch': 21200, '8 Inch': 24900, '10 Inch': 28800 },
+          '72x72': { '6 Inch': 23800, '8 Inch': 27900, '10 Inch': 32400 },
+          '75x72': { '6 Inch': 24500, '8 Inch': 28800, '10 Inch': 33300 },
+        },
+      },
+      {
+        name: 'Euro Top',
+        thicknesses: ['8 Inch', '10 Inch'],
+        prices: {
+          '72x36': { '8 Inch': 17900, '10 Inch': 20400 },
+          '75x36': { '8 Inch': 18300, '10 Inch': 20900 },
+          '72x48': { '8 Inch': 21700, '10 Inch': 24900 },
+          '72x60': { '8 Inch': 25900, '10 Inch': 29600 },
+          '75x60': { '8 Inch': 26700, '10 Inch': 30600 },
+          '72x72': { '8 Inch': 30100, '10 Inch': 34400 },
+          '75x72': { '8 Inch': 31000, '10 Inch': 35400 },
+        },
+      },
+      {
+        name: 'Pillow Top',
+        thicknesses: ['8 Inch', '10 Inch'],
+        prices: {
+          '72x36': { '8 Inch': 19900, '10 Inch': 22700 },
+          '75x36': { '8 Inch': 20400, '10 Inch': 23200 },
+          '72x48': { '8 Inch': 23900, '10 Inch': 27500 },
+          '72x60': { '8 Inch': 28400, '10 Inch': 32500 },
+          '75x60': { '8 Inch': 29300, '10 Inch': 33600 },
+          '72x72': { '8 Inch': 33100, '10 Inch': 37800 },
+          '75x72': { '8 Inch': 34100, '10 Inch': 38900 },
+        },
+      },
+    ],
+    materials: [
+      {
+        name: 'Bamboo Fabric',
+        desc: 'Naturally breathable and soft fabric made from bamboo fibres. Keeps you cool and fresh.',
+      },
+      {
+        name: 'Memory',
+        desc: 'Contours to your body, relieves pressure points and enhances comfort.',
+      },
+      {
+        name: 'Rebonded',
+        desc: 'High-density recycled foam for firm support and long-lasting durability.',
+      },
+    ],
+    features: [
+      'Dual-layer orthopaedic construction engineered for therapeutic back pain relief',
+      'High-Density Rebonded Foam core maintains rigid posture and spinal alignment',
+      'Adaptive Memory Foam cushions middle body pressure points and enhances comfort',
+      'Naturally breathable Bamboo Fabric cover made from bamboo fibres keeps you cool and fresh',
+      'Certified hypoallergenic, dust-mite proof, and antimicrobial sleep sanctuary',
+    ],
+  },
 ]
 
-const categories = ['All', 'Semi Medicated', 'Medicated', 'Bonnell Spring', 'Pocketed Spring', 'HR Mattress', 'Helixa Mattress']
+const categories = ['All', 'Semi Medicated', 'Medicated', 'Medicated Memory', 'Bonnell Spring', 'Pocketed Spring', 'HR Mattress', 'Helixa Mattress', 'Helixa Memory', 'Helixa Latex']
 
 export default function ProductsSection() {
   const { ref, visible } = useInView()

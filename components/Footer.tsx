@@ -11,6 +11,9 @@ export default function Footer() {
       'Pocketed Spring',
       'HR Mattress',
       'Helixa Mattress',
+      'Helixa Memory',
+      'Helixa Latex',
+      'Medicated Memory',
       'Custom Sizing',
     ],
     Company: [

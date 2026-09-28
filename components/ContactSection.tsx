@@ -363,6 +363,9 @@ export default function ContactSection() {
                       <option value="Pocketed Spring">Pocketed Spring — Zero Disturbance & Organic Fabric</option>
                       <option value="HR Mattress">HR Mattress — HD Foam, Super Soft & Organic Fabric</option>
                       <option value="Helixa Mattress">Helixa Mattress — Helixa Foam, Super Soft & Organic Fabric</option>
+                      <option value="Helixa Memory">Helixa Memory — Helixa Foam, Memory Foam & Bamboo Fabric</option>
+                      <option value="Helixa Latex">Helixa Latex — Helixa Foam, Latex & Bamboo Fabric</option>
+                      <option value="Medicated Memory">Medicated Memory — Rebonded, Memory & Bamboo Fabric</option>
                       <option value="Custom Bespoke">Bespoke / Custom Dimension Order</option>
                     </select>
                   </div>
