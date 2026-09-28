@@ -1020,7 +1020,7 @@ function ProductCard({
         style={{
           position: 'relative',
           background: '#FFFFFF',
-          height: '240px',
+          height: '255px',
           display: 'flex',
           alignItems: 'center',
           justifyContent: 'center',
@@ -1061,30 +1061,29 @@ function ProductCard({
         >
           {product.warranty}
         </span>
-        {/* Category tag */}
-        <span
-          style={{
-            position: 'absolute',
-            bottom: '12px',
-            right: '12px',
-            zIndex: 2,
-            background: '#1A1A1A',
-            color: '#fff',
-            fontSize: '10px',
-            fontWeight: 700,
-            padding: '4px 10px',
-            borderRadius: '50px',
-            letterSpacing: '0.05em',
-            textTransform: 'uppercase',
-            boxShadow: '0 2px 8px rgba(0,0,0,0.12)',
-          }}
-        >
-          {product.category}
-        </span>
       </div>
 
       {/* Info */}
       <div style={{ padding: '24px', display: 'flex', flexDirection: 'column', flex: 1 }}>
+        <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', marginBottom: '8px' }}>
+          <span
+            style={{
+              fontSize: '11px',
+              fontWeight: 700,
+              color: '#E51D24',
+              textTransform: 'uppercase',
+              letterSpacing: '0.08em',
+              background: 'rgba(229,29,36,0.08)',
+              padding: '4px 10px',
+              borderRadius: '50px',
+            }}
+          >
+            {product.category}
+          </span>
+          <span style={{ fontSize: '11px', fontWeight: 600, color: '#888' }}>
+            {product.seriesBadge}
+          </span>
+        </div>
         <h3 style={{ fontSize: '19px', fontWeight: 700, color: '#1A1A1A', marginBottom: '6px' }}>
           {product.name}
         </h3>
