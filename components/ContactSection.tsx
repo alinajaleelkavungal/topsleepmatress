@@ -357,16 +357,25 @@ export default function ContactSection() {
                         outline: 'none',
                       }}
                     >
-                      <option value="Semi Medicated">Semi Medicated — Rebonded, EPE & Organic Fabric</option>
-                      <option value="Medicated">Medicated — Rebonded, Super Soft & Organic Fabric</option>
-                      <option value="Bonnell Spring">Bonnell Spring — Bonnell Coil & Organic Fabric</option>
-                      <option value="Pocketed Spring">Pocketed Spring — Zero Disturbance & Organic Fabric</option>
-                      <option value="HR Mattress">HR Mattress — HD Foam, Super Soft & Organic Fabric</option>
-                      <option value="Helixa Mattress">Helixa Mattress — Helixa Foam, Super Soft & Organic Fabric</option>
-                      <option value="Helixa Memory">Helixa Memory — Helixa Foam, Memory Foam & Bamboo Fabric</option>
-                      <option value="Helixa Latex">Helixa Latex — Helixa Foam, Latex & Bamboo Fabric</option>
-                      <option value="Medicated Memory">Medicated Memory — Rebonded, Memory & Bamboo Fabric</option>
-                      <option value="Custom Bespoke">Bespoke / Custom Dimension Order</option>
+                      <optgroup label="🏥 Medicated Orthopaedic Collection">
+                        <option value="Semi Medicated">Semi Medicated — Rebonded, EPE & Organic Fabric</option>
+                        <option value="Medicated">Medicated — Rebonded, Super Soft & Organic Fabric</option>
+                        <option value="Medicated Memory">Medicated Memory — Rebonded, Memory & Bamboo Fabric</option>
+                        <option value="Medicated Latex">Medicated Latex — Rebonded, Latex & Bamboo Fabric</option>
+                      </optgroup>
+                      <optgroup label="🌿 Helixa Signature Luxury Series">
+                        <option value="Helixa Mattress">Helixa Mattress — Helixa Foam, Super Soft & Organic Fabric</option>
+                        <option value="Helixa Memory">Helixa Memory — Helixa Foam, Memory Foam & Bamboo Fabric</option>
+                        <option value="Helixa Latex">Helixa Latex — Helixa Foam, Latex & Bamboo Fabric</option>
+                      </optgroup>
+                      <optgroup label="🌀 Spring Systems & Everyday Comfort">
+                        <option value="Bonnell Spring">Bonnell Spring — Bonnell Coil & Organic Fabric</option>
+                        <option value="Pocketed Spring">Pocketed Spring — Zero Disturbance & Organic Fabric</option>
+                        <option value="HR Mattress">HR Mattress — HD Foam, Super Soft & Organic Fabric</option>
+                      </optgroup>
+                      <optgroup label="✨ Bespoke Dimensions">
+                        <option value="Custom Bespoke">Custom / Bespoke Dimension Order</option>
+                      </optgroup>
                     </select>
                   </div>
                 </div>

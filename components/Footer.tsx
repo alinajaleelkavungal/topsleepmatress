@@ -14,6 +14,7 @@ export default function Footer() {
       'Helixa Memory',
       'Helixa Latex',
       'Medicated Memory',
+      'Medicated Latex',
       'Custom Sizing',
     ],
     Company: [

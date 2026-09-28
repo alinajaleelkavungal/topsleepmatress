@@ -54,6 +54,7 @@ export interface Product {
   id: string
   name: string
   category: string
+  collection: 'Medicated Ortho' | 'Helixa Luxury' | 'Spring Support' | 'High Resilience'
   tagline: string
   description: string
   seriesBadge: string
@@ -72,6 +73,7 @@ export const products: Product[] = [
     id: 'semi-medicated',
     name: 'Semi Medicated',
     category: 'Semi Medicated',
+    collection: 'Medicated Ortho',
     tagline: 'Multi-Layer Support — Rebonded, EPE & Comfort Foam',
     description:
       'Engineered for orthopaedic spine alignment and rejuvenating rest. Built with High-Density Rebonded Foam, resilient EPE support, and contouring Comfort Foam, encased in breathable Organic Knitted Fabric that keeps you cool and fresh.',
@@ -152,6 +154,7 @@ export const products: Product[] = [
     id: 'medicated',
     name: 'Medicated',
     category: 'Medicated',
+    collection: 'Medicated Ortho',
     tagline: 'Dual-Layer Orthopaedic Support — Rebonded with Super Soft Foam',
     description:
       'Engineered for deep healing rest and postural relief. Features High-Density Rebonded Foam core topped with plush Super Soft Foam that cradles pressure points, encased in breathable, hypoallergenic Organic Knitted Fabric.',
@@ -225,9 +228,395 @@ export const products: Product[] = [
     ],
   },
   {
+    id: 'medicated-memory',
+    name: 'Medicated Memory',
+    category: 'Medicated Memory',
+    collection: 'Medicated Ortho',
+    tagline: 'High-Density Rebonded Core with Contouring Memory Foam',
+    description:
+      'Engineered for advanced orthopaedic spinal posture and body relief, pairing a high-density rebonded foam foundation with an adaptive memory foam layer that contours to pressure points, wrapped in breathable, skin-friendly Bamboo Fabric.',
+    seriesBadge: 'Orthopaedic Memory',
+    warranty: '7 Years Warranty',
+    warrantyBadgeColor: '#1E40AF',
+    image: '/images/products/medicated_memory.jpg',
+    basePrice: 14200,
+    sizes: ['72x36', '75x36', '72x48', '72x60', '75x60', '72x72', '75x72'],
+    styles: [
+      {
+        name: 'Standard',
+        thicknesses: ['6 Inch', '8 Inch', '10 Inch'],
+        prices: {
+          '72x36': { '6 Inch': 14200, '8 Inch': 16300, '10 Inch': 18900 },
+          '75x36': { '6 Inch': 14600, '8 Inch': 16800, '10 Inch': 19400 },
+          '72x48': { '6 Inch': 17200, '8 Inch': 20200, '10 Inch': 23500 },
+          '72x60': { '6 Inch': 20500, '8 Inch': 24200, '10 Inch': 27900 },
+          '75x60': { '6 Inch': 21200, '8 Inch': 24900, '10 Inch': 28800 },
+          '72x72': { '6 Inch': 23800, '8 Inch': 27900, '10 Inch': 32400 },
+          '75x72': { '6 Inch': 24500, '8 Inch': 28800, '10 Inch': 33300 },
+        },
+      },
+      {
+        name: 'Euro Top',
+        thicknesses: ['8 Inch', '10 Inch'],
+        prices: {
+          '72x36': { '8 Inch': 17900, '10 Inch': 20400 },
+          '75x36': { '8 Inch': 18300, '10 Inch': 20900 },
+          '72x48': { '8 Inch': 21700, '10 Inch': 24900 },
+          '72x60': { '8 Inch': 25900, '10 Inch': 29600 },
+          '75x60': { '8 Inch': 26700, '10 Inch': 30600 },
+          '72x72': { '8 Inch': 30100, '10 Inch': 34400 },
+          '75x72': { '8 Inch': 31000, '10 Inch': 35400 },
+        },
+      },
+      {
+        name: 'Pillow Top',
+        thicknesses: ['8 Inch', '10 Inch'],
+        prices: {
+          '72x36': { '8 Inch': 19900, '10 Inch': 22700 },
+          '75x36': { '8 Inch': 20400, '10 Inch': 23200 },
+          '72x48': { '8 Inch': 23900, '10 Inch': 27500 },
+          '72x60': { '8 Inch': 28400, '10 Inch': 32500 },
+          '75x60': { '8 Inch': 29300, '10 Inch': 33600 },
+          '72x72': { '8 Inch': 33100, '10 Inch': 37800 },
+          '75x72': { '8 Inch': 34100, '10 Inch': 38900 },
+        },
+      },
+    ],
+    materials: [
+      {
+        name: 'Bamboo Fabric',
+        desc: 'Naturally breathable and soft fabric made from bamboo fibres. Keeps you cool and fresh.',
+      },
+      {
+        name: 'Memory',
+        desc: 'Contours to your body, relieves pressure points and enhances comfort.',
+      },
+      {
+        name: 'Rebonded',
+        desc: 'High-density recycled foam for firm support and long-lasting durability.',
+      },
+    ],
+    features: [
+      'Dual-layer orthopaedic construction engineered for therapeutic back pain relief',
+      'High-Density Rebonded Foam core maintains rigid posture and spinal alignment',
+      'Adaptive Memory Foam cushions middle body pressure points and enhances comfort',
+      'Naturally breathable Bamboo Fabric cover made from bamboo fibres keeps you cool and fresh',
+      'Certified hypoallergenic, dust-mite proof, and antimicrobial sleep sanctuary',
+    ],
+  },
+  {
+    id: 'medicated-latex',
+    name: 'Medicated Latex',
+    category: 'Medicated Latex',
+    collection: 'Medicated Ortho',
+    tagline: 'Orthopaedic Rebonded Core with Buoyant Natural Latex',
+    description:
+      'Engineered for therapeutic spinal alignment and back relief, combining a heavy-duty High-Density Rebonded Foam core with a resilient pin-core Natural Latex comfort layer, enveloped in breathable, organic Bamboo Fabric.',
+    seriesBadge: 'Orthopaedic Natural Latex',
+    warranty: '7 Years Warranty',
+    warrantyBadgeColor: '#C2410C',
+    image: '/images/products/medicated_latex.jpg',
+    basePrice: 14800,
+    sizes: ['72x36', '75x36', '72x48', '72x60', '75x60', '72x72', '75x72'],
+    styles: [
+      {
+        name: 'Standard',
+        thicknesses: ['6 Inch', '8 Inch', '10 Inch'],
+        prices: {
+          '72x36': { '6 Inch': 14800, '8 Inch': 16900, '10 Inch': 19500 },
+          '75x36': { '6 Inch': 15200, '8 Inch': 17400, '10 Inch': 19900 },
+          '72x48': { '6 Inch': 17900, '8 Inch': 20800, '10 Inch': 24200 },
+          '72x60': { '6 Inch': 21200, '8 Inch': 24900, '10 Inch': 28600 },
+          '75x60': { '6 Inch': 21900, '8 Inch': 25600, '10 Inch': 29500 },
+          '72x72': { '6 Inch': 24600, '8 Inch': 28800, '10 Inch': 33200 },
+          '75x72': { '6 Inch': 25400, '8 Inch': 29600, '10 Inch': 34200 },
+        },
+      },
+      {
+        name: 'Euro Top',
+        thicknesses: ['8 Inch', '10 Inch'],
+        prices: {
+          '72x36': { '8 Inch': 18500, '10 Inch': 20900 },
+          '75x36': { '8 Inch': 18900, '10 Inch': 21500 },
+          '72x48': { '8 Inch': 22400, '10 Inch': 25600 },
+          '72x60': { '8 Inch': 26700, '10 Inch': 30500 },
+          '75x60': { '8 Inch': 27500, '10 Inch': 31500 },
+          '72x72': { '8 Inch': 30900, '10 Inch': 35300 },
+          '75x72': { '8 Inch': 31900, '10 Inch': 36400 },
+        },
+      },
+      {
+        name: 'Pillow Top',
+        thicknesses: ['8 Inch', '10 Inch'],
+        prices: {
+          '72x36': { '8 Inch': 20600, '10 Inch': 23400 },
+          '75x36': { '8 Inch': 21100, '10 Inch': 23900 },
+          '72x48': { '8 Inch': 24800, '10 Inch': 28400 },
+          '72x60': { '8 Inch': 29400, '10 Inch': 33500 },
+          '75x60': { '8 Inch': 30300, '10 Inch': 34600 },
+          '72x72': { '8 Inch': 34100, '10 Inch': 38900 },
+          '75x72': { '8 Inch': 35200, '10 Inch': 40100 },
+        },
+      },
+    ],
+    materials: [
+      {
+        name: 'Bamboo Fabric',
+        desc: 'Naturally breathable and soft fabric made from bamboo fibres. Keeps you cool and fresh.',
+      },
+      {
+        name: 'Latex',
+        desc: 'Responsive and resilient natural latex for superior comfort, pressure relief and breathability.',
+      },
+      {
+        name: 'Rebonded',
+        desc: 'High-density recycled foam for firm support and long-lasting durability.',
+      },
+    ],
+    features: [
+      'Pin-core responsive natural latex layer provides buoyant orthopaedic pressure relief',
+      'High-Density Rebonded Foam foundation maintains rigid posture and deep spinal support',
+      'Naturally breathable Bamboo Fabric cover made from bamboo fibres keeps you cool and fresh',
+      'Perforated airflow ventilation prevents heat retention for sweat-free rest',
+      'Hypoallergenic, anti-dust mite, and antimicrobial natural sleep protection',
+    ],
+  },
+  {
+    id: 'helixa-mattress',
+    name: 'Helixa Mattress',
+    category: 'Helixa Mattress',
+    collection: 'Helixa Luxury',
+    tagline: 'High-Resilience Aerated Helixa Foam with Cloud-Soft Comfort',
+    description:
+      'Engineered with an aerated High-Resilience Helixa foam core that provides superior airflow, pressure relief, and spinal alignment, cushioned by a plush Super Soft layer and wrapped in breathable Organic Knitted Fabric.',
+    seriesBadge: 'Helixa Airflow Core',
+    warranty: '7 Years Warranty',
+    warrantyBadgeColor: '#C2410C',
+    image: '/images/products/helixa_mattress.jpg',
+    basePrice: 11500,
+    sizes: ['72x36', '75x36', '72x48', '72x60', '75x60', '72x72', '75x72'],
+    styles: [
+      {
+        name: 'Standard',
+        thicknesses: ['6 Inch', '8 Inch', '10 Inch'],
+        prices: {
+          '72x36': { '6 Inch': 11500, '8 Inch': 13800, '10 Inch': 15900 },
+          '75x36': { '6 Inch': 11800, '8 Inch': 14200, '10 Inch': 16300 },
+          '72x48': { '6 Inch': 13900, '8 Inch': 16800, '10 Inch': 19500 },
+          '72x60': { '6 Inch': 16500, '8 Inch': 19900, '10 Inch': 23200 },
+          '75x60': { '6 Inch': 17000, '8 Inch': 20500, '10 Inch': 23900 },
+          '72x72': { '6 Inch': 19200, '8 Inch': 23200, '10 Inch': 26800 },
+          '75x72': { '6 Inch': 19800, '8 Inch': 23900, '10 Inch': 27600 },
+        },
+      },
+      {
+        name: 'Euro Top',
+        thicknesses: ['8 Inch', '10 Inch'],
+        prices: {
+          '72x36': { '8 Inch': 15200, '10 Inch': 17400 },
+          '75x36': { '8 Inch': 15600, '10 Inch': 17800 },
+          '72x48': { '8 Inch': 18400, '10 Inch': 21200 },
+          '72x60': { '8 Inch': 21800, '10 Inch': 25200 },
+          '75x60': { '8 Inch': 22500, '10 Inch': 25900 },
+          '72x72': { '8 Inch': 25400, '10 Inch': 29200 },
+          '75x72': { '8 Inch': 26200, '10 Inch': 30100 },
+        },
+      },
+      {
+        name: 'Pillow Top',
+        thicknesses: ['8 Inch', '10 Inch'],
+        prices: {
+          '72x36': { '8 Inch': 16800, '10 Inch': 19200 },
+          '75x36': { '8 Inch': 17200, '10 Inch': 19600 },
+          '72x48': { '8 Inch': 20200, '10 Inch': 23200 },
+          '72x60': { '8 Inch': 23900, '10 Inch': 27500 },
+          '75x60': { '8 Inch': 24600, '10 Inch': 28400 },
+          '72x72': { '8 Inch': 27800, '10 Inch': 31900 },
+          '75x72': { '8 Inch': 28600, '10 Inch': 32800 },
+        },
+      },
+    ],
+    materials: [
+      {
+        name: 'Organic Knitted Fabric',
+        desc: 'Breathable, skin-friendly and made from organic knitted fabric for a cooler, healthier sleep.',
+      },
+      {
+        name: 'Super Soft',
+        desc: 'A plush, ultra-soft layer that gently cushions your body for cloud-like comfort.',
+      },
+      {
+        name: 'Helixa Foam',
+        desc: 'High-resilience Helixa foam that provides superior support, pressure relief and long-lasting durability.',
+      },
+    ],
+    features: [
+      'Aerated High-Resilience Helixa foam core provides superior ergonomic spinal support',
+      'Pinhole ventilation matrix promotes continuous airflow for cool, sweat-free sleep',
+      'Super Soft plush layer gently contours around shoulders and hips for cloud-like comfort',
+      'Organic Knitted Fabric made from organic fibres keeps you fresh and hypoallergenic',
+      'Exceptional pressure redistribution and certified durability for restorative rest',
+    ],
+  },
+  {
+    id: 'helixa-memory',
+    name: 'Helixa Memory',
+    category: 'Helixa Memory',
+    collection: 'Helixa Luxury',
+    tagline: 'Contouring Memory Foam with Aerated Helixa & Bamboo Fabric',
+    description:
+      'Crafted with body-contouring Memory Foam that adapts dynamically to your posture, supported by a high-resilience aerated Helixa Foam core and encased in naturally breathable, eco-friendly Bamboo Fabric.',
+    seriesBadge: 'Bamboo Memory Foam',
+    warranty: '7 Years Warranty',
+    warrantyBadgeColor: '#2B8A3E',
+    image: '/images/products/helixa_memory.jpg',
+    basePrice: 12900,
+    sizes: ['72x36', '75x36', '72x48', '72x60', '75x60', '72x72', '75x72'],
+    styles: [
+      {
+        name: 'Standard',
+        thicknesses: ['6 Inch', '8 Inch', '10 Inch'],
+        prices: {
+          '72x36': { '6 Inch': 12900, '8 Inch': 14800, '10 Inch': 17200 },
+          '75x36': { '6 Inch': 13200, '8 Inch': 15200, '10 Inch': 17600 },
+          '72x48': { '6 Inch': 15600, '8 Inch': 18200, '10 Inch': 21500 },
+          '72x60': { '6 Inch': 18500, '8 Inch': 21900, '10 Inch': 25400 },
+          '75x60': { '6 Inch': 19200, '8 Inch': 22600, '10 Inch': 26200 },
+          '72x72': { '6 Inch': 21500, '8 Inch': 25400, '10 Inch': 29500 },
+          '75x72': { '6 Inch': 22200, '8 Inch': 26200, '10 Inch': 30400 },
+        },
+      },
+      {
+        name: 'Euro Top',
+        thicknesses: ['8 Inch', '10 Inch'],
+        prices: {
+          '72x36': { '8 Inch': 16400, '10 Inch': 18800 },
+          '75x36': { '8 Inch': 16800, '10 Inch': 19200 },
+          '72x48': { '8 Inch': 19800, '10 Inch': 22800 },
+          '72x60': { '8 Inch': 23800, '10 Inch': 27200 },
+          '75x60': { '8 Inch': 24500, '10 Inch': 28100 },
+          '72x72': { '8 Inch': 27600, '10 Inch': 31500 },
+          '75x72': { '8 Inch': 28400, '10 Inch': 32500 },
+        },
+      },
+      {
+        name: 'Pillow Top',
+        thicknesses: ['8 Inch', '10 Inch'],
+        prices: {
+          '72x36': { '8 Inch': 18200, '10 Inch': 20800 },
+          '75x36': { '8 Inch': 18600, '10 Inch': 21200 },
+          '72x48': { '8 Inch': 21800, '10 Inch': 25200 },
+          '72x60': { '8 Inch': 25900, '10 Inch': 29800 },
+          '75x60': { '8 Inch': 26800, '10 Inch': 30800 },
+          '72x72': { '8 Inch': 30200, '10 Inch': 34600 },
+          '75x72': { '8 Inch': 31100, '10 Inch': 35600 },
+        },
+      },
+    ],
+    materials: [
+      {
+        name: 'Bamboo Fabric',
+        desc: 'Naturally breathable and soft. Keeps you cool and fresh.',
+      },
+      {
+        name: 'Memory Foam',
+        desc: 'Adapts to your body, relieves pressure points and ensures a restful sleep.',
+      },
+      {
+        name: 'Helixa Foam',
+        desc: 'High-resilience foam for strong support; durability and long-lasting comfort.',
+      },
+    ],
+    features: [
+      'Visco-elastic Memory Foam adapts to your unique body contour and relieves pressure points',
+      'High-resilience Helixa Foam core provides strong orthopaedic support and durability',
+      'Naturally breathable Bamboo Fabric cover keeps the sleeping surface cool and fresh',
+      'Dual-layer pressure-relief system prevents tossing and turning for deep restful sleep',
+      'Hypoallergenic, anti-dust mite, and antimicrobial natural sleep environment',
+    ],
+  },
+  {
+    id: 'helixa-latex',
+    name: 'Helixa Latex',
+    category: 'Helixa Latex',
+    collection: 'Helixa Luxury',
+    tagline: 'Natural Pin-Core Latex with High-Resilience Helixa Support',
+    description:
+      'Combining pin-core responsive natural latex with a high-resilience Helixa foam core and breathable bamboo fabric cover for buoyant spinal alignment, supreme pressure distribution, and organic comfort.',
+    seriesBadge: 'Natural Latex Core',
+    warranty: '7 Years Warranty',
+    warrantyBadgeColor: '#15803D',
+    image: '/images/products/helixa_latex.jpg',
+    basePrice: 13800,
+    sizes: ['72x36', '75x36', '72x48', '72x60', '75x60', '72x72', '75x72'],
+    styles: [
+      {
+        name: 'Standard',
+        thicknesses: ['6 Inch', '8 Inch', '10 Inch'],
+        prices: {
+          '72x36': { '6 Inch': 13800, '8 Inch': 15900, '10 Inch': 18500 },
+          '75x36': { '6 Inch': 14200, '8 Inch': 16400, '10 Inch': 18900 },
+          '72x48': { '6 Inch': 16800, '8 Inch': 19600, '10 Inch': 22900 },
+          '72x60': { '6 Inch': 19900, '8 Inch': 23500, '10 Inch': 27200 },
+          '75x60': { '6 Inch': 20600, '8 Inch': 24200, '10 Inch': 28100 },
+          '72x72': { '6 Inch': 23100, '8 Inch': 27200, '10 Inch': 31600 },
+          '75x72': { '6 Inch': 23800, '8 Inch': 28100, '10 Inch': 32500 },
+        },
+      },
+      {
+        name: 'Euro Top',
+        thicknesses: ['8 Inch', '10 Inch'],
+        prices: {
+          '72x36': { '8 Inch': 17500, '10 Inch': 19900 },
+          '75x36': { '8 Inch': 17900, '10 Inch': 20400 },
+          '72x48': { '8 Inch': 21200, '10 Inch': 24400 },
+          '72x60': { '8 Inch': 25400, '10 Inch': 28900 },
+          '75x60': { '8 Inch': 26200, '10 Inch': 29900 },
+          '72x72': { '8 Inch': 29500, '10 Inch': 33600 },
+          '75x72': { '8 Inch': 30400, '10 Inch': 34700 },
+        },
+      },
+      {
+        name: 'Pillow Top',
+        thicknesses: ['8 Inch', '10 Inch'],
+        prices: {
+          '72x36': { '8 Inch': 19500, '10 Inch': 22200 },
+          '75x36': { '8 Inch': 19900, '10 Inch': 22700 },
+          '72x48': { '8 Inch': 23400, '10 Inch': 26900 },
+          '72x60': { '8 Inch': 27800, '10 Inch': 31800 },
+          '75x60': { '8 Inch': 28700, '10 Inch': 32900 },
+          '72x72': { '8 Inch': 32400, '10 Inch': 36900 },
+          '75x72': { '8 Inch': 33300, '10 Inch': 37900 },
+        },
+      },
+    ],
+    materials: [
+      {
+        name: 'Bamboo Fabric',
+        desc: 'Naturally breathable and soft fabric made from bamboo fibres. Keeps you cool and fresh.',
+      },
+      {
+        name: 'Latex',
+        desc: 'Responsive and resilient natural latex for superior comfort, pressure relief and breathability.',
+      },
+      {
+        name: 'Helixa Foam',
+        desc: 'High-resilience Helixa foam for strong support, durability and long-lasting comfort.',
+      },
+    ],
+    features: [
+      'Pin-core responsive natural latex layer delivers buoyant, ergonomic spine support',
+      'High-resilience Helixa foam base ensures heavy-duty structural stability and durability',
+      'Eco-friendly Bamboo Fabric made from natural bamboo fibres keeps you cool and fresh',
+      'Perforated latex pin-holes promote continuous active airflow and temperature control',
+      'Naturally hypoallergenic, dust-mite resistant, and antimicrobial sleeping surface',
+    ],
+  },
+  {
     id: 'bonnell-spring',
     name: 'Bonnell Spring',
     category: 'Bonnell Spring',
+    collection: 'Spring Support',
     tagline: 'High-Tensile Bonnell Coil System with Organic Knitted Cover',
     description:
       'Engineered with an interconnected Bonnell spring system, cushioned comfort layer, protective felt insulation, and high-density base foam, all wrapped in breathable Organic Knitted Fabric for exceptional spinal alignment and long-lasting durability.',
@@ -312,6 +701,7 @@ export const products: Product[] = [
     id: 'pocketed-spring',
     name: 'Pocketed Spring',
     category: 'Pocketed Spring',
+    collection: 'Spring Support',
     tagline: 'Zero Motion Transfer — Independent Pocket Coils & Organic Cover',
     description:
       'Engineered with individually wrapped pocket springs that move independently to eliminate partner disturbance, paired with a plush comfort layer and durable base foam, all encased in breathable Organic Knitted Fabric.',
@@ -392,6 +782,7 @@ export const products: Product[] = [
     id: 'hr-mattress',
     name: 'HR Mattress',
     category: 'HR Mattress',
+    collection: 'High Resilience',
     tagline: 'Cloud-Like Plush Comfort with High-Density Support Core',
     description:
       'Crafted with a robust High-Density (HD) foam core and a luxurious Super Soft foam layer that cushions pressure points with a cloud-like feel, all enveloped in breathable, skin-friendly Organic Knitted Fabric.',
@@ -437,320 +828,67 @@ export const products: Product[] = [
       'Organic Knitted Fabric made from organic fibres keeps you cool and fresh',
       'Anti-dust mite and hypoallergenic treated protection for hygienic sleep',
     ],
+  }
+]
+
+export interface CollectionSection {
+  id: string
+  title: string
+  badge: string
+  subtitle: string
+  icon: string
+  productIds: string[]
+}
+
+export const collectionSections: CollectionSection[] = [
+  {
+    id: 'medicated-ortho',
+    title: 'Medicated Orthopaedic Line',
+    badge: '🏥 Certified Orthopaedic Care (4 Models)',
+    subtitle: 'High-Density Rebonded Foam foundation engineered for therapeutic spinal alignment, joint pressure relief, and posture correction.',
+    icon: '🏥',
+    productIds: ['semi-medicated', 'medicated', 'medicated-memory', 'medicated-latex'],
   },
   {
-    id: 'helixa-mattress',
-    name: 'Helixa Mattress',
-    category: 'Helixa Mattress',
-    tagline: 'High-Resilience Aerated Helixa Foam with Cloud-Soft Comfort',
-    description:
-      'Engineered with an aerated High-Resilience Helixa foam core that provides superior airflow, pressure relief, and spinal alignment, cushioned by a plush Super Soft layer and wrapped in breathable Organic Knitted Fabric.',
-    seriesBadge: 'Helixa Airflow Core',
-    warranty: '7 Years Warranty',
-    warrantyBadgeColor: '#C2410C',
-    image: '/images/products/helixa_mattress.jpg',
-    basePrice: 11500,
-    sizes: ['72x36', '75x36', '72x48', '72x60', '75x60', '72x72', '75x72'],
-    styles: [
-      {
-        name: 'Standard',
-        thicknesses: ['6 Inch', '8 Inch', '10 Inch'],
-        prices: {
-          '72x36': { '6 Inch': 11500, '8 Inch': 13800, '10 Inch': 15900 },
-          '75x36': { '6 Inch': 11800, '8 Inch': 14200, '10 Inch': 16300 },
-          '72x48': { '6 Inch': 13900, '8 Inch': 16800, '10 Inch': 19500 },
-          '72x60': { '6 Inch': 16500, '8 Inch': 19900, '10 Inch': 23200 },
-          '75x60': { '6 Inch': 17000, '8 Inch': 20500, '10 Inch': 23900 },
-          '72x72': { '6 Inch': 19200, '8 Inch': 23200, '10 Inch': 26800 },
-          '75x72': { '6 Inch': 19800, '8 Inch': 23900, '10 Inch': 27600 },
-        },
-      },
-      {
-        name: 'Euro Top',
-        thicknesses: ['8 Inch', '10 Inch'],
-        prices: {
-          '72x36': { '8 Inch': 15200, '10 Inch': 17400 },
-          '75x36': { '8 Inch': 15600, '10 Inch': 17800 },
-          '72x48': { '8 Inch': 18400, '10 Inch': 21200 },
-          '72x60': { '8 Inch': 21800, '10 Inch': 25200 },
-          '75x60': { '8 Inch': 22500, '10 Inch': 25900 },
-          '72x72': { '8 Inch': 25400, '10 Inch': 29200 },
-          '75x72': { '8 Inch': 26200, '10 Inch': 30100 },
-        },
-      },
-      {
-        name: 'Pillow Top',
-        thicknesses: ['8 Inch', '10 Inch'],
-        prices: {
-          '72x36': { '8 Inch': 16800, '10 Inch': 19200 },
-          '75x36': { '8 Inch': 17200, '10 Inch': 19600 },
-          '72x48': { '8 Inch': 20200, '10 Inch': 23200 },
-          '72x60': { '8 Inch': 23900, '10 Inch': 27500 },
-          '75x60': { '8 Inch': 24600, '10 Inch': 28400 },
-          '72x72': { '8 Inch': 27800, '10 Inch': 31900 },
-          '75x72': { '8 Inch': 28600, '10 Inch': 32800 },
-        },
-      },
-    ],
-    materials: [
-      {
-        name: 'Organic Knitted Fabric',
-        desc: 'Breathable, skin-friendly and made from organic knitted fabric for a cooler, healthier sleep.',
-      },
-      {
-        name: 'Super Soft',
-        desc: 'A plush, ultra-soft layer that gently cushions your body for cloud-like comfort.',
-      },
-      {
-        name: 'Helixa Foam',
-        desc: 'High-resilience Helixa foam that provides superior support, pressure relief and long-lasting durability.',
-      },
-    ],
-    features: [
-      'Aerated High-Resilience Helixa foam core provides superior ergonomic spinal support',
-      'Pinhole ventilation matrix promotes continuous airflow for cool, sweat-free sleep',
-      'Super Soft plush layer gently contours around shoulders and hips for cloud-like comfort',
-      'Organic Knitted Fabric made from organic fibres keeps you fresh and hypoallergenic',
-      'Exceptional pressure redistribution and certified durability for restorative rest',
-    ],
+    id: 'helixa-series',
+    title: 'Helixa Signature Luxury Series',
+    badge: '🌿 Pin-Core Airflow Matrix (3 Models)',
+    subtitle: 'Aerated High-Resilience Helixa core with pinhole matrix ventilation for active cooling, cloud-soft contouring, and organic fabric luxury.',
+    icon: '🌿',
+    productIds: ['helixa-mattress', 'helixa-memory', 'helixa-latex'],
   },
   {
-    id: 'helixa-memory',
-    name: 'Helixa Memory',
-    category: 'Helixa Memory',
-    tagline: 'Contouring Memory Foam with Aerated Helixa & Bamboo Fabric',
-    description:
-      'Crafted with body-contouring Memory Foam that adapts dynamically to your posture, supported by a high-resilience aerated Helixa Foam core and encased in naturally breathable, eco-friendly Bamboo Fabric.',
-    seriesBadge: 'Bamboo Memory Foam',
-    warranty: '7 Years Warranty',
-    warrantyBadgeColor: '#2B8A3E',
-    image: '/images/products/helixa_memory.jpg',
-    basePrice: 12900,
-    sizes: ['72x36', '75x36', '72x48', '72x60', '75x60', '72x72', '75x72'],
-    styles: [
-      {
-        name: 'Standard',
-        thicknesses: ['6 Inch', '8 Inch', '10 Inch'],
-        prices: {
-          '72x36': { '6 Inch': 12900, '8 Inch': 14800, '10 Inch': 17200 },
-          '75x36': { '6 Inch': 13200, '8 Inch': 15200, '10 Inch': 17600 },
-          '72x48': { '6 Inch': 15600, '8 Inch': 18200, '10 Inch': 21500 },
-          '72x60': { '6 Inch': 18500, '8 Inch': 21900, '10 Inch': 25400 },
-          '75x60': { '6 Inch': 19200, '8 Inch': 22600, '10 Inch': 26200 },
-          '72x72': { '6 Inch': 21500, '8 Inch': 25400, '10 Inch': 29500 },
-          '75x72': { '6 Inch': 22200, '8 Inch': 26200, '10 Inch': 30400 },
-        },
-      },
-      {
-        name: 'Euro Top',
-        thicknesses: ['8 Inch', '10 Inch'],
-        prices: {
-          '72x36': { '8 Inch': 16400, '10 Inch': 18800 },
-          '75x36': { '8 Inch': 16800, '10 Inch': 19200 },
-          '72x48': { '8 Inch': 19800, '10 Inch': 22800 },
-          '72x60': { '8 Inch': 23800, '10 Inch': 27200 },
-          '75x60': { '8 Inch': 24500, '10 Inch': 28100 },
-          '72x72': { '8 Inch': 27600, '10 Inch': 31500 },
-          '75x72': { '8 Inch': 28400, '10 Inch': 32500 },
-        },
-      },
-      {
-        name: 'Pillow Top',
-        thicknesses: ['8 Inch', '10 Inch'],
-        prices: {
-          '72x36': { '8 Inch': 18200, '10 Inch': 20800 },
-          '75x36': { '8 Inch': 18600, '10 Inch': 21200 },
-          '72x48': { '8 Inch': 21800, '10 Inch': 25200 },
-          '72x60': { '8 Inch': 25900, '10 Inch': 29800 },
-          '75x60': { '8 Inch': 26800, '10 Inch': 30800 },
-          '72x72': { '8 Inch': 30200, '10 Inch': 34600 },
-          '75x72': { '8 Inch': 31100, '10 Inch': 35600 },
-        },
-      },
-    ],
-    materials: [
-      {
-        name: 'Bamboo Fabric',
-        desc: 'Naturally breathable and soft. Keeps you cool and fresh.',
-      },
-      {
-        name: 'Memory Foam',
-        desc: 'Adapts to your body, relieves pressure points and ensures a restful sleep.',
-      },
-      {
-        name: 'Helixa Foam',
-        desc: 'High-resilience foam for strong support; durability and long-lasting comfort.',
-      },
-    ],
-    features: [
-      'Visco-elastic Memory Foam adapts to your unique body contour and relieves pressure points',
-      'High-resilience Helixa Foam core provides strong orthopaedic support and durability',
-      'Naturally breathable Bamboo Fabric cover keeps the sleeping surface cool and fresh',
-      'Dual-layer pressure-relief system prevents tossing and turning for deep restful sleep',
-      'Hypoallergenic, anti-dust mite, and antimicrobial natural sleep environment',
-    ],
-  },
-  {
-    id: 'helixa-latex',
-    name: 'Helixa Latex',
-    category: 'Helixa Latex',
-    tagline: 'Natural Pin-Core Latex with High-Resilience Helixa Support',
-    description:
-      'Combining pin-core responsive natural latex with a high-resilience Helixa foam core and breathable bamboo fabric cover for buoyant spinal alignment, supreme pressure distribution, and organic comfort.',
-    seriesBadge: 'Natural Latex Core',
-    warranty: '7 Years Warranty',
-    warrantyBadgeColor: '#15803D',
-    image: '/images/products/helixa_latex.jpg',
-    basePrice: 13800,
-    sizes: ['72x36', '75x36', '72x48', '72x60', '75x60', '72x72', '75x72'],
-    styles: [
-      {
-        name: 'Standard',
-        thicknesses: ['6 Inch', '8 Inch', '10 Inch'],
-        prices: {
-          '72x36': { '6 Inch': 13800, '8 Inch': 15900, '10 Inch': 18500 },
-          '75x36': { '6 Inch': 14200, '8 Inch': 16400, '10 Inch': 18900 },
-          '72x48': { '6 Inch': 16800, '8 Inch': 19600, '10 Inch': 22900 },
-          '72x60': { '6 Inch': 19900, '8 Inch': 23500, '10 Inch': 27200 },
-          '75x60': { '6 Inch': 20600, '8 Inch': 24200, '10 Inch': 28100 },
-          '72x72': { '6 Inch': 23100, '8 Inch': 27200, '10 Inch': 31600 },
-          '75x72': { '6 Inch': 23800, '8 Inch': 28100, '10 Inch': 32500 },
-        },
-      },
-      {
-        name: 'Euro Top',
-        thicknesses: ['8 Inch', '10 Inch'],
-        prices: {
-          '72x36': { '8 Inch': 17500, '10 Inch': 19900 },
-          '75x36': { '8 Inch': 17900, '10 Inch': 20400 },
-          '72x48': { '8 Inch': 21200, '10 Inch': 24400 },
-          '72x60': { '8 Inch': 25400, '10 Inch': 28900 },
-          '75x60': { '8 Inch': 26200, '10 Inch': 29900 },
-          '72x72': { '8 Inch': 29500, '10 Inch': 33600 },
-          '75x72': { '8 Inch': 30400, '10 Inch': 34700 },
-        },
-      },
-      {
-        name: 'Pillow Top',
-        thicknesses: ['8 Inch', '10 Inch'],
-        prices: {
-          '72x36': { '8 Inch': 19500, '10 Inch': 22200 },
-          '75x36': { '8 Inch': 19900, '10 Inch': 22700 },
-          '72x48': { '8 Inch': 23400, '10 Inch': 26900 },
-          '72x60': { '8 Inch': 27800, '10 Inch': 31800 },
-          '75x60': { '8 Inch': 28700, '10 Inch': 32900 },
-          '72x72': { '8 Inch': 32400, '10 Inch': 36900 },
-          '75x72': { '8 Inch': 33300, '10 Inch': 37900 },
-        },
-      },
-    ],
-    materials: [
-      {
-        name: 'Bamboo Fabric',
-        desc: 'Naturally breathable and soft fabric made from bamboo fibres. Keeps you cool and fresh.',
-      },
-      {
-        name: 'Latex',
-        desc: 'Responsive and resilient natural latex for superior comfort, pressure relief and breathability.',
-      },
-      {
-        name: 'Helixa Foam',
-        desc: 'High-resilience Helixa foam for strong support, durability and long-lasting comfort.',
-      },
-    ],
-    features: [
-      'Pin-core responsive natural latex layer delivers buoyant, ergonomic spine support',
-      'High-resilience Helixa foam base ensures heavy-duty structural stability and durability',
-      'Eco-friendly Bamboo Fabric made from natural bamboo fibres keeps you cool and fresh',
-      'Perforated latex pin-holes promote continuous active airflow and temperature control',
-      'Naturally hypoallergenic, dust-mite resistant, and antimicrobial sleeping surface',
-    ],
-  },
-  {
-    id: 'medicated-memory',
-    name: 'Medicated Memory',
-    category: 'Medicated Memory',
-    tagline: 'High-Density Rebonded Core with Contouring Memory Foam',
-    description:
-      'Engineered for advanced orthopaedic spinal posture and body relief, pairing a high-density rebonded foam foundation with an adaptive memory foam layer that contours to pressure points, wrapped in breathable, skin-friendly Bamboo Fabric.',
-    seriesBadge: 'Orthopaedic Memory',
-    warranty: '7 Years Warranty',
-    warrantyBadgeColor: '#1E40AF',
-    image: '/images/products/medicated_memory.jpg',
-    basePrice: 14200,
-    sizes: ['72x36', '75x36', '72x48', '72x60', '75x60', '72x72', '75x72'],
-    styles: [
-      {
-        name: 'Standard',
-        thicknesses: ['6 Inch', '8 Inch', '10 Inch'],
-        prices: {
-          '72x36': { '6 Inch': 14200, '8 Inch': 16300, '10 Inch': 18900 },
-          '75x36': { '6 Inch': 14600, '8 Inch': 16800, '10 Inch': 19400 },
-          '72x48': { '6 Inch': 17200, '8 Inch': 20200, '10 Inch': 23500 },
-          '72x60': { '6 Inch': 20500, '8 Inch': 24200, '10 Inch': 27900 },
-          '75x60': { '6 Inch': 21200, '8 Inch': 24900, '10 Inch': 28800 },
-          '72x72': { '6 Inch': 23800, '8 Inch': 27900, '10 Inch': 32400 },
-          '75x72': { '6 Inch': 24500, '8 Inch': 28800, '10 Inch': 33300 },
-        },
-      },
-      {
-        name: 'Euro Top',
-        thicknesses: ['8 Inch', '10 Inch'],
-        prices: {
-          '72x36': { '8 Inch': 17900, '10 Inch': 20400 },
-          '75x36': { '8 Inch': 18300, '10 Inch': 20900 },
-          '72x48': { '8 Inch': 21700, '10 Inch': 24900 },
-          '72x60': { '8 Inch': 25900, '10 Inch': 29600 },
-          '75x60': { '8 Inch': 26700, '10 Inch': 30600 },
-          '72x72': { '8 Inch': 30100, '10 Inch': 34400 },
-          '75x72': { '8 Inch': 31000, '10 Inch': 35400 },
-        },
-      },
-      {
-        name: 'Pillow Top',
-        thicknesses: ['8 Inch', '10 Inch'],
-        prices: {
-          '72x36': { '8 Inch': 19900, '10 Inch': 22700 },
-          '75x36': { '8 Inch': 20400, '10 Inch': 23200 },
-          '72x48': { '8 Inch': 23900, '10 Inch': 27500 },
-          '72x60': { '8 Inch': 28400, '10 Inch': 32500 },
-          '75x60': { '8 Inch': 29300, '10 Inch': 33600 },
-          '72x72': { '8 Inch': 33100, '10 Inch': 37800 },
-          '75x72': { '8 Inch': 34100, '10 Inch': 38900 },
-        },
-      },
-    ],
-    materials: [
-      {
-        name: 'Bamboo Fabric',
-        desc: 'Naturally breathable and soft fabric made from bamboo fibres. Keeps you cool and fresh.',
-      },
-      {
-        name: 'Memory',
-        desc: 'Contours to your body, relieves pressure points and enhances comfort.',
-      },
-      {
-        name: 'Rebonded',
-        desc: 'High-density recycled foam for firm support and long-lasting durability.',
-      },
-    ],
-    features: [
-      'Dual-layer orthopaedic construction engineered for therapeutic back pain relief',
-      'High-Density Rebonded Foam core maintains rigid posture and spinal alignment',
-      'Adaptive Memory Foam cushions middle body pressure points and enhances comfort',
-      'Naturally breathable Bamboo Fabric cover made from bamboo fibres keeps you cool and fresh',
-      'Certified hypoallergenic, dust-mite proof, and antimicrobial sleep sanctuary',
-    ],
+    id: 'spring-comfort',
+    title: 'Spring Systems & Everyday Comfort',
+    badge: '🌀 Dynamic Coil & HR Foam (3 Models)',
+    subtitle: 'Interconnected Bonnell spring coils, zero partner disturbance independent pocket coils, and high-resilience foundational comfort.',
+    icon: '🌀',
+    productIds: ['bonnell-spring', 'pocketed-spring', 'hr-mattress'],
   },
 ]
 
-const categories = ['All', 'Semi Medicated', 'Medicated', 'Medicated Memory', 'Bonnell Spring', 'Pocketed Spring', 'HR Mattress', 'Helixa Mattress', 'Helixa Memory', 'Helixa Latex']
+const collectionTabs = [
+  { id: 'all', label: 'All Models', count: 10, icon: '✦' },
+  { id: 'medicated', label: 'Medicated Ortho', count: 4, icon: '🏥' },
+  { id: 'helixa', label: 'Helixa Series', count: 3, icon: '🌿' },
+  { id: 'spring', label: 'Spring Systems', count: 2, icon: '🌀' },
+  { id: 'hr', label: 'HR Comfort', count: 1, icon: '☁️' },
+]
+
+const materialPills = [
+  { id: 'all', label: 'All Materials' },
+  { id: 'bamboo', label: '🎋 Bamboo Fabric (4)' },
+  { id: 'latex', label: '🌱 Natural Latex (2)' },
+  { id: 'memory', label: '☁️ Memory Foam (2)' },
+  { id: 'spring', label: '🌀 Pocketed / Bonnell (2)' },
+  { id: 'rebonded', label: '🧱 Rebonded Foam (4)' },
+]
 
 export default function ProductsSection() {
   const { ref, visible } = useInView()
-  const [activeCategory, setActiveCategory] = useState('All')
+  const [activeTab, setActiveTab] = useState('all')
+  const [activeMaterial, setActiveMaterial] = useState('all')
   const [selectedProduct, setSelectedProduct] = useState<Product>(products[0])
-  const [showPriceTable, setShowPriceTable] = useState(false)
 
   // Interactive calculator state
   const [selectedSize, setSelectedSize] = useState<string>('72x36')
@@ -767,16 +905,48 @@ export default function ProductsSection() {
     }
   }, [selectedProduct])
 
-  // Current calculated price
   const activeStyle = selectedProduct.styles[selectedStyleIndex] || selectedProduct.styles[0]
-  const currentPrice =
-    activeStyle?.prices?.[selectedSize]?.[selectedThickness] ??
-    selectedProduct.basePrice
 
-  const filtered =
-    activeCategory === 'All'
-      ? products
-      : products.filter((p) => p.category === activeCategory)
+  // Filtered products list
+  const filteredProducts = products.filter((p) => {
+    // Collection filter
+    if (activeTab === 'medicated' && p.collection !== 'Medicated Ortho') return false
+    if (activeTab === 'helixa' && p.collection !== 'Helixa Luxury') return false
+    if (activeTab === 'spring' && p.collection !== 'Spring Support') return false
+    if (activeTab === 'hr' && p.collection !== 'High Resilience') return false
+
+    // Material filter
+    if (activeMaterial === 'bamboo') {
+      const hasBamboo = p.materials.some((m) => m.name.toLowerCase().includes('bamboo'))
+      if (!hasBamboo) return false
+    }
+    if (activeMaterial === 'latex') {
+      const hasLatex = p.materials.some((m) => m.name.toLowerCase().includes('latex'))
+      if (!hasLatex) return false
+    }
+    if (activeMaterial === 'memory') {
+      const hasMemory = p.materials.some((m) => m.name.toLowerCase().includes('memory'))
+      if (!hasMemory) return false
+    }
+    if (activeMaterial === 'spring') {
+      const hasSpring = p.materials.some((m) => m.name.toLowerCase().includes('spring'))
+      if (!hasSpring) return false
+    }
+    if (activeMaterial === 'rebonded') {
+      const hasRebonded = p.materials.some((m) => m.name.toLowerCase().includes('rebonded'))
+      if (!hasRebonded) return false
+    }
+
+    return true
+  })
+
+  const isDefaultView = activeTab === 'all' && activeMaterial === 'all'
+
+  const scrollToCalculator = (product: Product) => {
+    setSelectedProduct(product)
+    const elem = document.getElementById('product-interactive-calculator')
+    if (elem) elem.scrollIntoView({ behavior: 'smooth', block: 'start' })
+  }
 
   return (
     <section
@@ -795,7 +965,7 @@ export default function ProductsSection() {
             display: 'flex',
             alignItems: 'flex-end',
             justifyContent: 'space-between',
-            marginBottom: '40px',
+            marginBottom: '32px',
             flexWrap: 'wrap',
             gap: '24px',
             opacity: visible ? 1 : 0,
@@ -815,7 +985,7 @@ export default function ProductsSection() {
                 marginBottom: '14px',
               }}
             >
-              ✦ Official Brochure Collection
+              ✦ Official Brochure Collection &bull; 10 Signature Models
             </span>
             <h2
               style={{
@@ -829,62 +999,317 @@ export default function ProductsSection() {
             >
               Enjoy The Real <span style={{ color: '#E51D24' }}>Comfort</span>
             </h2>
-            <p style={{ color: '#666', fontSize: '15px', marginTop: '8px', maxWidth: '600px' }}>
-              Engineered by Top Global Group with certified medical-grade orthopaedic support, premium memory foam, and anti-dust mite protection.
+            <p style={{ color: '#666', fontSize: '15px', marginTop: '8px', maxWidth: '640px', lineHeight: 1.6 }}>
+              Crafted by Top Global Group. Explore our 10 certified mattresses categorized into therapeutic orthopaedic rebonded cores, aerated Helixa luxury, and dynamic spring systems.
             </p>
           </div>
 
-          {/* Category filter */}
+          {/* Primary Collection Tabs */}
           <div style={{ display: 'flex', gap: '8px', flexWrap: 'wrap' }}>
-            {categories.map((cat) => (
-              <button
-                key={cat}
-                id={`filter-${cat.toLowerCase().replace(/\s+/g, '-')}`}
-                onClick={() => setActiveCategory(cat)}
-                style={{
-                  padding: '8px 18px',
-                  borderRadius: '50px',
-                  border: '1.5px solid',
-                  borderColor: activeCategory === cat ? '#E51D24' : '#E0E0E0',
-                  background: activeCategory === cat ? '#E51D24' : '#fff',
-                  color: activeCategory === cat ? '#fff' : '#4A4A4A',
-                  fontWeight: 600,
-                  fontSize: '13px',
-                  cursor: 'pointer',
-                  transition: 'all 0.2s',
-                }}
-              >
-                {cat}
-              </button>
-            ))}
+            {collectionTabs.map((tab) => {
+              const isActive = activeTab === tab.id
+              return (
+                <button
+                  key={tab.id}
+                  id={`filter-tab-${tab.id}`}
+                  onClick={() => {
+                    setActiveTab(tab.id)
+                  }}
+                  style={{
+                    padding: '9px 18px',
+                    borderRadius: '50px',
+                    border: '1.5px solid',
+                    borderColor: isActive ? '#E51D24' : '#E0E0E0',
+                    background: isActive ? '#E51D24' : '#fff',
+                    color: isActive ? '#fff' : '#4A4A4A',
+                    fontWeight: 700,
+                    fontSize: '13px',
+                    cursor: 'pointer',
+                    transition: 'all 0.2s',
+                    display: 'inline-flex',
+                    alignItems: 'center',
+                    gap: '6px',
+                    boxShadow: isActive ? '0 4px 12px rgba(229,29,36,0.2)' : 'none',
+                  }}
+                >
+                  <span>{tab.icon}</span>
+                  <span>{tab.label}</span>
+                  <span
+                    style={{
+                      background: isActive ? 'rgba(255,255,255,0.25)' : '#F0F0F0',
+                      color: isActive ? '#fff' : '#666',
+                      fontSize: '11px',
+                      padding: '2px 7px',
+                      borderRadius: '50px',
+                      fontWeight: 700,
+                    }}
+                  >
+                    {tab.count}
+                  </span>
+                </button>
+              )
+            })}
           </div>
         </div>
 
-        {/* Products grid */}
+        {/* Secondary Material Quick Filter Pill Bar */}
         <div
           style={{
-            display: 'grid',
-            gridTemplateColumns: 'repeat(3, 1fr)',
-            gap: '24px',
-            marginBottom: '56px',
+            display: 'flex',
+            alignItems: 'center',
+            gap: '8px',
+            flexWrap: 'wrap',
+            marginBottom: '44px',
+            padding: '12px 18px',
+            background: '#FFFFFF',
+            borderRadius: '16px',
+            border: '1px solid #ECECEC',
+            boxShadow: '0 2px 10px rgba(0,0,0,0.02)',
           }}
-          className="products-grid"
         >
-          {filtered.map((product, i) => (
-            <ProductCard
-              key={product.id}
-              product={product}
-              index={i}
-              visible={visible}
-              selected={selectedProduct.id === product.id}
-              onSelect={() => {
-                setSelectedProduct(product)
-                const elem = document.getElementById('product-interactive-calculator')
-                if (elem) elem.scrollIntoView({ behavior: 'smooth', block: 'start' })
+          <span style={{ fontSize: '12px', fontWeight: 700, color: '#888', textTransform: 'uppercase', letterSpacing: '0.05em', marginRight: '4px' }}>
+            Filter by Core Material:
+          </span>
+          {materialPills.map((pill) => {
+            const isActive = activeMaterial === pill.id
+            return (
+              <button
+                key={pill.id}
+                id={`material-filter-${pill.id}`}
+                onClick={() => setActiveMaterial(pill.id)}
+                style={{
+                  padding: '5px 12px',
+                  borderRadius: '30px',
+                  border: '1px solid',
+                  borderColor: isActive ? '#1A1A1A' : '#E5E7EB',
+                  background: isActive ? '#1A1A1A' : '#F9FAFB',
+                  color: isActive ? '#FFF' : '#4B5563',
+                  fontSize: '12px',
+                  fontWeight: 600,
+                  cursor: 'pointer',
+                  transition: 'all 0.15s ease',
+                }}
+              >
+                {pill.label}
+              </button>
+            )
+          })}
+          {(activeTab !== 'all' || activeMaterial !== 'all') && (
+            <button
+              onClick={() => {
+                setActiveTab('all')
+                setActiveMaterial('all')
               }}
-            />
-          ))}
+              style={{
+                marginLeft: 'auto',
+                background: 'none',
+                border: 'none',
+                color: '#E51D24',
+                fontSize: '12px',
+                fontWeight: 700,
+                cursor: 'pointer',
+                padding: '4px 8px',
+                textDecoration: 'underline',
+              }}
+            >
+              Reset Filters ↺
+            </button>
+          )}
         </div>
+
+        {/* PRODUCTS PRESENTATION */}
+        {isDefaultView ? (
+          /* BALANCED 3-ROW COLLECTION LAYOUT: Row 1 = 4 cards, Row 2 = 3 cards, Row 3 = 3 cards = 10 perfectly aligned cards! */
+          <div style={{ display: 'flex', flexDirection: 'column', gap: '56px', marginBottom: '60px' }}>
+            {collectionSections.map((sec, secIdx) => {
+              const secProducts = sec.productIds
+                .map((id) => products.find((p) => p.id === id))
+                .filter(Boolean) as Product[]
+
+              const isFourCol = secProducts.length === 4
+
+              return (
+                <div key={sec.id} style={{ display: 'flex', flexDirection: 'column', gap: '20px' }}>
+                  {/* Collection Section Header Banner */}
+                  <div
+                    style={{
+                      display: 'flex',
+                      alignItems: 'center',
+                      justifyContent: 'space-between',
+                      flexWrap: 'wrap',
+                      gap: '12px',
+                      padding: '16px 24px',
+                      background: '#FFFFFF',
+                      borderRadius: '16px',
+                      borderLeft: '4px solid #E51D24',
+                      border: '1px solid #ECECEC',
+                      boxShadow: '0 2px 8px rgba(0,0,0,0.02)',
+                    }}
+                  >
+                    <div>
+                      <div style={{ display: 'flex', alignItems: 'center', gap: '8px', marginBottom: '4px' }}>
+                        <span style={{ fontSize: '11px', fontWeight: 700, color: '#E51D24', textTransform: 'uppercase', letterSpacing: '0.08em' }}>
+                          {sec.badge}
+                        </span>
+                      </div>
+                      <h3 style={{ fontSize: '20px', fontWeight: 700, color: '#1A1A1A', margin: 0 }}>
+                        {sec.title}
+                      </h3>
+                      <p style={{ fontSize: '13px', color: '#666', marginTop: '4px', margin: 0 }}>
+                        {sec.subtitle}
+                      </p>
+                    </div>
+
+                    <button
+                      onClick={() => setActiveTab(sec.id === 'spring-comfort' ? 'spring' : sec.id === 'helixa-series' ? 'helixa' : 'medicated')}
+                      style={{
+                        background: 'none',
+                        border: '1.5px solid #E0E0E0',
+                        padding: '6px 14px',
+                        borderRadius: '20px',
+                        fontSize: '12px',
+                        fontWeight: 600,
+                        color: '#4A4A4A',
+                        cursor: 'pointer',
+                        transition: 'all 0.2s',
+                      }}
+                      onMouseEnter={(e) => {
+                        ;(e.currentTarget as HTMLElement).style.borderColor = '#E51D24'
+                        ;(e.currentTarget as HTMLElement).style.color = '#E51D24'
+                      }}
+                      onMouseLeave={(e) => {
+                        ;(e.currentTarget as HTMLElement).style.borderColor = '#E0E0E0'
+                        ;(e.currentTarget as HTMLElement).style.color = '#4A4A4A'
+                      }}
+                    >
+                      Focus Collection ({secProducts.length}) →
+                    </button>
+                  </div>
+
+                  {/* Section Products Grid */}
+                  <div
+                    style={{
+                      display: 'grid',
+                      gridTemplateColumns: isFourCol ? 'repeat(4, 1fr)' : 'repeat(3, 1fr)',
+                      gap: '20px',
+                    }}
+                    className={isFourCol ? 'products-grid-four' : 'products-grid-three'}
+                  >
+                    {secProducts.map((product, pIdx) => (
+                      <ProductCard
+                        key={product.id}
+                        product={product}
+                        index={pIdx}
+                        visible={visible}
+                        selected={selectedProduct.id === product.id}
+                        onSelect={() => scrollToCalculator(product)}
+                      />
+                    ))}
+                  </div>
+                </div>
+              )
+            })}
+          </div>
+        ) : (
+          /* Filtered View */
+          <div style={{ marginBottom: '60px' }}>
+            <div
+              style={{
+                display: 'flex',
+                alignItems: 'center',
+                justifyContent: 'space-between',
+                padding: '14px 20px',
+                background: '#FFFFFF',
+                borderRadius: '12px',
+                border: '1px solid #ECECEC',
+                marginBottom: '24px',
+              }}
+            >
+              <span style={{ fontSize: '14px', fontWeight: 600, color: '#333' }}>
+                Showing <strong>{filteredProducts.length}</strong> of 10 mattresses matching criteria
+              </span>
+              <button
+                onClick={() => {
+                  setActiveTab('all')
+                  setActiveMaterial('all')
+                }}
+                style={{
+                  background: '#F5F5F7',
+                  border: 'none',
+                  padding: '6px 14px',
+                  borderRadius: '20px',
+                  fontSize: '12px',
+                  fontWeight: 600,
+                  color: '#4B5563',
+                  cursor: 'pointer',
+                }}
+              >
+                Clear Filters
+              </button>
+            </div>
+
+            {filteredProducts.length === 0 ? (
+              <div
+                style={{
+                  textAlign: 'center',
+                  padding: '60px 20px',
+                  background: '#FFFFFF',
+                  borderRadius: '20px',
+                  border: '1px solid #EAEAEA',
+                }}
+              >
+                <p style={{ fontSize: '18px', fontWeight: 600, color: '#666', marginBottom: '12px' }}>
+                  No mattresses match the active filter combination.
+                </p>
+                <button
+                  onClick={() => {
+                    setActiveTab('all')
+                    setActiveMaterial('all')
+                  }}
+                  style={{
+                    background: '#E51D24',
+                    color: '#fff',
+                    border: 'none',
+                    padding: '10px 20px',
+                    borderRadius: '50px',
+                    fontWeight: 700,
+                    cursor: 'pointer',
+                  }}
+                >
+                  View All 10 Mattresses
+                </button>
+              </div>
+            ) : (
+              <div
+                style={{
+                  display: 'grid',
+                  gridTemplateColumns:
+                    filteredProducts.length >= 4
+                      ? 'repeat(4, 1fr)'
+                      : filteredProducts.length === 3
+                      ? 'repeat(3, 1fr)'
+                      : filteredProducts.length === 2
+                      ? 'repeat(2, 1fr)'
+                      : 'repeat(1, minmax(320px, 460px))',
+                  gap: '20px',
+                  justifyContent: 'center',
+                }}
+                className={filteredProducts.length >= 4 ? 'products-grid-four' : 'products-grid-three'}
+              >
+                {filteredProducts.map((product, i) => (
+                  <ProductCard
+                    key={product.id}
+                    product={product}
+                    index={i}
+                    visible={visible}
+                    selected={selectedProduct.id === product.id}
+                    onSelect={() => scrollToCalculator(product)}
+                  />
+                ))}
+              </div>
+            )}
+          </div>
+        )}
 
         {/* Interactive Customizer & Price Calculator */}
         <div id="product-interactive-calculator" style={{ scrollMarginTop: '100px' }}>
@@ -1067,7 +1492,6 @@ export default function ProductsSection() {
                           key={style.name}
                           onClick={() => {
                             setSelectedStyleIndex(idx)
-                            // If currently selected thickness is not in new style, pick first
                             if (!style.thicknesses.includes(selectedThickness)) {
                               setSelectedThickness(style.thicknesses[0])
                             }
@@ -1106,18 +1530,19 @@ export default function ProductsSection() {
                           key={size}
                           onClick={() => setSelectedSize(size)}
                           style={{
-                            padding: '10px',
+                            padding: '10px 8px',
                             borderRadius: '10px',
-                            border: `2px solid ${isSelected ? '#E51D24' : '#E8E8E8'}`,
+                            border: `1.5px solid ${isSelected ? '#E51D24' : '#E0E0E0'}`,
                             background: isSelected ? '#E51D24' : '#fff',
-                            color: isSelected ? '#fff' : '#333',
-                            fontWeight: 700,
+                            color: isSelected ? '#fff' : '#4A4A4A',
+                            fontWeight: 600,
                             fontSize: '13px',
                             cursor: 'pointer',
-                            transition: 'all 0.2s',
+                            textAlign: 'center',
+                            transition: 'all 0.15s',
                           }}
                         >
-                          {size}&quot;
+                          {size}"
                         </button>
                       )
                     })}
@@ -1125,9 +1550,9 @@ export default function ProductsSection() {
                 </div>
 
                 {/* Step 3: Select Thickness */}
-                <div style={{ marginBottom: '28px' }}>
+                <div style={{ marginBottom: '32px' }}>
                   <label style={{ display: 'block', fontSize: '13px', fontWeight: 700, color: '#555', marginBottom: '8px', textTransform: 'uppercase', letterSpacing: '0.05em' }}>
-                    3. Select Mattress Thickness:
+                    3. Select Thickness:
                   </label>
                   <div style={{ display: 'flex', gap: '10px', flexWrap: 'wrap' }}>
                     {activeStyle.thicknesses.map((th) => {
@@ -1139,13 +1564,13 @@ export default function ProductsSection() {
                           style={{
                             padding: '10px 20px',
                             borderRadius: '10px',
-                            border: `2px solid ${isSelected ? '#E51D24' : '#E8E8E8'}`,
-                            background: isSelected ? '#E51D24' : '#fff',
-                            color: isSelected ? '#fff' : '#333',
+                            border: `1.5px solid ${isSelected ? '#1A1A1A' : '#E0E0E0'}`,
+                            background: isSelected ? '#1A1A1A' : '#fff',
+                            color: isSelected ? '#fff' : '#4A4A4A',
                             fontWeight: 700,
                             fontSize: '13px',
                             cursor: 'pointer',
-                            transition: 'all 0.2s',
+                            transition: 'all 0.15s',
                           }}
                         >
                           {th}
@@ -1155,11 +1580,10 @@ export default function ProductsSection() {
                   </div>
                 </div>
 
-                {/* Price Inquiry Card */}
+                {/* Official Brochure Pricing on Request */}
                 <div
                   style={{
-                    background: 'linear-gradient(135deg, #111827 0%, #1F2937 100%)',
-                    color: '#fff',
+                    background: '#1A1A1A',
                     borderRadius: '18px',
                     padding: '24px',
                     display: 'flex',
@@ -1246,13 +1670,14 @@ export default function ProductsSection() {
                   <span>📲</span> Looking for Complete Brochure &amp; Custom Size Quotations?
                 </h4>
                 <p style={{ fontSize: '13px', color: '#166534', margin: 0, lineHeight: 1.5 }}>
-                  Chat directly with our official TopSleep sales team on WhatsApp for wholesale pricing, bespoke dimensions, and current promotions.
+                  Chat with our team directly on WhatsApp for official pricing sheets, bulk orders, and custom dimension advice.
                 </p>
               </div>
               <a
                 href={getProductWhatsAppUrl(selectedProduct.name, 'Full Brochure & Custom Size Quotation')}
                 target="_blank"
                 rel="noopener noreferrer"
+                id="catalog-whatsapp-chat-btn"
                 style={{
                   background: '#16A34A',
                   color: '#fff',
@@ -1277,12 +1702,18 @@ export default function ProductsSection() {
       </div>
 
       <style>{`
+        @media (max-width: 1200px) {
+          .products-grid-four { grid-template-columns: repeat(2, 1fr) !important; }
+          .products-grid-three { grid-template-columns: repeat(2, 1fr) !important; }
+        }
         @media (max-width: 992px) {
-          .products-grid { grid-template-columns: repeat(2, 1fr) !important; }
+          .products-grid-four { grid-template-columns: repeat(2, 1fr) !important; }
+          .products-grid-three { grid-template-columns: repeat(2, 1fr) !important; }
           .calculator-grid { grid-template-columns: 1fr !important; }
         }
-        @media (max-width: 600px) {
-          .products-grid { grid-template-columns: 1fr !important; }
+        @media (max-width: 640px) {
+          .products-grid-four { grid-template-columns: 1fr !important; }
+          .products-grid-three { grid-template-columns: 1fr !important; }
           .sizes-grid { grid-template-columns: repeat(2, 1fr) !important; }
         }
       `}</style>
@@ -1330,7 +1761,7 @@ function ProductCard({
         style={{
           position: 'relative',
           background: '#FFFFFF',
-          height: '255px',
+          height: '240px',
           display: 'flex',
           alignItems: 'center',
           justifyContent: 'center',
@@ -1344,7 +1775,7 @@ function ProductCard({
             src={product.image}
             alt={product.name}
             fill
-            sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+            sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 25vw"
             style={{
               objectFit: 'cover',
               transition: 'transform 0.4s',
@@ -1361,9 +1792,9 @@ function ProductCard({
             zIndex: 2,
             background: product.warrantyBadgeColor,
             color: '#fff',
-            fontSize: '11px',
+            fontSize: '10px',
             fontWeight: 700,
-            padding: '4px 10px',
+            padding: '3px 9px',
             borderRadius: '50px',
             letterSpacing: '0.04em',
             boxShadow: '0 2px 8px rgba(0,0,0,0.15)',
@@ -1371,40 +1802,85 @@ function ProductCard({
         >
           {product.warranty}
         </span>
+        {selected && (
+          <span
+            style={{
+              position: 'absolute',
+              top: '12px',
+              right: '12px',
+              zIndex: 2,
+              background: '#E51D24',
+              color: '#fff',
+              fontSize: '10px',
+              fontWeight: 700,
+              padding: '3px 9px',
+              borderRadius: '50px',
+              letterSpacing: '0.04em',
+              boxShadow: '0 2px 8px rgba(229,29,36,0.3)',
+            }}
+          >
+            Active ✓
+          </span>
+        )}
       </div>
 
       {/* Info */}
-      <div style={{ padding: '24px', display: 'flex', flexDirection: 'column', flex: 1 }}>
+      <div style={{ padding: '20px', display: 'flex', flexDirection: 'column', flex: 1 }}>
         <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', marginBottom: '8px' }}>
           <span
             style={{
-              fontSize: '11px',
+              fontSize: '10px',
               fontWeight: 700,
               color: '#E51D24',
               textTransform: 'uppercase',
               letterSpacing: '0.08em',
               background: 'rgba(229,29,36,0.08)',
-              padding: '4px 10px',
+              padding: '3px 8px',
               borderRadius: '50px',
             }}
           >
             {product.category}
           </span>
-          <span style={{ fontSize: '11px', fontWeight: 600, color: '#888' }}>
+          <span style={{ fontSize: '10px', fontWeight: 600, color: '#888' }}>
             {product.seriesBadge}
           </span>
         </div>
-        <h3 style={{ fontSize: '19px', fontWeight: 700, color: '#1A1A1A', marginBottom: '6px' }}>
+
+        <h3 style={{ fontSize: '18px', fontWeight: 700, color: '#1A1A1A', marginBottom: '6px' }}>
           {product.name}
         </h3>
-        <p style={{ fontSize: '13px', color: '#6B6B6B', marginBottom: '14px', lineHeight: 1.5 }}>
+        <p style={{ fontSize: '12px', color: '#666', marginBottom: '12px', lineHeight: 1.5 }}>
           {product.tagline}
         </p>
 
+        {/* Materials Chips */}
+        <div style={{ display: 'flex', gap: '5px', flexWrap: 'wrap', marginBottom: '14px' }}>
+          {product.materials.map((m) => (
+            <span
+              key={m.name}
+              style={{
+                fontSize: '10px',
+                fontWeight: 600,
+                background: '#F5F5F7',
+                color: '#374151',
+                padding: '2px 7px',
+                borderRadius: '6px',
+                border: '1px solid #E5E7EB',
+                display: 'inline-flex',
+                alignItems: 'center',
+                gap: '4px',
+              }}
+            >
+              <span style={{ color: '#E51D24', fontSize: '7px' }}>●</span>
+              {m.name}
+            </span>
+          ))}
+        </div>
+
         {/* Feature bullets */}
-        <ul style={{ listStyle: 'none', padding: 0, margin: '0 0 16px', display: 'flex', flexDirection: 'column', gap: '6px' }}>
+        <ul style={{ listStyle: 'none', padding: 0, margin: '0 0 16px', display: 'flex', flexDirection: 'column', gap: '5px' }}>
           {product.features.slice(0, 2).map((feat, idx) => (
-            <li key={idx} style={{ fontSize: '12px', color: '#555', display: 'flex', alignItems: 'flex-start', gap: '6px' }}>
+            <li key={idx} style={{ fontSize: '11px', color: '#555', display: 'flex', alignItems: 'flex-start', gap: '5px', lineHeight: 1.4 }}>
               <span style={{ color: '#E51D24', fontWeight: 700 }}>✓</span>
               <span>{feat}</span>
             </li>
@@ -1437,7 +1913,7 @@ function ProductCard({
 
           <div style={{ display: 'flex', gap: '8px' }}>
             <a
-              href={getProductWhatsAppUrl(product.name, product.tagline)}
+              href={getProductWhatsAppUrl(product.name, 'Price Inquiry')}
               target="_blank"
               rel="noopener noreferrer"
               id={`price-details-${product.id}`}
@@ -1472,8 +1948,12 @@ function ProductCard({
             </a>
 
             <button
+              type="button"
               id={`configure-${product.id}`}
-              onClick={() => onSelect()}
+              onClick={(e) => {
+                e.stopPropagation()
+                onSelect()
+              }}
               style={{
                 padding: '11px 14px',
                 background: selected ? '#FFF0F0' : '#FAFAFA',
