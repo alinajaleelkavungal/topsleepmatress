@@ -27,7 +27,7 @@ const services = [
   {
     icon: '🛡️',
     title: 'Up to 7 Years Warranty',
-    desc: 'Top Sleep mattresses come with official manufacturer warranty (up to 7 Years on Elegant, Luxury Plus, and Luxury models; 5 Years on Deluxe; 3 Years on Classic).',
+    desc: 'Top Sleep mattresses come with official manufacturer warranty (up to 7 Years on Semi Medicated, Medicated, and Luxury Bonnell Spring models; 5 Years on Deluxe; 3 Years on Classic).',
     tag: 'Official Warranty',
     accent: '#E51D24',
   },

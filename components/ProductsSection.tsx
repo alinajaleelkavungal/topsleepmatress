@@ -69,16 +69,16 @@ export interface Product {
 
 export const products: Product[] = [
   {
-    id: 'elegant-medicated',
-    name: 'Elegant (Medicated)',
-    category: 'Memory Foam',
-    tagline: 'Orthopaedic Mattress — Rebonded with Memory Foam',
+    id: 'semi-medicated',
+    name: 'Semi Medicated',
+    category: 'Semi Medicated',
+    tagline: 'Multi-Layer Support — Rebonded, EPE & Comfort Foam',
     description:
-      'Very special in relieving back pain. Made with High Density Rebonded Foam and Memory Foam, covered with High Quality Knitted Fabric treated against fungus, bacteria, and house dust mites.',
-    seriesBadge: 'Medical Orthopaedic',
+      'Engineered for orthopaedic spine alignment and rejuvenating rest. Built with High-Density Rebonded Foam, resilient EPE support, and contouring Comfort Foam, encased in breathable Organic Knitted Fabric that keeps you cool and fresh.',
+    seriesBadge: 'Semi Medicated',
     warranty: '7 Years Warranty',
     warrantyBadgeColor: '#E51D24',
-    image: '/images/products/elegant_clean.jpg',
+    image: '/images/products/semi_medicated.jpg',
     basePrice: 17906,
     sizes: ['72x36', '75x36', '72x48', '72x60', '75x60', '72x72', '75x72'],
     styles: [
@@ -124,36 +124,41 @@ export const products: Product[] = [
     ],
     materials: [
       {
-        name: 'High Rebonded Foam',
-        desc: 'Rebonded foams are made from multiple foam densities re-bonded under high mechanical pressure, offering superior sound and shock absorption.',
+        name: 'Organic Knitted Fabric',
+        desc: 'Breathable, soft and skin-friendly fabric made from organic fibres. Keeps you cool and fresh.',
       },
       {
-        name: 'Memory Foam',
-        desc: 'Helps the body freely float on the mattress, improves blood circulation through pressure management, and actively adjusts to body temperature.',
+        name: 'Foam',
+        desc: 'Provides comfort, cushioning and supports your body.',
       },
       {
-        name: 'Treated Knitted Fabric',
-        desc: 'Covered with high-quality knitted fabric certified against fungus, bacteria, and house dust mites.',
+        name: 'EPE',
+        desc: 'Lightweight, durable and adds extra support and stability.',
+      },
+      {
+        name: 'Rebonded',
+        desc: 'High-density recycled foam for firm support and long-lasting durability.',
       },
     ],
     features: [
-      'Engineered specifically to alleviate persistent back pain',
-      'Memory Foam contouring eliminates pressure points',
-      'High-Density Rebonded Foam provides robust orthopaedic spinal alignment',
-      'Anti-fungus, anti-bacterial, and dust-mite treated fabric',
+      'Multi-layer semi-medicated orthopaedic construction',
+      'High-Density Rebonded Foam provides firm spinal support and durability',
+      'EPE layer delivers lightweight durability and extra stability',
+      'Comfort Foam layer cushions body contours and relieves pressure',
+      'Organic Knitted Fabric made from organic fibres keeps you cool and fresh',
     ],
   },
   {
-    id: 'luxury-plus',
-    name: 'Luxury Plus',
-    category: 'Super Soft Foam',
-    tagline: 'Rebonded with Super Soft Foam',
+    id: 'medicated',
+    name: 'Medicated',
+    category: 'Medicated',
+    tagline: 'Dual-Layer Orthopaedic Support — Rebonded with Super Soft Foam',
     description:
-      'High Density Rebonded Foam combined with Super Soft Foam, wrapped in premium knitted fabric treated against fungus, bacteria, and dust mites to deliver genuine relief from back pain.',
-    seriesBadge: 'Super Soft Comfort',
+      'Engineered for deep healing rest and postural relief. Features High-Density Rebonded Foam core topped with plush Super Soft Foam that cradles pressure points, encased in breathable, hypoallergenic Organic Knitted Fabric.',
+    seriesBadge: 'Medicated Ortho',
     warranty: '7 Years Warranty',
     warrantyBadgeColor: '#E51D24',
-    image: '/images/products/luxury_plus_clean.jpg',
+    image: '/images/products/medicated.jpg',
     basePrice: 13235,
     sizes: ['72x36', '75x36', '72x48', '72x60', '75x60', '72x72', '75x72'],
     styles: [
@@ -199,36 +204,37 @@ export const products: Product[] = [
     ],
     materials: [
       {
+        name: 'Organic Knitted Fabric',
+        desc: 'Breathable, soft and skin-friendly fabric made from organic fibres. Keeps you cool and fresh.',
+      },
+      {
         name: 'Super Soft Foam',
-        desc: 'Chemically inert, biodegradable polyurethane foam engineered to deliver cloud-like comfort and stress relief.',
+        desc: 'Provides plush comfort, reduces pressure points and supports your body for a restful sleep.',
       },
       {
-        name: 'Rebonded Core',
-        desc: 'Heavy-duty rebonded foam foundation providing essential posture stability beneath the plush surface.',
-      },
-      {
-        name: 'Anti-Allergen Fabric',
-        desc: 'Silky smooth knitted cover treated to resist dust mites, bacteria, and allergens.',
+        name: 'High-Density Rebonded Foam',
+        desc: 'High-density recycled foam for firm support and long-lasting durability.',
       },
     ],
     features: [
-      'Dual-layer composition: plush Super Soft Foam over rebonded base',
-      'Provides relief from lingering spinal and lumbar fatigue',
-      'Biodegradable and skin-friendly hypoallergenic materials',
-      'Durable construction backed by 7-Year warranty',
+      'Dual-layer medicated orthopaedic construction',
+      'High-Density Rebonded Foam provides firm spinal posture support and durability',
+      'Super Soft Foam provides plush comfort and relieves spinal pressure points',
+      'Organic Knitted Fabric made from organic fibres keeps you cool and fresh',
+      'Certified protection against bacteria, allergens, and dust mites',
     ],
   },
   {
-    id: 'luxury',
-    name: 'Luxury',
-    category: 'PU Foam',
-    tagline: 'Rebonded with PU Foam / Premium Foam',
+    id: 'luxury-bonnell-spring',
+    name: 'Luxury Bonnell Spring',
+    category: 'Bonnell Spring',
+    tagline: 'Premium Bonnell Coil System with Organic Knitted Cover',
     description:
-      'Engineered with High Density Rebonded Foam and PU Foam, finished with an imported breathable knitted cloth that permits air circulation and repels house dust mites.',
-    seriesBadge: 'Premium PU Foam',
+      'Engineered with an interconnected Bonnell spring system, cushioned comfort layer, protective felt insulation, and high-density base foam, all wrapped in premium breathable Organic Knitted Fabric for exceptional spinal alignment and long-lasting durability.',
+    seriesBadge: 'Bonnell Spring System',
     warranty: '7 Years Warranty',
     warrantyBadgeColor: '#E51D24',
-    image: '/images/products/luxury_clean.jpg',
+    image: '/images/products/bonnell_spring.jpg',
     basePrice: 10982,
     sizes: ['72x36', '75x36', '72x48', '72x60', '75x60', '72x72', '75x72'],
     styles: [
@@ -274,23 +280,32 @@ export const products: Product[] = [
     ],
     materials: [
       {
-        name: 'PU Foam Layer',
-        desc: 'Advanced polyurethane foam providing balanced cushioning, resilience, and ergonomic support.',
+        name: 'Organic Knitted Fabric',
+        desc: 'Breathable, soft and skin-friendly fabric made from organic fibres. Keeps you cool and fresh.',
       },
       {
-        name: 'Imported Knitted Cloth',
-        desc: 'Breathable imported knitted fabric allows continuous ventilation and prevents dust mites.',
+        name: 'Comfort Layer',
+        desc: 'Adds softness and enhances sleep comfort.',
       },
       {
-        name: 'Rebonded Core Base',
-        desc: 'Firm rebonded core prevents sagging and ensures consistent spinal support throughout.',
+        name: 'Bonnell Spring',
+        desc: 'Provides firm support, keeps your spine aligned and ensures long-lasting durability.',
+      },
+      {
+        name: 'Felt Layer',
+        desc: 'Acts as a protective layer, reduces friction and adds stability.',
+      },
+      {
+        name: 'Base Foam',
+        desc: 'Gives extra support and maintains the mattress shape.',
       },
     ],
     features: [
-      'High-resilience PU foam for flexible weight distribution',
-      'Imported breathable cloth prevents body heat accumulation',
-      'Treated against fungus, bacteria, and allergens',
-      'Full choice of Standard, Euro Top, and Pillow Top models',
+      'Multi-layer Bonnell spring support system with protective felt layer',
+      'Plush Comfort Layer provides cushioning and enhances sleep relaxation',
+      'High-resilience Bonnell coil core maintains healthy spine alignment',
+      'Breathable Organic Knitted Fabric made from organic fibres keeps you cool and fresh',
+      'Reinforced base foam gives extra support and preserves mattress shape',
     ],
   },
   {
@@ -419,7 +434,7 @@ export const products: Product[] = [
   },
 ]
 
-const categories = ['All', 'Orthopaedic', 'Memory Foam', 'Super Soft Foam', 'PU Foam', 'Spring']
+const categories = ['All', 'Semi Medicated', 'Medicated', 'Bonnell Spring', 'Spring', 'Orthopaedic']
 
 export default function ProductsSection() {
   const { ref, visible } = useInView()
@@ -670,21 +685,23 @@ export default function ProductsSection() {
                 <div
                   style={{
                     position: 'relative',
-                    background: '#F8F9FA',
+                    background: '#FFFFFF',
                     borderRadius: '20px',
                     overflow: 'hidden',
                     border: '1px solid #EAEAEA',
-                    padding: '24px',
+                    padding: '0px',
                     textAlign: 'center',
                     marginBottom: '24px',
                   }}
                 >
-                  <div style={{ position: 'relative', width: '100%', height: '220px' }}>
+                  <div style={{ position: 'relative', width: '100%', height: '340px' }}>
                     <Image
                       src={selectedProduct.image}
                       alt={selectedProduct.name}
                       fill
-                      style={{ objectFit: 'contain' }}
+                      style={{
+                        objectFit: 'cover',
+                      }}
                       priority
                     />
                   </div>
@@ -1002,32 +1019,36 @@ function ProductCard({
       <div
         style={{
           position: 'relative',
-          background: 'linear-gradient(135deg, #FFF8F8 0%, #F5F5F5 100%)',
-          height: '210px',
+          background: '#FFFFFF',
+          height: '240px',
           display: 'flex',
           alignItems: 'center',
           justifyContent: 'center',
           overflow: 'hidden',
-          padding: '20px',
+          padding: '0px',
+          borderBottom: '1px solid #F0F0F0',
         }}
       >
-        <Image
-          src={product.image}
-          alt={product.name}
-          width={280}
-          height={160}
-          style={{
-            objectFit: 'contain',
-            transition: 'transform 0.4s',
-            transform: hovered ? 'scale(1.06)' : 'scale(1)',
-          }}
-        />
+        <div style={{ position: 'relative', width: '100%', height: '100%' }}>
+          <Image
+            src={product.image}
+            alt={product.name}
+            fill
+            sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+            style={{
+              objectFit: 'cover',
+              transition: 'transform 0.4s',
+              transform: hovered ? 'scale(1.04)' : 'scale(1)',
+            }}
+          />
+        </div>
         {/* Warranty Badge */}
         <span
           style={{
             position: 'absolute',
-            top: '14px',
-            left: '14px',
+            top: '12px',
+            left: '12px',
+            zIndex: 2,
             background: product.warrantyBadgeColor,
             color: '#fff',
             fontSize: '11px',
@@ -1044,8 +1065,9 @@ function ProductCard({
         <span
           style={{
             position: 'absolute',
-            top: '14px',
-            right: '14px',
+            bottom: '12px',
+            right: '12px',
+            zIndex: 2,
             background: '#1A1A1A',
             color: '#fff',
             fontSize: '10px',
@@ -1054,6 +1076,7 @@ function ProductCard({
             borderRadius: '50px',
             letterSpacing: '0.05em',
             textTransform: 'uppercase',
+            boxShadow: '0 2px 8px rgba(0,0,0,0.12)',
           }}
         >
           {product.category}

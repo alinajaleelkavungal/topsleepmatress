@@ -22,7 +22,7 @@ export default function ContactSection() {
     name: '',
     email: '',
     phone: '',
-    model: 'Elegant (Medicated)',
+    model: 'Semi Medicated',
     size: '72x36',
     message: '',
   })
@@ -357,9 +357,9 @@ export default function ContactSection() {
                         outline: 'none',
                       }}
                     >
-                      <option value="Elegant (Medicated)">Elegant (Medicated) — Rebonded Memory Foam</option>
-                      <option value="Luxury Plus">Luxury Plus — Rebonded Super Soft Foam</option>
-                      <option value="Luxury">Luxury — Rebonded PU Foam</option>
+                      <option value="Semi Medicated">Semi Medicated — Rebonded, EPE & Organic Fabric</option>
+                      <option value="Medicated">Medicated — Rebonded, Super Soft & Organic Fabric</option>
+                      <option value="Luxury Bonnell Spring">Luxury Bonnell Spring — Bonnell Coil & Organic Fabric</option>
                       <option value="Deluxe">Deluxe — Bonnel & Pocketed Spring</option>
                       <option value="Classic">Classic — Rubberized Coir Orthopaedic</option>
                       <option value="Custom Bespoke">Bespoke / Custom Dimension Order</option>

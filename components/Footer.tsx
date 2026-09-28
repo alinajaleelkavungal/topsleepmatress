@@ -5,9 +5,9 @@ import Image from 'next/image'
 export default function Footer() {
   const links = {
     Products: [
-      'Elegant (Medicated)',
-      'Luxury Plus',
-      'Luxury',
+      'Semi Medicated',
+      'Medicated',
+      'Luxury Bonnell Spring',
       'Deluxe Spring',
       'Classic Orthopaedic',
       'Custom Sizing',
