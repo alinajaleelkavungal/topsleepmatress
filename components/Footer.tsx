@@ -10,6 +10,7 @@ export default function Footer() {
       'Bonnell Spring',
       'Pocketed Spring',
       'HR Mattress',
+      'Helixa Mattress',
       'Custom Sizing',
     ],
     Company: [

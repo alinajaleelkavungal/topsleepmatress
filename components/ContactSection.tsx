@@ -362,6 +362,7 @@ export default function ContactSection() {
                       <option value="Bonnell Spring">Bonnell Spring — Bonnell Coil & Organic Fabric</option>
                       <option value="Pocketed Spring">Pocketed Spring — Zero Disturbance & Organic Fabric</option>
                       <option value="HR Mattress">HR Mattress — HD Foam, Super Soft & Organic Fabric</option>
+                      <option value="Helixa Mattress">Helixa Mattress — Helixa Foam, Super Soft & Organic Fabric</option>
                       <option value="Custom Bespoke">Bespoke / Custom Dimension Order</option>
                     </select>
                   </div>

@@ -438,9 +438,85 @@ export const products: Product[] = [
       'Anti-dust mite and hypoallergenic treated protection for hygienic sleep',
     ],
   },
+  {
+    id: 'helixa-mattress',
+    name: 'Helixa Mattress',
+    category: 'Helixa Mattress',
+    tagline: 'High-Resilience Aerated Helixa Foam with Cloud-Soft Comfort',
+    description:
+      'Engineered with an aerated High-Resilience Helixa foam core that provides superior airflow, pressure relief, and spinal alignment, cushioned by a plush Super Soft layer and wrapped in breathable Organic Knitted Fabric.',
+    seriesBadge: 'Helixa Airflow Core',
+    warranty: '7 Years Warranty',
+    warrantyBadgeColor: '#C2410C',
+    image: '/images/products/helixa_mattress.jpg',
+    basePrice: 11500,
+    sizes: ['72x36', '75x36', '72x48', '72x60', '75x60', '72x72', '75x72'],
+    styles: [
+      {
+        name: 'Standard',
+        thicknesses: ['6 Inch', '8 Inch', '10 Inch'],
+        prices: {
+          '72x36': { '6 Inch': 11500, '8 Inch': 13800, '10 Inch': 15900 },
+          '75x36': { '6 Inch': 11800, '8 Inch': 14200, '10 Inch': 16300 },
+          '72x48': { '6 Inch': 13900, '8 Inch': 16800, '10 Inch': 19500 },
+          '72x60': { '6 Inch': 16500, '8 Inch': 19900, '10 Inch': 23200 },
+          '75x60': { '6 Inch': 17000, '8 Inch': 20500, '10 Inch': 23900 },
+          '72x72': { '6 Inch': 19200, '8 Inch': 23200, '10 Inch': 26800 },
+          '75x72': { '6 Inch': 19800, '8 Inch': 23900, '10 Inch': 27600 },
+        },
+      },
+      {
+        name: 'Euro Top',
+        thicknesses: ['8 Inch', '10 Inch'],
+        prices: {
+          '72x36': { '8 Inch': 15200, '10 Inch': 17400 },
+          '75x36': { '8 Inch': 15600, '10 Inch': 17800 },
+          '72x48': { '8 Inch': 18400, '10 Inch': 21200 },
+          '72x60': { '8 Inch': 21800, '10 Inch': 25200 },
+          '75x60': { '8 Inch': 22500, '10 Inch': 25900 },
+          '72x72': { '8 Inch': 25400, '10 Inch': 29200 },
+          '75x72': { '8 Inch': 26200, '10 Inch': 30100 },
+        },
+      },
+      {
+        name: 'Pillow Top',
+        thicknesses: ['8 Inch', '10 Inch'],
+        prices: {
+          '72x36': { '8 Inch': 16800, '10 Inch': 19200 },
+          '75x36': { '8 Inch': 17200, '10 Inch': 19600 },
+          '72x48': { '8 Inch': 20200, '10 Inch': 23200 },
+          '72x60': { '8 Inch': 23900, '10 Inch': 27500 },
+          '75x60': { '8 Inch': 24600, '10 Inch': 28400 },
+          '72x72': { '8 Inch': 27800, '10 Inch': 31900 },
+          '75x72': { '8 Inch': 28600, '10 Inch': 32800 },
+        },
+      },
+    ],
+    materials: [
+      {
+        name: 'Organic Knitted Fabric',
+        desc: 'Breathable, skin-friendly and made from organic knitted fabric for a cooler, healthier sleep.',
+      },
+      {
+        name: 'Super Soft',
+        desc: 'A plush, ultra-soft layer that gently cushions your body for cloud-like comfort.',
+      },
+      {
+        name: 'Helixa Foam',
+        desc: 'High-resilience Helixa foam that provides superior support, pressure relief and long-lasting durability.',
+      },
+    ],
+    features: [
+      'Aerated High-Resilience Helixa foam core provides superior ergonomic spinal support',
+      'Pinhole ventilation matrix promotes continuous airflow for cool, sweat-free sleep',
+      'Super Soft plush layer gently contours around shoulders and hips for cloud-like comfort',
+      'Organic Knitted Fabric made from organic fibres keeps you fresh and hypoallergenic',
+      'Exceptional pressure redistribution and certified durability for restorative rest',
+    ],
+  },
 ]
 
-const categories = ['All', 'Semi Medicated', 'Medicated', 'Bonnell Spring', 'Pocketed Spring', 'HR Mattress']
+const categories = ['All', 'Semi Medicated', 'Medicated', 'Bonnell Spring', 'Pocketed Spring', 'HR Mattress', 'Helixa Mattress']
 
 export default function ProductsSection() {
   const { ref, visible } = useInView()
