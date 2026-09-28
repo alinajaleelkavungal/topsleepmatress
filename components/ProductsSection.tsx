@@ -225,12 +225,12 @@ export const products: Product[] = [
     ],
   },
   {
-    id: 'luxury-bonnell-spring',
-    name: 'Luxury Bonnell Spring',
+    id: 'bonnell-spring',
+    name: 'Bonnell Spring',
     category: 'Bonnell Spring',
-    tagline: 'Premium Bonnell Coil System with Organic Knitted Cover',
+    tagline: 'High-Tensile Bonnell Coil System with Organic Knitted Cover',
     description:
-      'Engineered with an interconnected Bonnell spring system, cushioned comfort layer, protective felt insulation, and high-density base foam, all wrapped in premium breathable Organic Knitted Fabric for exceptional spinal alignment and long-lasting durability.',
+      'Engineered with an interconnected Bonnell spring system, cushioned comfort layer, protective felt insulation, and high-density base foam, all wrapped in breathable Organic Knitted Fabric for exceptional spinal alignment and long-lasting durability.',
     seriesBadge: 'Bonnell Spring System',
     warranty: '7 Years Warranty',
     warrantyBadgeColor: '#E51D24',
@@ -309,21 +309,21 @@ export const products: Product[] = [
     ],
   },
   {
-    id: 'deluxe',
-    name: 'Deluxe',
-    category: 'Spring',
-    tagline: 'Bonnel & Pocketed Spring Mattress',
+    id: 'pocketed-spring',
+    name: 'Pocketed Spring',
+    category: 'Pocketed Spring',
+    tagline: 'Zero Motion Transfer — Independent Pocket Coils & Organic Cover',
     description:
-      'Crafted with Bonnel Coil Spring and Pocketed Springs, Hard Cotton Felt, and High Density PU Foam. Featuring zero partner disturbance and electronically heat-tempered springs.',
+      'Engineered with individually wrapped pocket springs that move independently to eliminate partner disturbance, paired with a plush comfort layer and durable base foam, all encased in breathable Organic Knitted Fabric.',
     seriesBadge: 'Zero Partner Disturbance',
     warranty: '5 Years Warranty',
     warrantyBadgeColor: '#B07C12',
-    image: '/images/products/deluxe_clean.jpg',
+    image: '/images/products/pocketed_spring.jpg',
     basePrice: 13168,
     sizes: ['72x36', '75x36', '72x48', '72x60', '75x60', '72x72', '75x72'],
     styles: [
       {
-        name: 'Standard (Bonnell Spring)',
+        name: 'Standard',
         thicknesses: ['6 Inch', '8 Inch', '10 Inch'],
         prices: {
           '72x36': { '6 Inch': 13168, '8 Inch': 16146, '10 Inch': 17625 },
@@ -336,7 +336,7 @@ export const products: Product[] = [
         },
       },
       {
-        name: 'Euro Top (Bonnell Spring)',
+        name: 'Euro Top',
         thicknesses: ['8 Inch', '10 Inch'],
         prices: {
           '72x36': { '8 Inch': 17196, '10 Inch': 18742 },
@@ -349,7 +349,7 @@ export const products: Product[] = [
         },
       },
       {
-        name: 'Pillow Top (Pocketed Spring)',
+        name: 'Pillow Top',
         thicknesses: ['8 Inch', '10 Inch'],
         prices: {
           '72x36': { '8 Inch': 21026, '10 Inch': 22505 },
@@ -364,41 +364,46 @@ export const products: Product[] = [
     ],
     materials: [
       {
-        name: 'Pocketed Springs',
-        desc: 'Individually encased pocket springs isolate movement completely — ensuring zero partner disturbance.',
+        name: 'Organic Knitted Fabric',
+        desc: 'Breathable, soft and skin-friendly fabric made from organic fibres. Keeps you cool and fresh.',
       },
       {
-        name: 'Bonnell Springs',
-        desc: 'Electronically heat-tempered hourglass coils prevent breaking or flattening under pressure.',
+        name: 'Comfort Layer',
+        desc: 'Soft foam layer adds plush comfort and reduces pressure points.',
       },
       {
-        name: 'Hard Cotton Felt & PU Foam',
-        desc: 'Protective cotton felt insulation layer and high-density PU foam cushioning for long-lasting comfort.',
+        name: 'Pocketed Spring',
+        desc: 'Individually wrapped springs move independently, providing targeted support, less motion transfer and better spinal alignment.',
+      },
+      {
+        name: 'Base Foam',
+        desc: 'Adds stability and durability to the mattress.',
       },
     ],
     features: [
-      'Zero Partner Disturbance: pocketed coils respond independently',
-      'Double heat-treated Bonnell springs resist sagging and breakage',
-      'Reinforced hard cotton felt layer ensures seamless coil isolation',
-      'Knitted quilted cover treated against bacteria and dust mites',
+      'Individually wrapped pocket coils eliminate motion transfer and partner disturbance',
+      'Plush Comfort Layer reduces pressure points on hips, back, and shoulders',
+      'Targeted spinal alignment keeps posture naturally supported all night',
+      'Breathable Organic Knitted Fabric made from organic fibres keeps you cool and fresh',
+      'Reinforced base foam adds stability and ensures long-lasting durability',
     ],
   },
   {
-    id: 'classic',
-    name: 'Classic',
-    category: 'Orthopaedic',
-    tagline: 'High Density Rubberized Coir',
+    id: 'hr-mattress',
+    name: 'HR Mattress',
+    category: 'HR Mattress',
+    tagline: 'Cloud-Like Plush Comfort with High-Density Support Core',
     description:
-      'Made with High Density Rubberized Coir covered with High Quality Knitted Fabric treated against fungus, bacteria, and dust mites. Provides superior natural support to the spinal cord and middle body.',
-    seriesBadge: 'Natural Coir Support',
-    warranty: '3 Years Warranty',
-    warrantyBadgeColor: '#2B8A3E',
-    image: '/images/products/classic_clean.jpg',
+      'Crafted with a robust High-Density (HD) foam core and a luxurious Super Soft foam layer that cushions pressure points with a cloud-like feel, all enveloped in breathable, skin-friendly Organic Knitted Fabric.',
+    seriesBadge: 'High Resilience Foam',
+    warranty: '5 Years Warranty',
+    warrantyBadgeColor: '#2563EB',
+    image: '/images/products/hr_mattress.jpg',
     basePrice: 7740,
     sizes: ['72x36', '75x36', '72x48', '72x60', '75x60', '72x72', '75x72'],
     styles: [
       {
-        name: 'Standard (Rubberized Coir)',
+        name: 'Standard',
         thicknesses: ['4 Inch', '5 Inch', '6 Inch'],
         prices: {
           '72x36': { '4 Inch': 7740, '5 Inch': 8920, '6 Inch': 9950 },
@@ -413,28 +418,29 @@ export const products: Product[] = [
     ],
     materials: [
       {
-        name: 'Rubberized Coir',
-        desc: 'Natural coconut fiber infused with natural rubber latex for firm, resilient, and breathable spinal support.',
+        name: 'Organic Knitted Fabric',
+        desc: 'Breathable, soft and skin-friendly fabric made from organic fibres. Keeps you cool and fresh.',
       },
       {
-        name: 'High Density PU Foam',
-        desc: 'Comfort transition layer cushioning the body while maintaining orthopaedic posture alignment.',
+        name: 'Super Soft',
+        desc: 'Provides plush comfort, reduces pressure points and gives a cloud-like feel for better sleep.',
       },
       {
-        name: 'Breathable Knitted Fabric',
-        desc: 'Air-permeable knit fabric treated to eliminate allergens, dust mites, and bacteria.',
+        name: 'HD Foam',
+        desc: 'High-density foam for strong support, durability and long-lasting comfort.',
       },
     ],
     features: [
-      '100% natural, eco-friendly rubberized coir core',
-      'Provides firm, orthopaedic alignment for spine and lumbar region',
-      'Natural ventilation keeps mattress cool and fresh',
-      'Anti-fungal and antibacterial treated cover',
+      'Dual-layer high resilience foam construction for optimal pressure distribution',
+      'Plush Super Soft Foam comfort layer delivers a cloud-like relaxing feel',
+      'High-Density (HD) base foam core provides robust spinal support and durability',
+      'Organic Knitted Fabric made from organic fibres keeps you cool and fresh',
+      'Anti-dust mite and hypoallergenic treated protection for hygienic sleep',
     ],
   },
 ]
 
-const categories = ['All', 'Semi Medicated', 'Medicated', 'Bonnell Spring', 'Spring', 'Orthopaedic']
+const categories = ['All', 'Semi Medicated', 'Medicated', 'Bonnell Spring', 'Pocketed Spring', 'HR Mattress']
 
 export default function ProductsSection() {
   const { ref, visible } = useInView()

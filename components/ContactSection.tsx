@@ -359,9 +359,9 @@ export default function ContactSection() {
                     >
                       <option value="Semi Medicated">Semi Medicated — Rebonded, EPE & Organic Fabric</option>
                       <option value="Medicated">Medicated — Rebonded, Super Soft & Organic Fabric</option>
-                      <option value="Luxury Bonnell Spring">Luxury Bonnell Spring — Bonnell Coil & Organic Fabric</option>
-                      <option value="Deluxe">Deluxe — Bonnel & Pocketed Spring</option>
-                      <option value="Classic">Classic — Rubberized Coir Orthopaedic</option>
+                      <option value="Bonnell Spring">Bonnell Spring — Bonnell Coil & Organic Fabric</option>
+                      <option value="Pocketed Spring">Pocketed Spring — Zero Disturbance & Organic Fabric</option>
+                      <option value="HR Mattress">HR Mattress — HD Foam, Super Soft & Organic Fabric</option>
                       <option value="Custom Bespoke">Bespoke / Custom Dimension Order</option>
                     </select>
                   </div>

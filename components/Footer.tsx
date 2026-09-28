@@ -7,9 +7,9 @@ export default function Footer() {
     Products: [
       'Semi Medicated',
       'Medicated',
-      'Luxury Bonnell Spring',
-      'Deluxe Spring',
-      'Classic Orthopaedic',
+      'Bonnell Spring',
+      'Pocketed Spring',
+      'HR Mattress',
       'Custom Sizing',
     ],
     Company: [
