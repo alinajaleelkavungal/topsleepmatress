@@ -54,7 +54,7 @@ export default function Navbar() {
           gap: '8px',
         }}
       >
-        <span>🛏️ Free Shipping on all orders above ₹5,999 &nbsp;|&nbsp; 100-Night Free Trial</span>
+        <span>🛏️ Free Shipping on all orders above ₹5,999</span>
         <span style={{ opacity: 0.6 }}>|</span>
         <a
           href="tel:+919847317211"
@@ -99,7 +99,7 @@ export default function Navbar() {
             height={76}
             priority
             style={{
-              height: '54px',
+              height: '88px',
               width: 'auto',
               objectFit: 'contain',
               display: 'block',

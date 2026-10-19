@@ -17,13 +17,30 @@ const trustBadges = [
   { icon: '🚚', title: 'Free Doorstep Delivery', sub: 'Across all major cities', iconBg: '#F8FAFC' },
 ]
 
+const slides = [
+  { src: '/images/hero.png', alt: 'TopSleep Premium Luxury Mattress', pill: '7 Years Full Warranty', icon: '😴', title: 'Medical & Orthopaedic', sub: 'Certified Back Pain Relief' },
+  { src: '/images/products/medicated_memory.jpg', alt: 'Medicated Memory Foam Mattress', pill: 'Orthopaedic Memory', icon: '🧠', title: 'Medicated Memory Foam', sub: 'Contours to Every Pressure Point' },
+  { src: '/images/products/helixa_latex.jpg', alt: 'Helixa Latex Mattress', pill: 'Natural Latex', icon: '🌿', title: 'Helixa Natural Latex', sub: 'Buoyant, Breathable Comfort' },
+  { src: '/images/products/pocketed_spring.jpg', alt: 'Pocketed Spring Mattress', pill: 'Zero Disturbance', icon: '💤', title: 'Pocketed Spring', sub: 'Independent Spring Support' },
+  { src: '/images/products/bonnell_spring.jpg', alt: 'Bonnell Spring Mattress', pill: 'Firm Support', icon: '🛏️', title: 'Bonnell Spring', sub: 'Durable, Firm & Supportive' },
+  { src: '/images/products/hr_mattress.jpg', alt: 'HR Foam Mattress', pill: 'High Resilience', icon: '✨', title: 'HR Foam Mattress', sub: 'Strong Support, Lasting Comfort' },
+]
+
 export default function Hero() {
   const [visible, setVisible] = useState(false)
+  const [active, setActive] = useState(0)
 
   useEffect(() => {
     const t = setTimeout(() => setVisible(true), 80)
     return () => clearTimeout(t)
   }, [])
+
+  useEffect(() => {
+    const id = setInterval(() => setActive((i) => (i + 1) % slides.length), 4000)
+    return () => clearInterval(id)
+  }, [])
+
+  const slide = slides[active]
 
   return (
     <section
@@ -122,13 +139,21 @@ export default function Hero() {
               background: '#fff',
             }}
           >
-            <Image
-              src="/images/hero.png"
-              alt="TopSleep Premium Luxury Mattress"
-              fill
-              style={{ objectFit: 'cover' }}
-              priority
-            />
+            {slides.map((s, i) => (
+              <Image
+                key={s.src}
+                src={s.src}
+                alt={s.alt}
+                fill
+                sizes="540px"
+                style={{
+                  objectFit: 'cover',
+                  opacity: i === active ? 1 : 0,
+                  transition: 'opacity 0.9s ease',
+                }}
+                priority={i === 0}
+              />
+            ))}
 
             {/* Overlay badge 1: Top Right Warranty Pill */}
             <div
@@ -151,7 +176,7 @@ export default function Hero() {
               }}
             >
               <span style={{ fontSize: '12px' }}>★</span>
-              <span>7 Years Full Warranty</span>
+              <span>{slide.pill}</span>
             </div>
 
             {/* Overlay badge 2: Bottom Orthopaedic Glass Card */}
@@ -185,35 +210,16 @@ export default function Hero() {
                     fontSize: '18px',
                   }}
                 >
-                  😴
+                  {slide.icon}
                 </div>
                 <div>
                   <div style={{ fontWeight: 700, color: '#1A1A1A', fontSize: '13px', lineHeight: 1.2 }}>
-                    Medical &amp; Orthopaedic
+                    {slide.title}
                   </div>
                   <div style={{ color: '#E51D24', fontWeight: 800, fontSize: '14px', lineHeight: 1.2 }}>
-                    Certified Back Pain Relief
+                    {slide.sub}
                   </div>
                 </div>
-              </div>
-
-              <div
-                style={{
-                  background: '#EFF6FF',
-                  border: '1px solid #BFDBFE',
-                  color: '#1D4ED8',
-                  fontSize: '11px',
-                  fontWeight: 700,
-                  padding: '4px 10px',
-                  borderRadius: '20px',
-                  display: 'flex',
-                  alignItems: 'center',
-                  gap: '4px',
-                  whiteSpace: 'nowrap',
-                }}
-              >
-                <span style={{ color: '#2563EB' }}>✓</span>
-                <span>Doctor Tested</span>
               </div>
             </div>
           </div>
@@ -323,7 +329,7 @@ export default function Hero() {
               marginBottom: '26px',
             }}
           >
-            Discover mattresses and sleep solutions engineered with decades of expertise — crafted to give you the deepest, most restorative rest and the real comfort you deserve.
+            Discover mattresses and sleep solutions engineered with years of expertise — crafted to give you the deepest, most restorative rest and the real comfort you deserve.
           </p>
 
           {/* Call to Action Buttons */}
