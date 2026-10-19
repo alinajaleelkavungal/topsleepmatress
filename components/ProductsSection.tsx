@@ -58,7 +58,7 @@ export interface Product {
   tagline: string
   description: string
   seriesBadge: string
-  warranty: string
+  warranty?: string
   warrantyBadgeColor: string
   image: string
   basePrice: number
@@ -78,7 +78,6 @@ export const products: Product[] = [
     description:
       'Engineered for orthopaedic spine alignment and rejuvenating rest. Built with High-Density Rebonded Foam, resilient EPE support, and contouring Comfort Foam, encased in breathable Organic Knitted Fabric that keeps you cool and fresh.',
     seriesBadge: 'Semi Medicated',
-    warranty: '7 Years Warranty',
     warrantyBadgeColor: '#E51D24',
     image: '/images/products/semi_medicated.jpg',
     basePrice: 17906,
@@ -1351,7 +1350,7 @@ export default function ProductsSection() {
                     marginBottom: '8px',
                   }}
                 >
-                  {selectedProduct.seriesBadge} &bull; {selectedProduct.warranty}
+                  {selectedProduct.seriesBadge}{selectedProduct.warranty && <> &bull; {selectedProduct.warranty}</>}
                 </span>
                 <h3
                   style={{
@@ -1440,21 +1439,23 @@ export default function ProductsSection() {
                       priority
                     />
                   </div>
-                  <div
-                    style={{
-                      position: 'absolute',
-                      top: '16px',
-                      left: '16px',
-                      background: '#E51D24',
-                      color: '#fff',
-                      fontSize: '12px',
-                      fontWeight: 700,
-                      padding: '4px 12px',
-                      borderRadius: '50px',
-                    }}
-                  >
-                    {selectedProduct.warranty}
-                  </div>
+                  {selectedProduct.warranty && (
+                    <div
+                      style={{
+                        position: 'absolute',
+                        top: '16px',
+                        left: '16px',
+                        background: '#E51D24',
+                        color: '#fff',
+                        fontSize: '12px',
+                        fontWeight: 700,
+                        padding: '4px 12px',
+                        borderRadius: '50px',
+                      }}
+                    >
+                      {selectedProduct.warranty}
+                    </div>
+                  )}
                 </div>
 
                 {/* Key Benefits / Materials from Brochure */}
@@ -1603,9 +1604,11 @@ export default function ProductsSection() {
                       <span style={{ fontSize: '24px', fontWeight: 800, color: '#fff' }}>
                         Price Details on Request
                       </span>
-                      <span style={{ background: 'rgba(37, 211, 102, 0.15)', color: '#4ADE80', border: '1px solid rgba(74, 222, 128, 0.3)', fontSize: '11px', fontWeight: 700, padding: '3px 8px', borderRadius: '20px' }}>
-                        ✓ {selectedProduct.warranty}
-                      </span>
+                      {selectedProduct.warranty && (
+                        <span style={{ background: 'rgba(37, 211, 102, 0.15)', color: '#4ADE80', border: '1px solid rgba(74, 222, 128, 0.3)', fontSize: '11px', fontWeight: 700, padding: '3px 8px', borderRadius: '20px' }}>
+                          ✓ {selectedProduct.warranty}
+                        </span>
+                      )}
                     </div>
                     <div style={{ color: '#D1D5DB', fontSize: '13px', lineHeight: 1.5 }}>
                       Selected: <strong style={{ color: '#fff' }}>{activeStyle.name}</strong> &bull; <strong style={{ color: '#fff' }}>{selectedSize}&quot;</strong> &bull; <strong style={{ color: '#fff' }}>{selectedThickness}</strong>
@@ -1784,6 +1787,7 @@ function ProductCard({
           />
         </div>
         {/* Warranty Badge */}
+        {product.warranty && (
         <span
           style={{
             position: 'absolute',
@@ -1802,6 +1806,7 @@ function ProductCard({
         >
           {product.warranty}
         </span>
+        )}
         {selected && (
           <span
             style={{
