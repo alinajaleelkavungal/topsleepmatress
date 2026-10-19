@@ -232,7 +232,7 @@ export const products: Product[] = [
     description:
       'Engineered for deep healing rest and postural relief. Features High-Density Rebonded Foam core topped with plush Super Soft Foam that cradles pressure points, encased in breathable, hypoallergenic Organic Knitted Fabric.',
     seriesBadge: 'Medicated Ortho',
-    warranty: '7 Years Warranty',
+    warranty: '5 Years Warranty',
     warrantyBadgeColor: '#E51D24',
     image: '/images/products/medicated.jpg',
     basePrice: 13235,
