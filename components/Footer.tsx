@@ -19,7 +19,6 @@ export default function Footer() {
     ],
     Company: [
       'About Top Sleep',
-      'Top Global Group',
       'Manufacturing Quality',
       'Warranty Registration',
       'Contact Us',
@@ -63,7 +62,7 @@ export default function Footer() {
               />
             </div>
             <p style={{ color: '#888', fontSize: '14px', lineHeight: 1.8, maxWidth: '300px', marginBottom: '24px' }}>
-              Part of <strong>Top Global Group</strong> (www.topglobalgroup.com). Dedicated to high-density rebonded foam, memory foam, and luxury spring systems &mdash; enjoy the real comfort.
+              Dedicated to high-density rebonded foam, memory foam, and luxury spring systems &mdash; enjoy the real comfort.
             </p>
             {/* Awards & Certifications from Brochure */}
             <div style={{ display: 'flex', gap: '8px', flexWrap: 'wrap' }}>
@@ -228,7 +227,7 @@ export default function Footer() {
           }}
         >
           <span style={{ color: '#666', fontSize: '13px' }}>
-            © 2024 Top Sleep Mattress &bull; Top Global Group (<a href="http://www.topglobalgroup.com" target="_blank" rel="noopener noreferrer" style={{ color: '#888', textDecoration: 'none' }}>www.topglobalgroup.com</a>). All rights reserved.
+            © 2024 Top Sleep Mattress &bull; All rights reserved.
           </span>
           <div style={{ display: 'flex', gap: '24px' }}>
             {['Privacy Policy', 'Terms of Service', 'Warranty Policy', 'Sitemap'].map((l) => (

@@ -48,7 +48,7 @@ const services = [
   {
     icon: '🚚',
     title: 'Direct Doorstep Delivery',
-    desc: 'Reliable and safe delivery directly from Top Global Group manufacturing facilities to your home, ensuring your mattress arrives in pristine condition.',
+    desc: 'Reliable and safe delivery directly from our manufacturing facilities to your home, ensuring your mattress arrives in pristine condition.',
     tag: 'Doorstep Care',
     accent: '#E51D24',
   },
@@ -112,7 +112,7 @@ export default function ServicesSection() {
             Services Built Around <span style={{ color: '#E51D24' }}>Your Sleep</span>
           </h2>
           <p style={{ color: '#6B6B6B', fontSize: '17px', maxWidth: '540px', margin: '0 auto', lineHeight: 1.7 }}>
-            From custom dimensions to certified anti-allergen treatments &mdash; engineered by Top Global Group so you enjoy the real comfort.
+            From custom dimensions to certified anti-allergen treatments &mdash; engineered by Top Sleep so you enjoy the real comfort.
           </p>
         </div>
 

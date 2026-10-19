@@ -16,13 +16,6 @@ function useInView(threshold = 0.15) {
   return { ref, visible }
 }
 
-const milestones = [
-  { year: '1999', title: 'Founded', desc: 'TopSleep was born from a simple belief — everyone deserves perfect sleep.' },
-  { year: '2007', title: 'First Ortho Range', desc: 'Launched our award-winning orthopedic mattress line, trusted by 1M+ sleepers.' },
-  { year: '2015', title: 'Memory Foam Era', desc: 'Pioneered CoolGel memory foam in India, revolutionizing comfort and temperature regulation.' },
-  { year: '2024', title: 'Smart Sleep Tech', desc: 'Introduced AI-powered sleep tracking integration with our SmartSleep mattress range.' },
-]
-
 export default function AboutSection() {
   const { ref, visible } = useInView()
 
@@ -92,7 +85,7 @@ export default function AboutSection() {
                 marginBottom: '20px',
               }}
             >
-              Part of <strong>Top Global Group</strong> (www.topglobalgroup.com), Top Sleep Mattress is dedicated to the science and craftsmanship of restorative rest. Combining high-density rebonded foam, premium memory foam, and zero-partner-disturbance spring systems, our mattresses transform the way you sleep.
+              Top Sleep Mattress is dedicated to the science and craftsmanship of restorative rest. Combining high-density rebonded foam, premium memory foam, and zero-partner-disturbance spring systems, our mattresses transform the way you sleep.
             </p>
             <p style={{ color: '#6B6B6B', fontSize: '16px', lineHeight: 1.8 }}>
               Every mattress is specifically engineered to relieve back pain and support the spine, enveloped in imported knitted fabric that is scientifically treated against fungus, bacteria, and house dust mites.
@@ -121,88 +114,11 @@ export default function AboutSection() {
             </a>
           </div>
         </div>
-
-        {/* Timeline milestones */}
-        <div
-          style={{
-            display: 'grid',
-            gridTemplateColumns: 'repeat(4, 1fr)',
-            gap: '1px',
-            background: '#E8E8E8',
-            borderRadius: '20px',
-            overflow: 'hidden',
-          }}
-          className="milestone-grid"
-        >
-          {milestones.map((m, i) => {
-            const isSmartTech = i === 3
-            const bg = isSmartTech
-              ? 'linear-gradient(135deg, #0B2545 0%, #133E87 100%)'
-              : i % 2 === 0
-              ? '#fff'
-              : '#E51D24'
-            const numColor = isSmartTech
-              ? 'rgba(147, 197, 253, 0.7)'
-              : i % 2 === 0
-              ? '#E51D24'
-              : 'rgba(255,255,255,0.5)'
-
-            return (
-              <div
-                key={m.year}
-                style={{
-                  background: bg,
-                  color: i % 2 === 0 ? '#1A1A1A' : '#fff',
-                  padding: '40px 32px',
-                  opacity: visible ? 1 : 0,
-                  transform: visible ? 'translateY(0)' : 'translateY(30px)',
-                  transition: `all 0.7s cubic-bezier(0.16, 1, 0.3, 1) ${0.1 + i * 0.12}s`,
-                }}
-              >
-                <div
-                  style={{
-                    fontFamily: "'Playfair Display', Georgia, serif",
-                    fontSize: '42px',
-                    fontWeight: 700,
-                    lineHeight: 1,
-                    marginBottom: '8px',
-                    color: numColor,
-                  }}
-                >
-                  {m.year}
-                </div>
-                <div
-                  style={{
-                    fontWeight: 700,
-                    fontSize: '17px',
-                    marginBottom: '12px',
-                    color: i % 2 === 0 ? '#1A1A1A' : '#fff',
-                  }}
-                >
-                  {m.title}
-                </div>
-                <div
-                  style={{
-                    fontSize: '14px',
-                    lineHeight: 1.7,
-                    color: i % 2 === 0 ? '#6B6B6B' : 'rgba(255,255,255,0.80)',
-                  }}
-                >
-                  {m.desc}
-                </div>
-              </div>
-            )
-          })}
-        </div>
       </div>
 
       <style>{`
         @media (max-width: 900px) {
           .about-header-grid { grid-template-columns: 1fr !important; gap: 32px !important; }
-          .milestone-grid { grid-template-columns: repeat(2, 1fr) !important; }
-        }
-        @media (max-width: 560px) {
-          .milestone-grid { grid-template-columns: 1fr !important; }
         }
       `}</style>
     </section>

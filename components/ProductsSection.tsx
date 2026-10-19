@@ -1000,7 +1000,7 @@ export default function ProductsSection() {
               Enjoy The Real <span style={{ color: '#E51D24' }}>Comfort</span>
             </h2>
             <p style={{ color: '#666', fontSize: '15px', marginTop: '8px', maxWidth: '640px', lineHeight: 1.6 }}>
-              Crafted by Top Global Group. Explore our 10 certified mattresses categorized into therapeutic orthopaedic rebonded cores, aerated Helixa luxury, and dynamic spring systems.
+              Explore our 10 certified mattresses categorized into therapeutic orthopaedic rebonded cores, aerated Helixa luxury, and dynamic spring systems.
             </p>
           </div>
 

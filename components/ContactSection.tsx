@@ -119,12 +119,11 @@ export default function ContactSection() {
               Top Sleep Mattress
             </h3>
             <p style={{ color: 'rgba(255,255,255,0.85)', fontSize: '14px', lineHeight: 1.6, marginBottom: '32px' }}>
-              A division of <strong>Top Global Group</strong>. Certified manufacturers of medical, orthopaedic, and luxury spring mattresses.
+              Certified manufacturers of medical, orthopaedic, and luxury spring mattresses.
             </p>
 
             {[
-              { icon: '🌐', title: 'Official Website', detail: 'www.topglobalgroup.com', href: 'http://www.topglobalgroup.com' },
-              { icon: '📍', title: 'Corporate Office', detail: 'Top Global Group Headquarters, India' },
+              { icon: '📍', title: 'Corporate Office', detail: 'Top Sleep Mattress Headquarters, India' },
               { icon: '📞', title: 'Direct Phone / Call', detail: '+91 98473 17211', href: 'tel:+919847317211' },
               { icon: '💬', title: 'WhatsApp Support', detail: '+91 9061612539', href: 'https://wa.me/919061612539' },
               { icon: '✉️', title: 'Email Support', detail: 'topglobalgroup1@gmail.com', href: 'mailto:topglobalgroup1@gmail.com' },
@@ -226,25 +225,6 @@ export default function ContactSection() {
                 onMouseLeave={(e) => { ;(e.currentTarget as HTMLElement).style.background = 'rgba(255,255,255,0.18)' }}
               >
                 ✉️ Email Us
-              </a>
-              <a
-                href="http://www.topglobalgroup.com"
-                target="_blank"
-                rel="noopener noreferrer"
-                style={{
-                  background: 'rgba(255,255,255,0.18)',
-                  color: '#fff',
-                  padding: '8px 14px',
-                  borderRadius: '8px',
-                  fontSize: '12px',
-                  fontWeight: 600,
-                  textDecoration: 'none',
-                  transition: 'background 0.2s',
-                }}
-                onMouseEnter={(e) => { ;(e.currentTarget as HTMLElement).style.background = 'rgba(255,255,255,0.30)' }}
-                onMouseLeave={(e) => { ;(e.currentTarget as HTMLElement).style.background = 'rgba(255,255,255,0.18)' }}
-              >
-                🌐 Website
               </a>
             </div>
           </div>

@@ -3,13 +3,6 @@
 import Image from 'next/image'
 import { useEffect, useState } from 'react'
 
-const stats = [
-  { value: '10L+', label: 'Happy Customers' },
-  { value: '25+', label: 'Years of Excellence' },
-  { value: '100', label: 'Night Free Trial' },
-  { value: '4.8★', label: 'Average Rating' },
-]
-
 const trustBadges = [
   { icon: '🛡️', title: 'Up to 7 Years Warranty', sub: 'Comprehensive coverage', iconBg: '#F0F7FF' },
   { icon: '🔬', title: 'Anti-Dust Mite & Fungus', sub: 'Hypoallergenic certified', iconBg: '#F0F9FF' },
@@ -450,62 +443,6 @@ export default function Hero() {
         </div>
       </div>
 
-      {/* Stats strip */}
-      <div
-        style={{
-          borderTop: '1px solid #E8E8E8',
-          background: '#fff',
-          position: 'relative',
-          zIndex: 2,
-        }}
-      >
-        <div
-          style={{
-            display: 'grid',
-            gridTemplateColumns: 'repeat(4, 1fr)',
-            maxWidth: '1280px',
-            margin: '0 auto',
-            padding: '0 32px',
-          }}
-          className="stats-grid"
-        >
-          {stats.map((stat, i) => (
-            <div
-              key={stat.label}
-              style={{
-                padding: '22px 18px',
-                textAlign: 'center',
-                borderRight: i < stats.length - 1 ? '1px solid #E8E8E8' : 'none',
-              }}
-            >
-              <div
-                style={{
-                  fontFamily: "'Playfair Display', Georgia, serif",
-                  fontSize: '32px',
-                  fontWeight: 700,
-                  color: '#1A1A1A',
-                  lineHeight: 1,
-                }}
-              >
-                {stat.value}
-              </div>
-              <div
-                style={{
-                  color: '#6B6B6B',
-                  fontSize: '12px',
-                  marginTop: '6px',
-                  fontWeight: 600,
-                  textTransform: 'uppercase',
-                  letterSpacing: '0.04em',
-                }}
-              >
-                {stat.label}
-              </div>
-            </div>
-          ))}
-        </div>
-      </div>
-
       <style>{`
         @media (max-width: 990px) {
           .hero-grid {
@@ -536,13 +473,6 @@ export default function Hero() {
           .hero-trust-grid {
             grid-template-columns: 1fr 1fr !important;
             margin: 0 auto;
-          }
-          .stats-grid {
-            grid-template-columns: repeat(2, 1fr) !important;
-          }
-          .stats-grid > div {
-            border-right: none !important;
-            border-bottom: 1px solid #E8E8E8;
           }
         }
 
