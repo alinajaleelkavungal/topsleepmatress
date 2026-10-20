@@ -114,6 +114,21 @@ export default function Footer() {
               >
                 <span>💬</span> <span>+91 9061612539 (WhatsApp)</span>
               </a>
+              <div style={{ color: '#aaa', display: 'flex', alignItems: 'flex-start', gap: '8px' }}>
+                <span>📍</span>
+                <div>
+                  <div>Top Sleep Mattress Headquarters, India</div>
+                  <a
+                    href="tel:+919946862203"
+                    id="footer-office-link"
+                    style={{ color: '#aaa', textDecoration: 'none', whiteSpace: 'nowrap', transition: 'color 0.2s' }}
+                    onMouseEnter={(e) => { ;(e.currentTarget as HTMLElement).style.color = '#fff' }}
+                    onMouseLeave={(e) => { ;(e.currentTarget as HTMLElement).style.color = '#aaa' }}
+                  >
+                    +91 99468 62203
+                  </a>
+                </div>
+              </div>
             </div>
           </div>
 
