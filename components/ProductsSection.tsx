@@ -1918,6 +1918,29 @@ function ProductCard({
           </div>
 
           <div style={{ display: 'flex', gap: '8px' }}>
+            <button
+              type="button"
+              id={`configure-${product.id}`}
+              onClick={(e) => {
+                e.stopPropagation()
+                onSelect()
+              }}
+              style={{
+                padding: '11px 14px',
+                background: selected ? '#FFF0F0' : '#FAFAFA',
+                color: selected ? '#E51D24' : '#4B5563',
+                border: `1.5px solid ${selected ? '#E51D24' : '#E5E7EB'}`,
+                borderRadius: '10px',
+                fontWeight: 600,
+                fontSize: '12px',
+                cursor: 'pointer',
+                transition: 'all 0.2s',
+                whiteSpace: 'nowrap',
+              }}
+            >
+              {selected ? '✓ Sizes' : 'View Sizes'}
+            </button>
+
             <a
               href={getProductWhatsAppUrl(product.name, 'Price Inquiry')}
               target="_blank"
@@ -1952,29 +1975,6 @@ function ProductCard({
               <WhatsAppIcon size={16} />
               <span>Price Details</span>
             </a>
-
-            <button
-              type="button"
-              id={`configure-${product.id}`}
-              onClick={(e) => {
-                e.stopPropagation()
-                onSelect()
-              }}
-              style={{
-                padding: '11px 14px',
-                background: selected ? '#FFF0F0' : '#FAFAFA',
-                color: selected ? '#E51D24' : '#4B5563',
-                border: `1.5px solid ${selected ? '#E51D24' : '#E5E7EB'}`,
-                borderRadius: '10px',
-                fontWeight: 600,
-                fontSize: '12px',
-                cursor: 'pointer',
-                transition: 'all 0.2s',
-                whiteSpace: 'nowrap',
-              }}
-            >
-              {selected ? '✓ Sizes' : 'View Sizes'}
-            </button>
           </div>
         </div>
       </div>
