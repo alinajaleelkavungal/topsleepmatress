@@ -1,5 +1,7 @@
 'use client'
 
+import PhoneIcon from './PhoneIcon'
+
 const CALL_NUMBER = '+919847317211'
 const WHATSAPP_NUMBER = '919061612539'
 const WHATSAPP_URL = `https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent(
@@ -68,7 +70,7 @@ export default function FloatingContact() {
           ;(e.currentTarget as HTMLElement).style.transform = 'scale(1)'
         }}
       >
-        📞
+        <PhoneIcon size={26} />
       </a>
     </div>
   )

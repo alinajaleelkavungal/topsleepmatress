@@ -1,6 +1,7 @@
 'use client'
 
 import { useEffect, useRef, useState } from 'react'
+import PhoneIcon from './PhoneIcon'
 
 function useInView(threshold = 0.1) {
   const ref = useRef<HTMLElement>(null)
@@ -124,7 +125,7 @@ export default function ContactSection() {
 
             {[
               { icon: '💬', title: 'WhatsApp Support', detail: '+91 9061612539', href: 'https://wa.me/919061612539' },
-              { icon: '📞', title: 'Direct Phone / Call', detail: '+91 98473 17211', href: 'tel:+919847317211' },
+              { icon: <PhoneIcon size={20} />, title: 'Direct Phone / Call', detail: '+91 98473 17211', href: 'tel:+919847317211' },
               { icon: '✉️', title: 'Email Support', detail: 'topglobalgroup1@gmail.com', href: 'mailto:topglobalgroup1@gmail.com' },
               { icon: '📍', title: 'Corporate Office', detail: 'Top Sleep Mattress Headquarters, India', extra: '+91 99468 62203' },
             ].map((item) => (
@@ -188,7 +189,9 @@ export default function ContactSection() {
                 onMouseEnter={(e) => { ;(e.currentTarget as HTMLElement).style.background = '#fff'; ;(e.currentTarget as HTMLElement).style.color = '#E51D24' }}
                 onMouseLeave={(e) => { ;(e.currentTarget as HTMLElement).style.background = 'rgba(255,255,255,0.22)'; ;(e.currentTarget as HTMLElement).style.color = '#fff' }}
               >
-                📞 Call: 98473 17211
+                <span style={{ display: 'inline-flex', alignItems: 'center', gap: '6px' }}>
+                  <PhoneIcon size={14} /> Call: 98473 17211
+                </span>
               </a>
               <a
                 href="https://wa.me/919061612539"
