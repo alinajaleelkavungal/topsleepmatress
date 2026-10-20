@@ -5,13 +5,14 @@ import Link from 'next/link'
 import Image from 'next/image'
 
 const navLinks = [
-  { label: 'About Us', href: '#about' },
-  { label: 'Services', href: '#services' },
-  { label: 'Products', href: '#products' },
-  { label: 'Contact', href: '#contact' },
+  { label: 'Home', href: '#hero', view: 'home' },
+  { label: 'About Us', href: '#about', view: 'about' },
+  { label: 'Services', href: '#services', view: 'services' },
+  { label: 'Products', href: '#products', view: 'products' },
+  { label: 'Contact', href: '#contact', view: 'contact' },
 ]
 
-export default function Navbar() {
+export default function Navbar({ view }: { view: string }) {
   const [scrolled, setScrolled] = useState(false)
   const [menuOpen, setMenuOpen] = useState(false)
   const menuRef = useRef<HTMLDivElement>(null)
@@ -125,9 +126,9 @@ export default function Navbar() {
               <a
                 href={link.href}
                 style={{
-                  color: '#1A1A1A',
+                  color: link.view === view ? '#E51D24' : '#1A1A1A',
                   textDecoration: 'none',
-                  fontWeight: 500,
+                  fontWeight: link.view === view ? 700 : 500,
                   fontSize: '15px',
                   padding: '8px 16px',
                   borderRadius: '8px',
@@ -140,7 +141,7 @@ export default function Navbar() {
                 }}
                 onMouseLeave={(e) => {
                   ;(e.target as HTMLElement).style.background = 'transparent'
-                  ;(e.target as HTMLElement).style.color = '#1A1A1A'
+                  ;(e.target as HTMLElement).style.color = link.view === view ? '#E51D24' : '#1A1A1A'
                 }}
               >
                 {link.label}
@@ -216,9 +217,9 @@ export default function Navbar() {
                 display: 'block',
                 padding: '12px 0',
                 borderBottom: '1px solid #f5f5f5',
-                color: '#1A1A1A',
+                color: link.view === view ? '#E51D24' : '#1A1A1A',
                 textDecoration: 'none',
-                fontWeight: 500,
+                fontWeight: link.view === view ? 700 : 500,
                 fontSize: '16px',
               }}
             >

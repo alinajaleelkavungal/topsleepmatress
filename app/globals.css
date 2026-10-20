@@ -131,3 +131,13 @@ body {
     text-align: center;
   }
 }
+
+/* Clears the fixed header when the hero is not shown (About / Services / Products / Contact views) */
+.view-offset {
+  padding-top: 130px;
+}
+@media (max-width: 768px) {
+  .view-offset {
+    padding-top: 100px;
+  }
+}
