@@ -1313,6 +1313,7 @@ export default function ProductsSection() {
         {/* Interactive Customizer & Price Calculator */}
         <div id="product-interactive-calculator" style={{ scrollMarginTop: '100px' }}>
           <div
+            className="product-detail-card"
             style={{
               background: '#fff',
               borderRadius: '24px',

@@ -33,7 +33,7 @@ export default function Footer() {
   }
 
   return (
-    <footer style={{ background: '#111', color: '#fff', padding: '72px 32px 32px' }}>
+    <footer className="site-footer" style={{ background: '#111', color: '#fff', padding: '72px 32px 32px' }}>
       <div style={{ maxWidth: '1280px', margin: '0 auto' }}>
         {/* Top grid */}
         <div

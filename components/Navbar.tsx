@@ -38,6 +38,7 @@ export default function Navbar() {
     >
       {/* Top notice bar */}
       <div
+        className="top-notice"
         style={{
           background: 'linear-gradient(90deg, #0B2545 0%, #133E87 50%, #0B2545 100%)',
           color: '#fff',
@@ -74,6 +75,7 @@ export default function Navbar() {
       </div>
 
       <nav
+        className="main-nav"
         style={{
           display: 'flex',
           alignItems: 'center',
@@ -98,6 +100,7 @@ export default function Navbar() {
             width={180}
             height={76}
             priority
+            className="nav-logo"
             style={{
               height: '88px',
               width: 'auto',

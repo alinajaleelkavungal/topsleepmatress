@@ -53,3 +53,81 @@ body {
   background: var(--color-ts-red);
   color: white;
 }
+
+/* ---------- Mobile-only adjustments (desktop is unaffected) ---------- */
+@media (max-width: 768px) {
+  html,
+  body {
+    overflow-x: hidden;
+  }
+
+  /* Header */
+  .top-notice {
+    padding: 6px 12px !important;
+    font-size: 11px !important;
+    gap: 4px 8px !important;
+  }
+  .main-nav {
+    padding: 8px 16px !important;
+  }
+  .nav-logo {
+    height: 52px !important;
+  }
+  .mobile-menu {
+    padding: 8px 16px 20px !important;
+    max-height: calc(100vh - 120px);
+    overflow-y: auto;
+  }
+
+  /* Section spacing */
+  main > section:not(#hero) {
+    padding: 56px 20px !important;
+  }
+  .site-footer {
+    padding: 48px 20px 28px !important;
+  }
+
+  /* Hero */
+  #hero .hero-grid {
+    padding-top: 150px !important;
+    padding-left: 20px !important;
+    padding-right: 20px !important;
+  }
+  .hero-title {
+    font-size: clamp(40px, 12vw, 56px) !important;
+  }
+
+  /* Cards with generous desktop padding */
+  .contact-card {
+    padding: 28px 20px !important;
+  }
+  .product-detail-card {
+    padding: 20px 16px !important;
+  }
+  .calculator-grid {
+    gap: 24px !important;
+  }
+  .calculator-grid button {
+    min-width: 0 !important;
+  }
+
+  /* Floating call / WhatsApp buttons: bottom-right on phones */
+  .floating-contact-container {
+    top: auto !important;
+    bottom: 16px !important;
+    right: 14px !important;
+    gap: 10px !important;
+  }
+  .floating-contact-container a {
+    width: 48px !important;
+    height: 48px !important;
+  }
+}
+
+@media (max-width: 480px) {
+  .hero-buttons-row a {
+    flex: 1 1 100%;
+    justify-content: center;
+    text-align: center;
+  }
+}

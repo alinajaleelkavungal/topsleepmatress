@@ -256,6 +256,7 @@ export default function Hero() {
 
           {/* Main Title: Top Sleep with Big Font */}
           <h1
+            className="hero-title"
             style={{
               fontFamily: "'Playfair Display', Georgia, serif",
               fontSize: 'clamp(52px, 6.4vw, 84px)',

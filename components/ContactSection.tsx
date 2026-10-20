@@ -31,6 +31,17 @@ export default function ContactSection() {
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault()
+    const lines = [
+      'Hello TopSleep, I would like a quote / pricing details.',
+      `Name: ${form.name}`,
+      `Phone: ${form.phone}`,
+      form.email && `Email: ${form.email}`,
+      `Mattress: ${form.model}`,
+      `Size: ${form.size}`,
+      form.message && `Message: ${form.message}`,
+    ].filter(Boolean)
+    const text = encodeURIComponent(lines.join('\n'))
+    window.open(`https://wa.me/919061612539?text=${text}`, '_blank', 'noopener,noreferrer')
     setSubmitted(true)
   }
 
@@ -101,6 +112,7 @@ export default function ContactSection() {
         >
           {/* Left info panel */}
           <div
+            className="contact-card"
             style={{
               background: 'linear-gradient(135deg, #E51D24 0%, #B71218 100%)',
               borderRadius: '24px',
@@ -236,6 +248,7 @@ export default function ContactSection() {
 
           {/* Right form */}
           <div
+            className="contact-card"
             style={{
               background: '#FAF9F9',
               borderRadius: '24px',
@@ -270,10 +283,13 @@ export default function ContactSection() {
                   Thank you, {form.name}!
                 </h3>
                 <p style={{ color: '#6B6B6B', fontSize: '15px', maxWidth: '400px', margin: '0 auto 24px', lineHeight: 1.7 }}>
-                  Our mattress specialists will contact you shortly with brochure specifications and custom quotation details.
+                  WhatsApp has opened with your enquiry details filled in. Please press send there and our mattress specialists will reply with brochure specifications and custom quotation details.
                 </p>
                 <button
-                  onClick={() => setSubmitted(false)}
+                  onClick={() => {
+                    setForm({ name: '', email: '', phone: '', model: 'Semi Medicated', size: '72x36', message: '' })
+                    setSubmitted(false)
+                  }}
                   style={{
                     background: '#E51D24',
                     color: '#fff',
