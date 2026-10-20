@@ -56,7 +56,7 @@ export default function Navbar({ view }: { view: string }) {
           gap: '8px',
         }}
       >
-        <span>🛏️ Free Shipping on all orders above ₹5,999</span>
+        <span>🛏️ Doorstep Delivery Available</span>
         <span style={{ opacity: 0.6 }}>|</span>
         <a
           href="tel:+919847317211"
