@@ -7,7 +7,7 @@ const trustBadges = [
   { icon: '🛡️', title: 'Up to 7 Years Warranty', sub: 'Comprehensive coverage', iconBg: '#F0F7FF' },
   { icon: '🔬', title: 'Anti-Dust Mite & Fungus', sub: 'Hypoallergenic certified', iconBg: '#F0F9FF' },
   { icon: '💤', title: 'Zero Disturbance', sub: 'Independent pocket springs', iconBg: '#FFF5F5' },
-  { icon: '🚚', title: 'Free Doorstep Delivery', sub: 'Across all major cities', iconBg: '#F8FAFC' },
+  { icon: '🚚', title: 'Doorstep Delivery Available', sub: 'Across all major cities', iconBg: '#F8FAFC' },
 ]
 
 const slides = [
