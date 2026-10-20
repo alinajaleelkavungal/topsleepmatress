@@ -82,7 +82,7 @@ export const products: Product[] = [
     warrantyBadgeColor: '#C2410C',
     image: '/images/products/medicated_latex.jpg',
     basePrice: 14800,
-    sizes: ['72x36', '75x36', '72x48', '72x60', '75x60', '72x72', '75x72'],
+    sizes: ['72x36', '75x36', '72x48', '72x60', '75x60', '72x72', '75x72', '78x72'],
     styles: [
       {
         name: 'Standard',
@@ -159,7 +159,7 @@ export const products: Product[] = [
     warrantyBadgeColor: '#1E40AF',
     image: '/images/products/medicated_memory.jpg',
     basePrice: 14200,
-    sizes: ['72x36', '75x36', '72x48', '72x60', '75x60', '72x72', '75x72'],
+    sizes: ['72x36', '75x36', '72x48', '72x60', '75x60', '72x72', '75x72', '78x72'],
     styles: [
       {
         name: 'Standard',
@@ -236,7 +236,7 @@ export const products: Product[] = [
     warrantyBadgeColor: '#E51D24',
     image: '/images/products/medicated.jpg',
     basePrice: 13235,
-    sizes: ['72x36', '75x36', '72x48', '72x60', '75x60', '72x72', '75x72'],
+    sizes: ['72x36', '75x36', '72x48', '72x60', '75x60', '72x72', '75x72', '78x72'],
     styles: [
       {
         name: 'Standard',
@@ -312,7 +312,7 @@ export const products: Product[] = [
     warrantyBadgeColor: '#E51D24',
     image: '/images/products/semi_medicated.jpg',
     basePrice: 17906,
-    sizes: ['72x36', '75x36', '72x48', '72x60', '75x60', '72x72', '75x72'],
+    sizes: ['72x36', '75x36', '72x48', '72x60', '75x60', '72x72', '75x72', '78x72'],
     styles: [
       {
         name: 'Standard',
@@ -393,7 +393,7 @@ export const products: Product[] = [
     warrantyBadgeColor: '#15803D',
     image: '/images/products/helixa_latex.jpg',
     basePrice: 13800,
-    sizes: ['72x36', '75x36', '72x48', '72x60', '75x60', '72x72', '75x72'],
+    sizes: ['72x36', '75x36', '72x48', '72x60', '75x60', '72x72', '75x72', '78x72'],
     styles: [
       {
         name: 'Standard',
@@ -470,7 +470,7 @@ export const products: Product[] = [
     warrantyBadgeColor: '#2B8A3E',
     image: '/images/products/helixa_memory.jpg',
     basePrice: 12900,
-    sizes: ['72x36', '75x36', '72x48', '72x60', '75x60', '72x72', '75x72'],
+    sizes: ['72x36', '75x36', '72x48', '72x60', '75x60', '72x72', '75x72', '78x72'],
     styles: [
       {
         name: 'Standard',
@@ -547,7 +547,7 @@ export const products: Product[] = [
     warrantyBadgeColor: '#C2410C',
     image: '/images/products/helixa_mattress.jpg',
     basePrice: 11500,
-    sizes: ['72x36', '75x36', '72x48', '72x60', '75x60', '72x72', '75x72'],
+    sizes: ['72x36', '75x36', '72x48', '72x60', '75x60', '72x72', '75x72', '78x72'],
     styles: [
       {
         name: 'Standard',
@@ -624,7 +624,7 @@ export const products: Product[] = [
     warrantyBadgeColor: '#E51D24',
     image: '/images/products/bonnell_spring.jpg',
     basePrice: 10982,
-    sizes: ['72x36', '75x36', '72x48', '72x60', '75x60', '72x72', '75x72'],
+    sizes: ['72x36', '75x36', '72x48', '72x60', '75x60', '72x72', '75x72', '78x72'],
     styles: [
       {
         name: 'Standard',
@@ -709,7 +709,7 @@ export const products: Product[] = [
     warrantyBadgeColor: '#B07C12',
     image: '/images/products/pocketed_spring.jpg',
     basePrice: 13168,
-    sizes: ['72x36', '75x36', '72x48', '72x60', '75x60', '72x72', '75x72'],
+    sizes: ['72x36', '75x36', '72x48', '72x60', '75x60', '72x72', '75x72', '78x72'],
     styles: [
       {
         name: 'Standard',
@@ -790,7 +790,7 @@ export const products: Product[] = [
     warrantyBadgeColor: '#2563EB',
     image: '/images/products/hr_mattress.jpg',
     basePrice: 7740,
-    sizes: ['72x36', '75x36', '72x48', '72x60', '75x60', '72x72', '75x72'],
+    sizes: ['72x36', '75x36', '72x48', '72x60', '75x60', '72x72', '75x72', '78x72'],
     styles: [
       {
         name: 'Standard',
