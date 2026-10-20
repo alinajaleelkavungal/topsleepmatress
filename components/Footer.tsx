@@ -155,65 +155,6 @@ export default function Footer() {
           ))}
         </div>
 
-        {/* Newsletter strip */}
-        <div
-          style={{
-            background: 'rgba(229,29,36,0.08)',
-            border: '1px solid rgba(229,29,36,0.25)',
-            borderRadius: '16px',
-            padding: '28px 32px',
-            display: 'flex',
-            alignItems: 'center',
-            justifyContent: 'space-between',
-            gap: '24px',
-            marginBottom: '48px',
-            flexWrap: 'wrap',
-          }}
-        >
-          <div>
-            <div style={{ fontWeight: 700, fontSize: '16px', color: '#fff', marginBottom: '4px' }}>
-              Download Top Sleep E-Brochure & Price Lists
-            </div>
-            <div style={{ color: '#888', fontSize: '13px' }}>Join our subscriber list for exclusive dealer and retail pricing updates.</div>
-          </div>
-          <div style={{ display: 'flex', gap: '8px', flex: '0 0 auto' }}>
-            <input
-              id="newsletter-email"
-              type="email"
-              placeholder="your@email.com"
-              style={{
-                padding: '11px 18px',
-                borderRadius: '8px',
-                border: 'none',
-                background: 'rgba(255,255,255,0.10)',
-                color: '#fff',
-                fontSize: '14px',
-                outline: 'none',
-                width: '240px',
-              }}
-            />
-            <button
-              id="newsletter-subscribe-btn"
-              style={{
-                padding: '11px 22px',
-                background: '#E51D24',
-                color: '#fff',
-                border: 'none',
-                borderRadius: '8px',
-                fontWeight: 600,
-                fontSize: '14px',
-                cursor: 'pointer',
-                whiteSpace: 'nowrap',
-                transition: 'background 0.2s',
-              }}
-              onMouseEnter={(e) => { ;(e.currentTarget as HTMLElement).style.background = '#C8161D' }}
-              onMouseLeave={(e) => { ;(e.currentTarget as HTMLElement).style.background = '#E51D24' }}
-            >
-              Get Brochure
-            </button>
-          </div>
-        </div>
-
         {/* Bottom bar */}
         <div
           style={{
