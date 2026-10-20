@@ -127,7 +127,6 @@ export default function ContactSection() {
               { icon: '📞', title: 'Direct Phone / Call', detail: '+91 98473 17211', href: 'tel:+919847317211' },
               { icon: '💬', title: 'WhatsApp Support', detail: '+91 9061612539', href: 'https://wa.me/919061612539' },
               { icon: '✉️', title: 'Email Support', detail: 'topglobalgroup1@gmail.com', href: 'mailto:topglobalgroup1@gmail.com' },
-              { icon: '🛡️', title: 'Warranty & Claims', detail: 'Up to 7-Year Replacement Warranty Support' },
             ].map((item) => (
               <div key={item.title} style={{ display: 'flex', gap: '16px', marginBottom: '24px' }}>
                 <div

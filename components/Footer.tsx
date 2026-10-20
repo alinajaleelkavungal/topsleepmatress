@@ -66,7 +66,7 @@ export default function Footer() {
             </p>
             {/* Awards & Certifications from Brochure */}
             <div style={{ display: 'flex', gap: '8px', flexWrap: 'wrap' }}>
-              {['🛡️ Up to 7 Yrs Warranty', '🔬 Anti-Dust Mite', '🛏️ Zero Partner Disturbance', '🌿 ISO Certified'].map((a) => (
+              {['🛡️ Up to 7 Yrs Warranty', '🔬 Anti-Dust Mite', '🛏️ Zero Partner Disturbance'].map((a) => (
                 <span
                   key={a}
                   style={{
