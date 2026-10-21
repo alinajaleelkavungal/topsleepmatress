@@ -98,7 +98,7 @@ export default function Hero() {
           className="hero-image-col"
           style={{
             width: '100%',
-            maxWidth: '560px',
+            maxWidth: '480px',
             justifySelf: 'center',
             opacity: visible ? 1 : 0,
             transform: visible ? 'translateY(0)' : 'translateY(16px)',
@@ -123,7 +123,7 @@ export default function Hero() {
                 src={s.src}
                 alt={s.alt}
                 fill
-                sizes="(max-width: 990px) 100vw, 560px"
+                sizes="(max-width: 990px) 100vw, 480px"
                 style={{
                   objectFit: 'cover',
                   opacity: i === active ? 1 : 0,
