@@ -867,20 +867,20 @@ export const collectionSections: CollectionSection[] = [
 ]
 
 const collectionTabs = [
-  { id: 'all', label: 'All Models', count: 10, icon: '' },
-  { id: 'medicated', label: 'Medicated Ortho', count: 4, icon: '🏥' },
-  { id: 'helixa', label: 'Helixa Series', count: 3, icon: '🌿' },
-  { id: 'spring', label: 'Spring Systems', count: 2, icon: '🌀' },
-  { id: 'hr', label: 'HR Comfort', count: 1, icon: '☁️' },
+  { id: 'all', label: 'All Models', count: 10 },
+  { id: 'medicated', label: 'Medicated Ortho', count: 4 },
+  { id: 'helixa', label: 'Helixa Series', count: 3 },
+  { id: 'spring', label: 'Spring Systems', count: 2 },
+  { id: 'hr', label: 'HR Comfort', count: 1 },
 ]
 
 const materialPills = [
   { id: 'all', label: 'All Materials' },
-  { id: 'bamboo', label: '🎋 Bamboo Fabric (4)' },
-  { id: 'latex', label: '🌱 Natural Latex (2)' },
-  { id: 'memory', label: '☁️ Memory Foam (2)' },
-  { id: 'spring', label: '🌀 Pocketed / Bonnell (2)' },
-  { id: 'rebonded', label: '🧱 Rebonded Foam (4)' },
+  { id: 'bamboo', label: 'Bamboo Fabric (4)' },
+  { id: 'latex', label: 'Natural Latex (2)' },
+  { id: 'memory', label: 'Memory Foam (2)' },
+  { id: 'spring', label: 'Pocketed / Bonnell (2)' },
+  { id: 'rebonded', label: 'Rebonded Foam (4)' },
 ]
 
 export default function ProductsSection() {
@@ -1004,7 +1004,17 @@ export default function ProductsSection() {
           </div>
 
           {/* Primary Collection Tabs */}
-          <div style={{ display: 'flex', gap: '8px', flexWrap: 'wrap' }}>
+          <div
+            style={{
+              display: 'flex',
+              flexWrap: 'wrap',
+              background: '#fff',
+              border: '1px solid #E4E4E4',
+              borderRadius: '6px',
+              padding: '4px',
+              gap: '2px',
+            }}
+          >
             {collectionTabs.map((tab) => {
               const isActive = activeTab === tab.id
               return (
@@ -1015,32 +1025,27 @@ export default function ProductsSection() {
                     setActiveTab(tab.id)
                   }}
                   style={{
-                    padding: '9px 18px',
-                    borderRadius: '50px',
-                    border: '1.5px solid',
-                    borderColor: isActive ? '#E51D24' : '#E0E0E0',
-                    background: isActive ? '#E51D24' : '#fff',
+                    padding: '9px 14px',
+                    borderRadius: '4px',
+                    border: 'none',
+                    background: isActive ? '#1A1A1A' : 'transparent',
                     color: isActive ? '#fff' : '#4A4A4A',
-                    fontWeight: 700,
+                    fontWeight: 600,
                     fontSize: '13px',
                     cursor: 'pointer',
-                    transition: 'all 0.2s',
+                    transition: 'background 0.2s, color 0.2s',
                     display: 'inline-flex',
-                    alignItems: 'center',
+                    alignItems: 'baseline',
                     gap: '6px',
-                    boxShadow: isActive ? '0 4px 12px rgba(229,29,36,0.2)' : 'none',
                   }}
                 >
-                  {tab.icon && <span>{tab.icon}</span>}
                   <span>{tab.label}</span>
                   <span
                     style={{
-                      background: isActive ? 'rgba(255,255,255,0.25)' : '#F0F0F0',
-                      color: isActive ? '#fff' : '#666',
+                      color: isActive ? 'rgba(255,255,255,0.6)' : '#A0A0A0',
                       fontSize: '11px',
-                      padding: '2px 7px',
-                      borderRadius: '50px',
-                      fontWeight: 700,
+                      fontWeight: 600,
+                      fontVariantNumeric: 'tabular-nums',
                     }}
                   >
                     {tab.count}
@@ -1056,17 +1061,15 @@ export default function ProductsSection() {
           style={{
             display: 'flex',
             alignItems: 'center',
-            gap: '8px',
+            gap: '6px',
             flexWrap: 'wrap',
             marginBottom: '44px',
-            padding: '12px 18px',
-            background: '#FFFFFF',
-            borderRadius: '16px',
-            border: '1px solid #ECECEC',
-            boxShadow: '0 2px 10px rgba(0,0,0,0.02)',
+            padding: '14px 0',
+            borderTop: '1px solid #E4E4E4',
+            borderBottom: '1px solid #E4E4E4',
           }}
         >
-          <span style={{ fontSize: '12px', fontWeight: 700, color: '#888', textTransform: 'uppercase', letterSpacing: '0.05em', marginRight: '4px' }}>
+          <span style={{ fontSize: '11px', fontWeight: 700, color: '#888', textTransform: 'uppercase', letterSpacing: '0.1em', marginRight: '10px' }}>
             Filter by Core Material:
           </span>
           {materialPills.map((pill) => {
@@ -1077,16 +1080,16 @@ export default function ProductsSection() {
                 id={`material-filter-${pill.id}`}
                 onClick={() => setActiveMaterial(pill.id)}
                 style={{
-                  padding: '5px 12px',
-                  borderRadius: '30px',
+                  padding: '6px 12px',
+                  borderRadius: '4px',
                   border: '1px solid',
-                  borderColor: isActive ? '#1A1A1A' : '#E5E7EB',
-                  background: isActive ? '#1A1A1A' : '#F9FAFB',
-                  color: isActive ? '#FFF' : '#4B5563',
+                  borderColor: isActive ? '#E51D24' : '#E4E4E4',
+                  background: '#fff',
+                  color: isActive ? '#E51D24' : '#4A4A4A',
                   fontSize: '12px',
                   fontWeight: 600,
                   cursor: 'pointer',
-                  transition: 'all 0.15s ease',
+                  transition: 'border-color 0.15s ease, color 0.15s ease',
                 }}
               >
                 {pill.label}
@@ -1107,11 +1110,12 @@ export default function ProductsSection() {
                 fontSize: '12px',
                 fontWeight: 700,
                 cursor: 'pointer',
-                padding: '4px 8px',
+                padding: '4px 0',
                 textDecoration: 'underline',
+                textUnderlineOffset: '3px',
               }}
             >
-              Reset Filters ↺
+              Reset Filters
             </button>
           )}
         </div>
@@ -1162,9 +1166,9 @@ export default function ProductsSection() {
                       onClick={() => setActiveTab(sec.id === 'spring-comfort' ? 'spring' : sec.id === 'helixa-series' ? 'helixa' : 'medicated')}
                       style={{
                         background: 'none',
-                        border: '1.5px solid #E0E0E0',
-                        padding: '6px 14px',
-                        borderRadius: '20px',
+                        border: '1px solid #E0E0E0',
+                        padding: '7px 14px',
+                        borderRadius: '4px',
                         fontSize: '12px',
                         fontWeight: 600,
                         color: '#4A4A4A',
@@ -1216,10 +1220,10 @@ export default function ProductsSection() {
                 display: 'flex',
                 alignItems: 'center',
                 justifyContent: 'space-between',
-                padding: '14px 20px',
+                padding: '12px 16px',
                 background: '#FFFFFF',
-                borderRadius: '12px',
-                border: '1px solid #ECECEC',
+                borderRadius: '6px',
+                border: '1px solid #E4E4E4',
                 marginBottom: '24px',
               }}
             >
@@ -1232,10 +1236,10 @@ export default function ProductsSection() {
                   setActiveMaterial('all')
                 }}
                 style={{
-                  background: '#F5F5F7',
-                  border: 'none',
+                  background: '#fff',
+                  border: '1px solid #E0E0E0',
                   padding: '6px 14px',
-                  borderRadius: '20px',
+                  borderRadius: '4px',
                   fontSize: '12px',
                   fontWeight: 600,
                   color: '#4B5563',
