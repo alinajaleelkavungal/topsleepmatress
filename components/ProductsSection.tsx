@@ -1,7 +1,7 @@
 'use client'
 
 import Image from 'next/image'
-import { useEffect, useRef, useState } from 'react'
+import { useCallback, useEffect, useRef, useState } from 'react'
 
 function useInView(threshold = 0.05) {
   const ref = useRef<HTMLElement>(null)
@@ -923,6 +923,7 @@ export default function ProductsSection() {
   const [selectedSize, setSelectedSize] = useState<string>('72x36')
   const [selectedStyleIndex, setSelectedStyleIndex] = useState<number>(0)
   const [selectedThickness, setSelectedThickness] = useState<string>('5 Inch')
+  const [showCustomSize, setShowCustomSize] = useState(false)
 
   // Keep calculator selections valid when product changes
   useEffect(() => {
@@ -935,6 +936,7 @@ export default function ProductsSection() {
   }, [selectedProduct])
 
   const activeStyle = selectedProduct.styles[selectedStyleIndex] || selectedProduct.styles[0]
+  const closeCustomSize = useCallback(() => setShowCustomSize(false), [])
 
   // Filtered products list
   const filteredProducts = products.filter((p) => {
@@ -1588,6 +1590,34 @@ export default function ProductsSection() {
                       </button>
                     ))}
                   </div>
+                  <button
+                    type="button"
+                    id="customize-size-btn"
+                    onClick={() => setShowCustomSize(true)}
+                    style={{
+                      marginTop: '8px',
+                      width: '100%',
+                      padding: '11px 14px',
+                      borderRadius: '4px',
+                      border: '1px dashed #B5B5B5',
+                      background: '#fff',
+                      color: '#1A1A1A',
+                      fontWeight: 600,
+                      fontSize: '13px',
+                      cursor: 'pointer',
+                      transition: 'border-color 0.15s, color 0.15s',
+                    }}
+                    onMouseEnter={(e) => {
+                      ;(e.currentTarget as HTMLElement).style.borderColor = '#E51D24'
+                      ;(e.currentTarget as HTMLElement).style.color = '#E51D24'
+                    }}
+                    onMouseLeave={(e) => {
+                      ;(e.currentTarget as HTMLElement).style.borderColor = '#B5B5B5'
+                      ;(e.currentTarget as HTMLElement).style.color = '#1A1A1A'
+                    }}
+                  >
+                    + Customize Your Size
+                  </button>
                 </div>
 
                 {/* Step 3: Select Thickness */}
@@ -1750,7 +1780,195 @@ export default function ProductsSection() {
           .sizes-grid { grid-template-columns: repeat(2, 1fr) !important; }
         }
       `}</style>
+
+      {showCustomSize && (
+        <CustomSizeModal
+          productName={selectedProduct.name}
+          styleName={activeStyle.name}
+          onClose={closeCustomSize}
+        />
+      )}
     </section>
+  )
+}
+
+function CustomSizeModal({
+  productName,
+  styleName,
+  onClose,
+}: {
+  productName: string
+  styleName: string
+  onClose: () => void
+}) {
+  const [length, setLength] = useState('')
+  const [width, setWidth] = useState('')
+  const [thickness, setThickness] = useState('')
+
+  // Close on Escape and stop the page behind from scrolling
+  useEffect(() => {
+    const onKey = (e: KeyboardEvent) => {
+      if (e.key === 'Escape') onClose()
+    }
+    const prevOverflow = document.body.style.overflow
+    document.body.style.overflow = 'hidden'
+    window.addEventListener('keydown', onKey)
+    return () => {
+      document.body.style.overflow = prevOverflow
+      window.removeEventListener('keydown', onKey)
+    }
+  }, [onClose])
+
+  const handleSubmit = (e: React.FormEvent) => {
+    e.preventDefault()
+    const text = [
+      `Hello TopSleep, I would like a custom size quotation for *${productName}*.`,
+      `Construction Style: ${styleName}`,
+      `Length: ${length} inches`,
+      `Width: ${width} inches`,
+      `Thickness: ${thickness} inches`,
+    ].join('\n')
+    window.open(
+      `https://wa.me/${BUSINESS_WHATSAPP_NUMBER}?text=${encodeURIComponent(text)}`,
+      '_blank',
+      'noopener,noreferrer'
+    )
+    onClose()
+  }
+
+  const fields = [
+    { id: 'custom-length', label: 'Length (inches)', placeholder: 'e.g. 78', value: length, set: setLength },
+    { id: 'custom-width', label: 'Width (inches)', placeholder: 'e.g. 66', value: width, set: setWidth },
+    { id: 'custom-thickness', label: 'Thickness (inches)', placeholder: 'e.g. 8', value: thickness, set: setThickness },
+  ]
+
+  return (
+    <div
+      onClick={onClose}
+      style={{
+        position: 'fixed',
+        inset: 0,
+        zIndex: 10000,
+        background: 'rgba(17, 17, 17, 0.55)',
+        display: 'flex',
+        alignItems: 'center',
+        justifyContent: 'center',
+        padding: '16px',
+      }}
+    >
+      <div
+        role="dialog"
+        aria-modal="true"
+        aria-labelledby="custom-size-title"
+        onClick={(e) => e.stopPropagation()}
+        style={{
+          width: '100%',
+          maxWidth: '440px',
+          maxHeight: 'calc(100vh - 32px)',
+          overflowY: 'auto',
+          background: '#fff',
+          borderRadius: '8px',
+          borderTop: '3px solid #E51D24',
+          padding: '28px',
+        }}
+      >
+        <div style={{ display: 'flex', alignItems: 'flex-start', justifyContent: 'space-between', gap: '16px', marginBottom: '6px' }}>
+          <h3
+            id="custom-size-title"
+            style={{
+              fontFamily: "'Playfair Display', Georgia, serif",
+              fontSize: '24px',
+              fontWeight: 600,
+              color: '#1A1A1A',
+              lineHeight: 1.2,
+            }}
+          >
+            Customize Your Size
+          </h3>
+          <button
+            type="button"
+            onClick={onClose}
+            aria-label="Close"
+            style={{
+              background: 'none',
+              border: 'none',
+              fontSize: '22px',
+              lineHeight: 1,
+              color: '#888',
+              cursor: 'pointer',
+              padding: '2px 4px',
+            }}
+          >
+            ×
+          </button>
+        </div>
+        <p style={{ fontSize: '13px', color: '#666', lineHeight: 1.6, marginBottom: '22px' }}>
+          {productName} &bull; {styleName}. Enter your exact dimensions and we&apos;ll send you a quotation on WhatsApp.
+        </p>
+
+        <form onSubmit={handleSubmit} style={{ display: 'flex', flexDirection: 'column', gap: '16px' }}>
+          {fields.map((f, i) => (
+            <div key={f.id}>
+              <label htmlFor={f.id} style={stepLabelStyle}>
+                {f.label}
+              </label>
+              <input
+                id={f.id}
+                type="number"
+                inputMode="decimal"
+                min="1"
+                step="any"
+                required
+                autoFocus={i === 0}
+                placeholder={f.placeholder}
+                value={f.value}
+                onChange={(e) => f.set(e.target.value)}
+                style={{
+                  width: '100%',
+                  padding: '12px 14px',
+                  borderRadius: '4px',
+                  border: '1px solid #E0E0E0',
+                  fontSize: '15px',
+                  color: '#1A1A1A',
+                  outline: 'none',
+                  fontFamily: 'inherit',
+                  transition: 'border-color 0.2s',
+                }}
+                onFocus={(e) => { e.currentTarget.style.borderColor = '#1A1A1A' }}
+                onBlur={(e) => { e.currentTarget.style.borderColor = '#E0E0E0' }}
+              />
+            </div>
+          ))}
+
+          <button
+            type="submit"
+            id="custom-size-submit-btn"
+            style={{
+              marginTop: '6px',
+              width: '100%',
+              background: '#25D366',
+              color: '#fff',
+              border: 'none',
+              padding: '14px 20px',
+              borderRadius: '4px',
+              fontWeight: 600,
+              fontSize: '15px',
+              cursor: 'pointer',
+              display: 'inline-flex',
+              alignItems: 'center',
+              justifyContent: 'center',
+              gap: '8px',
+              transition: 'background 0.2s ease',
+            }}
+            onMouseEnter={(e) => { ;(e.currentTarget as HTMLElement).style.background = '#1EA952' }}
+            onMouseLeave={(e) => { ;(e.currentTarget as HTMLElement).style.background = '#25D366' }}
+          >
+            <WhatsAppIcon size={18} />
+            <span>Submit on WhatsApp</span>
+          </button>
+        </form>
+      </div>
+    </div>
   )
 }
 
