@@ -242,26 +242,6 @@ function ServiceCard({
       >
         {service.desc}
       </p>
-
-      {/* Bottom link */}
-      <div
-        style={{
-          marginTop: '24px',
-          paddingTop: '16px',
-          borderTop: '1px solid #EFEFEF',
-          display: 'flex',
-          alignItems: 'center',
-          gap: '6px',
-          fontSize: '13px',
-          fontWeight: 600,
-          color: '#1A1A1A',
-        }}
-      >
-        Learn more
-        <span style={{ transform: hovered ? 'translateX(4px)' : 'translateX(0)', transition: 'transform 0.3s', color: service.accent }}>
-          →
-        </span>
-      </div>
     </div>
   )
 }

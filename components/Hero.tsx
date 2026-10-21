@@ -154,22 +154,17 @@ export default function Hero() {
                 position: 'absolute',
                 top: '16px',
                 right: '16px',
-                background: 'linear-gradient(135deg, rgba(229,29,36,0.94) 0%, rgba(185,18,24,0.94) 100%)',
-                backdropFilter: 'blur(10px)',
-                borderRadius: '50px',
-                padding: '7px 15px',
+                background: '#E51D24',
+                borderRadius: '4px',
+                padding: '6px 12px',
                 color: '#fff',
-                fontSize: '12px',
+                fontSize: '11px',
                 fontWeight: 700,
-                letterSpacing: '0.02em',
-                boxShadow: '0 4px 16px rgba(229,29,36,0.35)',
-                display: 'flex',
-                alignItems: 'center',
-                gap: '6px',
+                letterSpacing: '0.08em',
+                textTransform: 'uppercase',
               }}
             >
-              <span style={{ fontSize: '12px' }}>★</span>
-              <span>{slide.pill}</span>
+              {slide.pill}
             </div>
 
             {/* Overlay badge 2: Bottom Orthopaedic Glass Card */}
@@ -179,32 +174,16 @@ export default function Hero() {
                 bottom: '16px',
                 left: '16px',
                 right: '16px',
-                background: 'rgba(255, 255, 255, 0.94)',
-                backdropFilter: 'blur(14px)',
-                borderRadius: '16px',
-                padding: '11px 16px',
+                background: '#fff',
+                borderRadius: '4px',
+                borderLeft: '3px solid #E51D24',
+                padding: '10px 14px',
                 display: 'flex',
                 alignItems: 'center',
                 justifyContent: 'space-between',
-                boxShadow: '0 10px 28px rgba(0, 0, 0, 0.12)',
-                border: '1px solid rgba(229, 29, 36, 0.14)',
               }}
             >
               <div style={{ display: 'flex', alignItems: 'center', gap: '10px' }}>
-                <div
-                  style={{
-                    width: '36px',
-                    height: '36px',
-                    borderRadius: '10px',
-                    background: 'rgba(229,29,36,0.08)',
-                    display: 'flex',
-                    alignItems: 'center',
-                    justifyContent: 'center',
-                    fontSize: '18px',
-                  }}
-                >
-                  {slide.icon}
-                </div>
                 <div>
                   <div style={{ fontWeight: 700, color: '#1A1A1A', fontSize: '13px', lineHeight: 1.2 }}>
                     {slide.title}
@@ -236,20 +215,16 @@ export default function Hero() {
             style={{
               display: 'inline-flex',
               alignItems: 'center',
-              gap: '8px',
-              background: 'rgba(229,29,36,0.06)',
+              gap: '10px',
               color: '#E51D24',
-              padding: '6px 16px',
-              borderRadius: '50px',
               fontSize: '12px',
               fontWeight: 700,
-              letterSpacing: '0.12em',
+              letterSpacing: '0.14em',
               textTransform: 'uppercase',
-              marginBottom: '14px',
-              border: '1px solid rgba(229,29,36,0.20)',
-              boxShadow: '0 2px 8px rgba(229,29,36,0.04)',
+              marginBottom: '16px',
             }}
           >
+            <span style={{ width: '24px', height: '1px', background: '#E51D24' }} />
             <span>Luxury Mattress Collection</span>
           </div>
 
@@ -334,26 +309,23 @@ export default function Hero() {
               href="#products"
               id="hero-shop-btn"
               style={{
-                background: 'linear-gradient(135deg, #E51D24 0%, #C8161D 100%)',
+                background: '#E51D24',
                 color: '#fff',
-                padding: '14px 34px',
-                borderRadius: '50px',
-                fontWeight: 700,
+                padding: '14px 28px',
+                borderRadius: '4px',
+                fontWeight: 600,
                 fontSize: '15px',
                 textDecoration: 'none',
                 display: 'inline-flex',
                 alignItems: 'center',
                 gap: '8px',
-                transition: 'all 0.25s ease',
-                boxShadow: '0 8px 24px rgba(229,29,36,0.28)',
+                transition: 'background 0.2s ease',
               }}
               onMouseEnter={(e) => {
-                ;(e.currentTarget as HTMLElement).style.transform = 'translateY(-2px)'
-                ;(e.currentTarget as HTMLElement).style.boxShadow = '0 14px 32px rgba(229,29,36,0.38)'
+                ;(e.currentTarget as HTMLElement).style.background = '#B8141A'
               }}
               onMouseLeave={(e) => {
-                ;(e.currentTarget as HTMLElement).style.transform = 'translateY(0)'
-                ;(e.currentTarget as HTMLElement).style.boxShadow = '0 8px 24px rgba(229,29,36,0.28)'
+                ;(e.currentTarget as HTMLElement).style.background = '#E51D24'
               }}
             >
               Explore Products →
@@ -362,26 +334,26 @@ export default function Hero() {
               href="#about"
               id="hero-about-btn"
               style={{
-                border: '2px solid #E51D24',
-                color: '#E51D24',
+                border: '1px solid #1A1A1A',
+                color: '#1A1A1A',
                 background: 'transparent',
-                padding: '13px 32px',
-                borderRadius: '50px',
+                padding: '13px 28px',
+                borderRadius: '4px',
                 fontWeight: 600,
                 fontSize: '15px',
                 textDecoration: 'none',
                 display: 'inline-flex',
                 alignItems: 'center',
                 gap: '8px',
-                transition: 'all 0.25s ease',
+                transition: 'background 0.2s ease, color 0.2s ease',
               }}
               onMouseEnter={(e) => {
-                ;(e.currentTarget as HTMLElement).style.background = 'rgba(229,29,36,0.06)'
-                ;(e.currentTarget as HTMLElement).style.transform = 'translateY(-2px)'
+                ;(e.currentTarget as HTMLElement).style.background = '#1A1A1A'
+                ;(e.currentTarget as HTMLElement).style.color = '#fff'
               }}
               onMouseLeave={(e) => {
                 ;(e.currentTarget as HTMLElement).style.background = 'transparent'
-                ;(e.currentTarget as HTMLElement).style.transform = 'translateY(0)'
+                ;(e.currentTarget as HTMLElement).style.color = '#1A1A1A'
               }}
             >
               Learn More
