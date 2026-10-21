@@ -41,7 +41,7 @@ export default function Navbar({ view }: { view: string }) {
       <div
         className="top-notice"
         style={{
-          background: 'linear-gradient(90deg, #0B2545 0%, #133E87 50%, #0B2545 100%)',
+          background: '#111111',
           color: '#fff',
           textAlign: 'center',
           padding: '8px 24px',
