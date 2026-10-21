@@ -61,6 +61,7 @@ export interface Product {
   warranty?: string
   warrantyBadgeColor: string
   image: string
+  imagePosition?: string
   basePrice: number
   sizes: string[]
   styles: StyleOption[]
@@ -81,6 +82,7 @@ export const products: Product[] = [
     warranty: '7 Years Warranty',
     warrantyBadgeColor: '#C2410C',
     image: '/images/products/medicated_latex.jpg',
+    imagePosition: 'right center',
     basePrice: 14800,
     sizes: ['72x36', '75x36', '72x48', '72x60', '75x60', '72x72', '75x72', '78x72'],
     styles: [
@@ -235,6 +237,7 @@ export const products: Product[] = [
     warranty: '5 Years Warranty',
     warrantyBadgeColor: '#E51D24',
     image: '/images/products/medicated.jpg',
+    imagePosition: 'right center',
     basePrice: 13235,
     sizes: ['72x36', '75x36', '72x48', '72x60', '75x60', '72x72', '75x72', '78x72'],
     styles: [
@@ -311,6 +314,7 @@ export const products: Product[] = [
     seriesBadge: 'Semi Medicated',
     warrantyBadgeColor: '#E51D24',
     image: '/images/products/semi_medicated.jpg',
+    imagePosition: 'right center',
     basePrice: 17906,
     sizes: ['72x36', '75x36', '72x48', '72x60', '75x60', '72x72', '75x72', '78x72'],
     styles: [
@@ -1465,6 +1469,7 @@ export default function ProductsSection() {
                       sizes="(max-width: 992px) 100vw, 560px"
                       style={{
                         objectFit: 'cover',
+                        objectPosition: selectedProduct.imagePosition,
                       }}
                       priority
                     />
@@ -1800,6 +1805,7 @@ function ProductCard({
           sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 25vw"
           style={{
             objectFit: 'cover',
+            objectPosition: product.imagePosition,
             transition: 'transform 0.6s ease',
             transform: hovered ? 'scale(1.03)' : 'scale(1)',
           }}
