@@ -389,7 +389,7 @@ export const products: Product[] = [
     description:
       'Combining pin-core responsive natural latex with a high-resilience Helixa foam core and breathable bamboo fabric cover for buoyant spinal alignment, supreme pressure distribution, and organic comfort.',
     seriesBadge: 'Natural Latex Core',
-    warranty: '7 Years Warranty',
+    warranty: '10 Years Warranty',
     warrantyBadgeColor: '#15803D',
     image: '/images/products/helixa_latex.jpg',
     basePrice: 13800,
@@ -466,7 +466,7 @@ export const products: Product[] = [
     description:
       'Crafted with body-contouring Memory Foam that adapts dynamically to your posture, supported by a high-resilience aerated Helixa Foam core and encased in naturally breathable, eco-friendly Bamboo Fabric.',
     seriesBadge: 'Bamboo Memory Foam',
-    warranty: '5 Years Warranty',
+    warranty: '10 Years Warranty',
     warrantyBadgeColor: '#2B8A3E',
     image: '/images/products/helixa_memory.jpg',
     basePrice: 12900,
@@ -543,7 +543,7 @@ export const products: Product[] = [
     description:
       'Engineered with an aerated High-Resilience Helixa foam core that provides superior airflow, pressure relief, and spinal alignment, cushioned by a plush Super Soft layer and wrapped in breathable Organic Knitted Fabric.',
     seriesBadge: 'Helixa Airflow Core',
-    warranty: '5 Years Warranty',
+    warranty: '10 Years Warranty',
     warrantyBadgeColor: '#C2410C',
     image: '/images/products/helixa_mattress.jpg',
     basePrice: 11500,

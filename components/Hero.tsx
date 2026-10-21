@@ -4,7 +4,7 @@ import Image from 'next/image'
 import { useEffect, useState } from 'react'
 
 const trustBadges = [
-  { icon: '🛡️', title: 'Up to 7 Years Warranty', sub: 'Comprehensive coverage', iconBg: '#F0F7FF' },
+  { icon: '🛡️', title: 'Up to 10 Years Warranty', sub: 'Comprehensive coverage', iconBg: '#F0F7FF' },
   { icon: '🔬', title: 'Anti-Dust Mite & Fungus', sub: 'Hypoallergenic certified', iconBg: '#F0F9FF' },
   { icon: '💤', title: 'Zero Disturbance', sub: 'Independent pocket springs', iconBg: '#FFF5F5' },
   { icon: '🚚', title: 'Doorstep Delivery Available', sub: 'Across all major cities', iconBg: '#F8FAFC' },
