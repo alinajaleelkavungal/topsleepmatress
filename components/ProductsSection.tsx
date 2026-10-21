@@ -1026,163 +1026,150 @@ export default function ProductsSection() {
         {/* Header */}
         <div
           style={{
-            display: 'flex',
-            alignItems: 'flex-end',
-            justifyContent: 'space-between',
-            marginBottom: '32px',
-            flexWrap: 'wrap',
-            gap: '24px',
+            marginBottom: '36px',
+            maxWidth: '720px',
             opacity: visible ? 1 : 0,
             transform: visible ? 'translateY(0)' : 'translateY(30px)',
             transition: 'all 0.7s ease',
           }}
         >
-          <div>
-            <span
-              style={{
-                color: '#E51D24',
-                fontWeight: 700,
-                fontSize: '12px',
-                letterSpacing: '0.15em',
-                textTransform: 'uppercase',
-                display: 'block',
-                marginBottom: '14px',
-              }}
-            >
-              Official Brochure Collection &bull; 10 Signature Models
-            </span>
-            <h2
-              style={{
-                fontFamily: "'Playfair Display', Georgia, serif",
-                fontSize: 'clamp(34px, 4vw, 48px)',
-                fontWeight: 700,
-                color: '#1A1A1A',
-                letterSpacing: '-0.02em',
-                lineHeight: 1.15,
-              }}
-            >
-              Enjoy The Real <span style={{ color: '#E51D24' }}>Comfort</span>
-            </h2>
-            <p style={{ color: '#666', fontSize: '15px', marginTop: '8px', maxWidth: '640px', lineHeight: 1.6 }}>
-              Explore our 10 certified mattresses categorized into therapeutic orthopaedic rebonded cores, aerated Helixa luxury, and dynamic spring systems.
-            </p>
-          </div>
-
-          {/* Primary Collection Tabs */}
-          <div
+          <span
             style={{
-              display: 'flex',
-              flexWrap: 'wrap',
-              background: '#fff',
-              border: '1px solid #E4E4E4',
-              borderRadius: '6px',
-              padding: '4px',
-              gap: '2px',
+              color: '#E51D24',
+              fontWeight: 700,
+              fontSize: '12px',
+              letterSpacing: '0.15em',
+              textTransform: 'uppercase',
+              display: 'block',
+              marginBottom: '14px',
             }}
           >
-            {collectionTabs.map((tab) => {
-              const isActive = activeTab === tab.id
-              return (
-                <button
-                  key={tab.id}
-                  id={`filter-tab-${tab.id}`}
-                  onClick={() => {
-                    setActiveTab(tab.id)
-                  }}
-                  style={{
-                    padding: '9px 14px',
-                    borderRadius: '4px',
-                    border: 'none',
-                    background: isActive ? '#1A1A1A' : 'transparent',
-                    color: isActive ? '#fff' : '#4A4A4A',
-                    fontWeight: 600,
-                    fontSize: '13px',
-                    cursor: 'pointer',
-                    transition: 'background 0.2s, color 0.2s',
-                    display: 'inline-flex',
-                    alignItems: 'baseline',
-                    gap: '6px',
-                  }}
-                >
-                  <span>{tab.label}</span>
-                  <span
-                    style={{
-                      color: isActive ? 'rgba(255,255,255,0.6)' : '#A0A0A0',
-                      fontSize: '11px',
-                      fontWeight: 600,
-                      fontVariantNumeric: 'tabular-nums',
-                    }}
-                  >
-                    {tab.count}
-                  </span>
-                </button>
-              )
-            })}
-          </div>
+            Official Brochure Collection &bull; 10 Signature Models
+          </span>
+          <h2
+            style={{
+              fontFamily: "'Playfair Display', Georgia, serif",
+              fontSize: 'clamp(34px, 4vw, 48px)',
+              fontWeight: 700,
+              color: '#1A1A1A',
+              letterSpacing: '-0.02em',
+              lineHeight: 1.15,
+            }}
+          >
+            Enjoy The Real <span style={{ color: '#E51D24' }}>Comfort</span>
+          </h2>
+          <p style={{ color: '#666', fontSize: '15px', marginTop: '12px', lineHeight: 1.7 }}>
+            Explore our 10 certified mattresses categorized into therapeutic orthopaedic rebonded cores, aerated Helixa luxury, and dynamic spring systems.
+          </p>
         </div>
 
-        {/* Secondary Material Quick Filter Pill Bar */}
+        {/* Filter panel */}
         <div
           style={{
-            display: 'flex',
-            alignItems: 'center',
-            gap: '6px',
-            flexWrap: 'wrap',
-            marginBottom: '44px',
-            padding: '14px 0',
-            borderTop: '1px solid #E4E4E4',
-            borderBottom: '1px solid #E4E4E4',
+            background: '#fff',
+            border: '1px solid #E4E4E4',
+            borderRadius: '8px',
+            marginBottom: '48px',
           }}
         >
-          <span style={{ fontSize: '11px', fontWeight: 700, color: '#888', textTransform: 'uppercase', letterSpacing: '0.1em', marginRight: '10px' }}>
-            Filter by Core Material:
-          </span>
-          {materialPills.map((pill) => {
-            const isActive = activeMaterial === pill.id
-            return (
-              <button
-                key={pill.id}
-                id={`material-filter-${pill.id}`}
-                onClick={() => setActiveMaterial(pill.id)}
-                style={{
-                  padding: '6px 12px',
-                  borderRadius: '4px',
-                  border: '1px solid',
-                  borderColor: isActive ? '#E51D24' : '#E4E4E4',
-                  background: '#fff',
-                  color: isActive ? '#E51D24' : '#4A4A4A',
-                  fontSize: '12px',
-                  fontWeight: 600,
-                  cursor: 'pointer',
-                  transition: 'border-color 0.15s ease, color 0.15s ease',
-                }}
-              >
-                {pill.label}
-              </button>
-            )
-          })}
-          {(activeTab !== 'all' || activeMaterial !== 'all') && (
-            <button
-              onClick={() => {
-                setActiveTab('all')
-                setActiveMaterial('all')
-              }}
-              style={{
-                marginLeft: 'auto',
-                background: 'none',
-                border: 'none',
-                color: '#E51D24',
-                fontSize: '12px',
-                fontWeight: 700,
-                cursor: 'pointer',
-                padding: '4px 0',
-                textDecoration: 'underline',
-                textUnderlineOffset: '3px',
-              }}
-            >
-              Reset Filters
-            </button>
-          )}
+          {/* Collection */}
+          <div className="filter-row" style={{ borderBottom: '1px solid #EFEFEF' }}>
+            <span className="filter-row-label">Collection</span>
+            <div className="filter-tabs">
+              {collectionTabs.map((tab) => {
+                const isActive = activeTab === tab.id
+                return (
+                  <button
+                    key={tab.id}
+                    id={`filter-tab-${tab.id}`}
+                    onClick={() => setActiveTab(tab.id)}
+                    style={{
+                      position: 'relative',
+                      flexShrink: 0,
+                      padding: '16px 2px',
+                      border: 'none',
+                      background: 'none',
+                      color: isActive ? '#1A1A1A' : '#777',
+                      fontWeight: isActive ? 700 : 500,
+                      fontSize: '14px',
+                      cursor: 'pointer',
+                      whiteSpace: 'nowrap',
+                      transition: 'color 0.2s',
+                    }}
+                  >
+                    {tab.label}
+                    <span style={{ marginLeft: '6px', fontSize: '12px', color: isActive ? '#E51D24' : '#B0B0B0', fontWeight: 600 }}>
+                      {tab.count}
+                    </span>
+                    <span
+                      style={{
+                        position: 'absolute',
+                        left: 0,
+                        right: 0,
+                        bottom: '-1px',
+                        height: '2px',
+                        background: isActive ? '#E51D24' : 'transparent',
+                        transition: 'background 0.2s',
+                      }}
+                    />
+                  </button>
+                )
+              })}
+            </div>
+          </div>
+
+          {/* Core material */}
+          <div className="filter-row">
+            <span className="filter-row-label">Filter by Core Material</span>
+            <div style={{ display: 'flex', alignItems: 'center', flexWrap: 'wrap', gap: '6px', padding: '14px 0' }}>
+              {materialPills.map((pill) => {
+                const isActive = activeMaterial === pill.id
+                return (
+                  <button
+                    key={pill.id}
+                    id={`material-filter-${pill.id}`}
+                    onClick={() => setActiveMaterial(pill.id)}
+                    style={{
+                      padding: '7px 12px',
+                      borderRadius: '4px',
+                      border: '1px solid',
+                      borderColor: isActive ? '#1A1A1A' : '#E4E4E4',
+                      background: isActive ? '#1A1A1A' : '#fff',
+                      color: isActive ? '#fff' : '#4A4A4A',
+                      fontSize: '12px',
+                      fontWeight: 600,
+                      cursor: 'pointer',
+                      transition: 'border-color 0.15s ease, background 0.15s ease, color 0.15s ease',
+                    }}
+                  >
+                    {pill.label}
+                  </button>
+                )
+              })}
+              {(activeTab !== 'all' || activeMaterial !== 'all') && (
+                <button
+                  onClick={() => {
+                    setActiveTab('all')
+                    setActiveMaterial('all')
+                  }}
+                  style={{
+                    marginLeft: 'auto',
+                    background: 'none',
+                    border: 'none',
+                    color: '#E51D24',
+                    fontSize: '12px',
+                    fontWeight: 700,
+                    cursor: 'pointer',
+                    padding: '4px 0',
+                    textDecoration: 'underline',
+                    textUnderlineOffset: '3px',
+                  }}
+                >
+                  Reset Filters
+                </button>
+              )}
+            </div>
+          </div>
         </div>
 
         {/* PRODUCTS PRESENTATION */}
@@ -1798,6 +1785,31 @@ export default function ProductsSection() {
       </div>
 
       <style>{`
+        .filter-row {
+          display: grid;
+          grid-template-columns: 170px 1fr;
+          align-items: center;
+          padding: 0 20px;
+        }
+        .filter-row-label {
+          font-size: 11px;
+          font-weight: 700;
+          color: #888;
+          text-transform: uppercase;
+          letter-spacing: 0.1em;
+        }
+        .filter-tabs {
+          display: flex;
+          gap: 24px;
+          overflow-x: auto;
+          scrollbar-width: none;
+        }
+        .filter-tabs::-webkit-scrollbar { display: none; }
+        @media (max-width: 720px) {
+          .filter-row { grid-template-columns: 1fr; padding: 0 16px; }
+          .filter-row-label { padding-top: 14px; }
+          .filter-tabs { gap: 20px; }
+        }
         @media (max-width: 1200px) {
           .products-grid-four { grid-template-columns: repeat(2, 1fr) !important; }
           .products-grid-three { grid-template-columns: repeat(2, 1fr) !important; }
