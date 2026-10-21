@@ -116,9 +116,8 @@ export default function ContactSection() {
           <div
             className="contact-card"
             style={{
-              background: '#1A1A1A',
+              background: 'linear-gradient(135deg, #E51D24 0%, #B71218 100%)',
               borderRadius: '8px',
-              borderTop: '3px solid #E51D24',
               padding: '48px 40px',
               color: '#fff',
             }}
@@ -143,13 +142,13 @@ export default function ContactSection() {
               { icon: <Mail size={17} strokeWidth={1.75} />, title: 'Email Support', detail: 'topglobalgroup1@gmail.com', href: 'mailto:topglobalgroup1@gmail.com' },
               { icon: <MapPin size={17} strokeWidth={1.75} />, title: 'Corporate Office', detail: 'Top Sleep Mattress Headquarters, India', extra: '+91 99468 62203' },
             ].map((item) => (
-              <div key={item.title} style={{ display: 'flex', gap: '16px', paddingBottom: '18px', marginBottom: '18px', borderBottom: '1px solid rgba(255,255,255,0.10)' }}>
+              <div key={item.title} style={{ display: 'flex', gap: '16px', paddingBottom: '18px', marginBottom: '18px', borderBottom: '1px solid rgba(255,255,255,0.22)' }}>
                 <div
                   style={{
                     width: '40px',
                     height: '40px',
-                    border: '1px solid rgba(255,255,255,0.18)',
-                    color: 'rgba(255,255,255,0.75)',
+                    border: '1px solid rgba(255,255,255,0.4)',
+                    color: '#fff',
                     borderRadius: '4px',
                     display: 'flex',
                     alignItems: 'center',
@@ -179,7 +178,15 @@ export default function ContactSection() {
                     <div style={{ fontSize: '14px', color: '#fff', fontWeight: 500 }}>{item.detail}</div>
                   )}
                   {'extra' in item && (
-                    <div style={{ fontSize: '14px', color: '#fff', fontWeight: 500, marginTop: '2px', whiteSpace: 'nowrap' }}>{item.extra}</div>
+                    <a
+                      href="tel:+919946862203"
+                      id="contact-office-call"
+                      style={{ display: 'block', fontSize: '14px', color: '#fff', fontWeight: 500, marginTop: '2px', whiteSpace: 'nowrap', textDecoration: 'none', transition: 'opacity 0.2s' }}
+                      onMouseEnter={(e) => { ;(e.currentTarget as HTMLElement).style.opacity = '0.85' }}
+                      onMouseLeave={(e) => { ;(e.currentTarget as HTMLElement).style.opacity = '1' }}
+                    >
+                      {item.extra}
+                    </a>
                   )}
                 </div>
               </div>
