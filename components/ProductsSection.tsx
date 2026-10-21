@@ -29,6 +29,17 @@ export interface StyleOption {
 // Note: Replace this placeholder number with your actual Business WhatsApp number (including country code, no '+' or spaces, e.g. '919876543210')
 export const BUSINESS_WHATSAPP_NUMBER = '919061612539'
 
+// Lets other parts of the page (e.g. footer links) open a product or the custom size box.
+// Kept at module level so a request survives the section mounting after a view switch.
+type ProductRequest = { productId?: string; customSize?: boolean }
+let pendingRequest: ProductRequest | null = null
+const PRODUCT_REQUEST_EVENT = 'topsleep:product-request'
+
+export function requestProduct(request: ProductRequest) {
+  pendingRequest = request
+  window.dispatchEvent(new Event(PRODUCT_REQUEST_EVENT))
+}
+
 export function getProductWhatsAppUrl(productName: string, configDetails?: string) {
   const text = configDetails
     ? `Hello TopSleep, I would like to get the price details and availability for *${productName}* (${configDetails}).`
@@ -937,6 +948,28 @@ export default function ProductsSection() {
 
   const activeStyle = selectedProduct.styles[selectedStyleIndex] || selectedProduct.styles[0]
   const closeCustomSize = useCallback(() => setShowCustomSize(false), [])
+
+  // Handle product / custom size requests from other sections
+  useEffect(() => {
+    const handle = () => {
+      const request = pendingRequest
+      if (!request) return
+      pendingRequest = null
+      const product = products.find((p) => p.id === request.productId)
+      if (product) setSelectedProduct(product)
+      if (request.customSize) setShowCustomSize(true)
+      // Wait a frame so this runs after the view switch has scrolled to the top
+      requestAnimationFrame(() => {
+        document.getElementById('product-interactive-calculator')?.scrollIntoView({ behavior: 'smooth', block: 'start' })
+      })
+    }
+    const frame = requestAnimationFrame(handle)
+    window.addEventListener(PRODUCT_REQUEST_EVENT, handle)
+    return () => {
+      cancelAnimationFrame(frame)
+      window.removeEventListener(PRODUCT_REQUEST_EVENT, handle)
+    }
+  }, [])
 
   // Filtered products list
   const filteredProducts = products.filter((p) => {

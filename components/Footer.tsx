@@ -1,27 +1,43 @@
 'use client'
 
 import Image from 'next/image'
+import { BUSINESS_WHATSAPP_NUMBER, products, requestProduct } from './ProductsSection'
+
+type FooterLink = { label: string; href: string; external?: boolean; onClick?: () => void }
+
+const productLink = (name: string): FooterLink => {
+  const product = products.find((p) => p.name === name)
+  return {
+    label: name,
+    href: '#products',
+    onClick: product ? () => requestProduct({ productId: product.id }) : undefined,
+  }
+}
+
+const WARRANTY_URL = `https://wa.me/${BUSINESS_WHATSAPP_NUMBER}?text=${encodeURIComponent(
+  'Hello TopSleep, I would like to register my mattress warranty.'
+)}`
 
 export default function Footer() {
-  const links = {
+  const links: Record<string, FooterLink[]> = {
     Products: [
-      'Semi Medicated',
-      'Medicated',
-      'Bonnell Spring',
-      'Pocketed Spring',
-      'HR Mattress',
-      'Helixa Mattress',
-      'Helixa Memory',
-      'Helixa Latex',
-      'Medicated Memory',
-      'Medicated Latex',
-      'Custom Sizing',
+      productLink('Semi Medicated'),
+      productLink('Medicated'),
+      productLink('Bonnell Spring'),
+      productLink('Pocketed Spring'),
+      productLink('HR Mattress'),
+      productLink('Helixa Mattress'),
+      productLink('Helixa Memory'),
+      productLink('Helixa Latex'),
+      productLink('Medicated Memory'),
+      productLink('Medicated Latex'),
+      { label: 'Custom Sizing', href: '#products', onClick: () => requestProduct({ customSize: true }) },
     ],
     Company: [
-      'About Top Sleep',
-      'Manufacturing Quality',
-      'Warranty Registration',
-      'Contact Us',
+      { label: 'About Top Sleep', href: '#about' },
+      { label: 'Manufacturing Quality', href: '#services' },
+      { label: 'Warranty Registration', href: WARRANTY_URL, external: true },
+      { label: 'Contact Us', href: '#contact' },
     ],
   }
 
@@ -143,9 +159,12 @@ export default function Footer() {
               </h4>
               <ul style={{ listStyle: 'none' }}>
                 {items.map((item) => (
-                  <li key={item} style={{ marginBottom: '10px' }}>
+                  <li key={item.label} style={{ marginBottom: '10px' }}>
                     <a
-                      href="#products"
+                      href={item.href}
+                      onClick={item.onClick}
+                      target={item.external ? '_blank' : undefined}
+                      rel={item.external ? 'noopener noreferrer' : undefined}
                       style={{
                         color: '#888',
                         textDecoration: 'none',
@@ -155,7 +174,7 @@ export default function Footer() {
                       onMouseEnter={(e) => { ;(e.currentTarget as HTMLElement).style.color = '#E51D24' }}
                       onMouseLeave={(e) => { ;(e.currentTarget as HTMLElement).style.color = '#888' }}
                     >
-                      {item}
+                      {item.label}
                     </a>
                   </li>
                 ))}
