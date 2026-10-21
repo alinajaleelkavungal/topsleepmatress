@@ -883,6 +883,31 @@ const materialPills = [
   { id: 'rebonded', label: 'Rebonded Foam (4)' },
 ]
 
+const stepLabelStyle = {
+  display: 'block',
+  fontSize: '11px',
+  fontWeight: 700,
+  color: '#888',
+  marginBottom: '10px',
+  textTransform: 'uppercase',
+  letterSpacing: '0.1em',
+} as const
+
+function optionStyle(isSelected: boolean) {
+  return {
+    padding: '10px 8px',
+    borderRadius: '4px',
+    border: `1px solid ${isSelected ? '#E51D24' : '#E4E4E4'}`,
+    background: isSelected ? '#FFF5F5' : '#fff',
+    color: isSelected ? '#E51D24' : '#4A4A4A',
+    fontWeight: 600,
+    fontSize: '13px',
+    cursor: 'pointer',
+    textAlign: 'center',
+    transition: 'border-color 0.15s, color 0.15s, background 0.15s',
+  } as const
+}
+
 export default function ProductsSection() {
   const { ref, visible } = useInView()
   const [activeTab, setActiveTab] = useState('all')
@@ -1479,16 +1504,34 @@ export default function ProductsSection() {
 
               {/* Right Column: Size, Style, Thickness Selectors & Live Price */}
               <div>
-                <h4 style={{ fontSize: '18px', fontWeight: 700, color: '#1A1A1A', marginBottom: '16px' }}>
+                <h4
+                  style={{
+                    fontFamily: "'Playfair Display', Georgia, serif",
+                    fontSize: '22px',
+                    fontWeight: 600,
+                    color: '#1A1A1A',
+                    marginBottom: '24px',
+                  }}
+                >
                   Select Dimensions &amp; Construction Style
                 </h4>
 
                 {/* Step 1: Select Style (Standard, Euro Top, Pillow Top) */}
                 <div style={{ marginBottom: '24px' }}>
-                  <label style={{ display: 'block', fontSize: '13px', fontWeight: 700, color: '#555', marginBottom: '8px', textTransform: 'uppercase', letterSpacing: '0.05em' }}>
+                  <label style={stepLabelStyle}>
                     1. Select Construction Style:
                   </label>
-                  <div style={{ display: 'flex', gap: '10px', flexWrap: 'wrap' }}>
+                  <div
+                    style={{
+                      display: 'flex',
+                      flexWrap: 'wrap',
+                      gap: '2px',
+                      padding: '4px',
+                      background: '#fff',
+                      border: '1px solid #E4E4E4',
+                      borderRadius: '6px',
+                    }}
+                  >
                     {selectedProduct.styles.map((style, idx) => {
                       const isSelected = selectedStyleIndex === idx
                       return (
@@ -1502,16 +1545,16 @@ export default function ProductsSection() {
                           }}
                           style={{
                             flex: 1,
-                            minWidth: '120px',
-                            padding: '12px 16px',
-                            borderRadius: '12px',
-                            border: `2px solid ${isSelected ? '#E51D24' : '#E0E0E0'}`,
-                            background: isSelected ? 'rgba(229,29,36,0.04)' : '#fff',
-                            color: isSelected ? '#E51D24' : '#333',
-                            fontWeight: 700,
+                            minWidth: '100px',
+                            padding: '10px 14px',
+                            borderRadius: '4px',
+                            border: 'none',
+                            background: isSelected ? '#1A1A1A' : 'transparent',
+                            color: isSelected ? '#fff' : '#4A4A4A',
+                            fontWeight: 600,
                             fontSize: '14px',
                             cursor: 'pointer',
-                            transition: 'all 0.2s',
+                            transition: 'background 0.2s, color 0.2s',
                           }}
                         >
                           {style.name}
@@ -1523,64 +1566,37 @@ export default function ProductsSection() {
 
                 {/* Step 2: Select Size */}
                 <div style={{ marginBottom: '24px' }}>
-                  <label style={{ display: 'block', fontSize: '13px', fontWeight: 700, color: '#555', marginBottom: '8px', textTransform: 'uppercase', letterSpacing: '0.05em' }}>
+                  <label style={stepLabelStyle}>
                     2. Select Mattress Size (Length x Width in Inches):
                   </label>
-                  <div style={{ display: 'grid', gridTemplateColumns: 'repeat(4, 1fr)', gap: '8px' }} className="sizes-grid">
-                    {selectedProduct.sizes.map((size) => {
-                      const isSelected = selectedSize === size
-                      return (
-                        <button
-                          key={size}
-                          onClick={() => setSelectedSize(size)}
-                          style={{
-                            padding: '10px 8px',
-                            borderRadius: '10px',
-                            border: `1.5px solid ${isSelected ? '#E51D24' : '#E0E0E0'}`,
-                            background: isSelected ? '#E51D24' : '#fff',
-                            color: isSelected ? '#fff' : '#4A4A4A',
-                            fontWeight: 600,
-                            fontSize: '13px',
-                            cursor: 'pointer',
-                            textAlign: 'center',
-                            transition: 'all 0.15s',
-                          }}
-                        >
-                          {size}"
-                        </button>
-                      )
-                    })}
+                  <div style={{ display: 'grid', gridTemplateColumns: 'repeat(4, 1fr)', gap: '6px' }} className="sizes-grid">
+                    {selectedProduct.sizes.map((size) => (
+                      <button
+                        key={size}
+                        onClick={() => setSelectedSize(size)}
+                        style={optionStyle(selectedSize === size)}
+                      >
+                        {size}&quot;
+                      </button>
+                    ))}
                   </div>
                 </div>
 
                 {/* Step 3: Select Thickness */}
-                <div style={{ marginBottom: '32px' }}>
-                  <label style={{ display: 'block', fontSize: '13px', fontWeight: 700, color: '#555', marginBottom: '8px', textTransform: 'uppercase', letterSpacing: '0.05em' }}>
+                <div style={{ marginBottom: '28px' }}>
+                  <label style={stepLabelStyle}>
                     3. Select Thickness:
                   </label>
-                  <div style={{ display: 'flex', gap: '10px', flexWrap: 'wrap' }}>
-                    {activeStyle.thicknesses.map((th) => {
-                      const isSelected = selectedThickness === th
-                      return (
-                        <button
-                          key={th}
-                          onClick={() => setSelectedThickness(th)}
-                          style={{
-                            padding: '10px 20px',
-                            borderRadius: '10px',
-                            border: `1.5px solid ${isSelected ? '#1A1A1A' : '#E0E0E0'}`,
-                            background: isSelected ? '#1A1A1A' : '#fff',
-                            color: isSelected ? '#fff' : '#4A4A4A',
-                            fontWeight: 700,
-                            fontSize: '13px',
-                            cursor: 'pointer',
-                            transition: 'all 0.15s',
-                          }}
-                        >
-                          {th}
-                        </button>
-                      )
-                    })}
+                  <div style={{ display: 'flex', gap: '6px', flexWrap: 'wrap' }}>
+                    {activeStyle.thicknesses.map((th) => (
+                      <button
+                        key={th}
+                        onClick={() => setSelectedThickness(th)}
+                        style={{ ...optionStyle(selectedThickness === th), padding: '10px 18px' }}
+                      >
+                        {th}
+                      </button>
+                    ))}
                   </div>
                 </div>
 
@@ -1588,32 +1604,38 @@ export default function ProductsSection() {
                 <div
                   style={{
                     background: '#1A1A1A',
-                    borderRadius: '18px',
-                    padding: '24px',
+                    borderRadius: '6px',
+                    borderTop: '3px solid #E51D24',
+                    padding: '22px 24px',
                     display: 'flex',
                     alignItems: 'center',
                     justifyContent: 'space-between',
                     flexWrap: 'wrap',
                     gap: '20px',
-                    border: '1px solid rgba(255,255,255,0.08)',
-                    boxShadow: '0 10px 30px rgba(0,0,0,0.15)',
                   }}
                 >
                   <div>
-                    <div style={{ color: '#9CA3AF', fontSize: '11px', fontWeight: 700, textTransform: 'uppercase', letterSpacing: '0.1em', marginBottom: '6px' }}>
+                    <div style={{ color: '#9A9A9A', fontSize: '11px', fontWeight: 700, textTransform: 'uppercase', letterSpacing: '0.12em', marginBottom: '6px' }}>
                       Official Brochure Pricing
                     </div>
-                    <div style={{ display: 'flex', alignItems: 'center', gap: '10px', marginBottom: '6px' }}>
-                      <span style={{ fontSize: '24px', fontWeight: 800, color: '#fff' }}>
+                    <div style={{ display: 'flex', alignItems: 'baseline', flexWrap: 'wrap', gap: '4px 12px', marginBottom: '8px' }}>
+                      <span
+                        style={{
+                          fontFamily: "'Playfair Display', Georgia, serif",
+                          fontSize: '24px',
+                          fontWeight: 600,
+                          color: '#fff',
+                        }}
+                      >
                         Price Details on Request
                       </span>
                       {selectedProduct.warranty && (
-                        <span style={{ background: 'rgba(37, 211, 102, 0.15)', color: '#4ADE80', border: '1px solid rgba(74, 222, 128, 0.3)', fontSize: '11px', fontWeight: 700, padding: '3px 8px', borderRadius: '20px' }}>
+                        <span style={{ color: '#BDBDBD', fontSize: '12px', fontWeight: 600 }}>
                           ✓ {selectedProduct.warranty}
                         </span>
                       )}
                     </div>
-                    <div style={{ color: '#D1D5DB', fontSize: '13px', lineHeight: 1.5 }}>
+                    <div style={{ color: '#BDBDBD', fontSize: '13px', lineHeight: 1.5 }}>
                       Selected: <strong style={{ color: '#fff' }}>{activeStyle.name}</strong> &bull; <strong style={{ color: '#fff' }}>{selectedSize}&quot;</strong> &bull; <strong style={{ color: '#fff' }}>{selectedThickness}</strong>
                     </div>
                   </div>
@@ -1629,24 +1651,21 @@ export default function ProductsSection() {
                     style={{
                       background: '#25D366',
                       color: '#fff',
-                      padding: '14px 28px',
-                      borderRadius: '50px',
-                      fontWeight: 700,
+                      padding: '13px 22px',
+                      borderRadius: '4px',
+                      fontWeight: 600,
                       fontSize: '14px',
                       textDecoration: 'none',
-                      transition: 'all 0.2s ease',
+                      transition: 'background 0.2s ease',
                       display: 'inline-flex',
                       alignItems: 'center',
                       gap: '8px',
-                      boxShadow: '0 6px 20px rgba(37, 211, 102, 0.35)',
                     }}
                     onMouseEnter={(e) => {
-                      ;(e.currentTarget as HTMLElement).style.background = '#20BA5A'
-                      ;(e.currentTarget as HTMLElement).style.transform = 'translateY(-2px)'
+                      ;(e.currentTarget as HTMLElement).style.background = '#1EA952'
                     }}
                     onMouseLeave={(e) => {
                       ;(e.currentTarget as HTMLElement).style.background = '#25D366'
-                      ;(e.currentTarget as HTMLElement).style.transform = 'translateY(0)'
                     }}
                   >
                     <WhatsAppIcon size={18} />
