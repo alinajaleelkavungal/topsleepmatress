@@ -26,8 +26,8 @@ const services = [
   },
   {
     icon: '🛡️',
-    title: 'Up to 10 Years Warranty',
-    desc: 'Top Sleep mattresses come with official manufacturer warranty (10 Years on Helixa series models; up to 7 Years on Semi Medicated, Medicated series, and Bonnell Spring; 5 Years on Pocketed Spring and HR Mattress).',
+    title: 'Up to 15 Years Warranty',
+    desc: 'Top Sleep mattresses come with official manufacturer warranty (15 Years on Helixa series models; 10 Years on Medicated, Medicated Memory, and Medicated Latex; 5 Years on Bonnell Spring, Pocketed Spring, and HR Mattress; 4 Years on Semi Medicated).',
     tag: 'Official Warranty',
     accent: '#E51D24',
   },

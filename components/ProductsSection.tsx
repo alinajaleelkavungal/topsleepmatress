@@ -79,7 +79,7 @@ export const products: Product[] = [
     description:
       'Engineered for therapeutic spinal alignment and back relief, combining a heavy-duty High-Density Rebonded Foam core with a resilient pin-core Natural Latex comfort layer, enveloped in breathable, organic Bamboo Fabric.',
     seriesBadge: 'Orthopaedic Natural Latex',
-    warranty: '7 Years Warranty',
+    warranty: '10 Years Warranty',
     warrantyBadgeColor: '#C2410C',
     image: '/images/products/medicated_latex.jpg',
     imagePosition: 'right center',
@@ -157,7 +157,7 @@ export const products: Product[] = [
     description:
       'Engineered for advanced orthopaedic spinal posture and body relief, pairing a high-density rebonded foam foundation with an adaptive memory foam layer that contours to pressure points, wrapped in breathable, skin-friendly Bamboo Fabric.',
     seriesBadge: 'Orthopaedic Memory',
-    warranty: '7 Years Warranty',
+    warranty: '10 Years Warranty',
     warrantyBadgeColor: '#1E40AF',
     image: '/images/products/medicated_memory.jpg',
     basePrice: 14200,
@@ -234,7 +234,7 @@ export const products: Product[] = [
     description:
       'Engineered for deep healing rest and postural relief. Features High-Density Rebonded Foam core topped with plush Super Soft Foam that cradles pressure points, encased in breathable, hypoallergenic Organic Knitted Fabric.',
     seriesBadge: 'Medicated Ortho',
-    warranty: '5 Years Warranty',
+    warranty: '10 Years Warranty',
     warrantyBadgeColor: '#E51D24',
     image: '/images/products/medicated.jpg',
     imagePosition: 'right center',
@@ -312,6 +312,7 @@ export const products: Product[] = [
     description:
       'Engineered for orthopaedic spine alignment and rejuvenating rest. Built with High-Density Rebonded Foam, resilient EPE support, and contouring Comfort Foam, encased in breathable Organic Knitted Fabric that keeps you cool and fresh.',
     seriesBadge: 'Semi Medicated',
+    warranty: '4 Years Warranty',
     warrantyBadgeColor: '#E51D24',
     image: '/images/products/semi_medicated.jpg',
     imagePosition: 'right center',
@@ -393,7 +394,7 @@ export const products: Product[] = [
     description:
       'Combining pin-core responsive natural latex with a high-resilience Helixa foam core and breathable bamboo fabric cover for buoyant spinal alignment, supreme pressure distribution, and organic comfort.',
     seriesBadge: 'Natural Latex Core',
-    warranty: '10 Years Warranty',
+    warranty: '15 Years Warranty',
     warrantyBadgeColor: '#15803D',
     image: '/images/products/helixa_latex.jpg',
     basePrice: 13800,
@@ -470,7 +471,7 @@ export const products: Product[] = [
     description:
       'Crafted with body-contouring Memory Foam that adapts dynamically to your posture, supported by a high-resilience aerated Helixa Foam core and encased in naturally breathable, eco-friendly Bamboo Fabric.',
     seriesBadge: 'Bamboo Memory Foam',
-    warranty: '10 Years Warranty',
+    warranty: '15 Years Warranty',
     warrantyBadgeColor: '#2B8A3E',
     image: '/images/products/helixa_memory.jpg',
     basePrice: 12900,
@@ -547,7 +548,7 @@ export const products: Product[] = [
     description:
       'Engineered with an aerated High-Resilience Helixa foam core that provides superior airflow, pressure relief, and spinal alignment, cushioned by a plush Super Soft layer and wrapped in breathable Organic Knitted Fabric.',
     seriesBadge: 'Helixa Airflow Core',
-    warranty: '10 Years Warranty',
+    warranty: '15 Years Warranty',
     warrantyBadgeColor: '#C2410C',
     image: '/images/products/helixa_mattress.jpg',
     basePrice: 11500,
@@ -624,7 +625,7 @@ export const products: Product[] = [
     description:
       'Engineered with an interconnected Bonnell spring system, cushioned comfort layer, protective felt insulation, and high-density base foam, all wrapped in breathable Organic Knitted Fabric for exceptional spinal alignment and long-lasting durability.',
     seriesBadge: 'Bonnell Spring System',
-    warranty: '7 Years Warranty',
+    warranty: '5 Years Warranty',
     warrantyBadgeColor: '#E51D24',
     image: '/images/products/bonnell_spring.jpg',
     basePrice: 10982,

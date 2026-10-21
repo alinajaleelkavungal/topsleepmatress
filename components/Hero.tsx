@@ -4,14 +4,14 @@ import Image from 'next/image'
 import { useEffect, useState } from 'react'
 
 const trustBadges = [
-  { icon: '🛡️', title: 'Up to 10 Years Warranty', sub: 'Comprehensive coverage', iconBg: '#F0F7FF' },
+  { icon: '🛡️', title: 'Up to 15 Years Warranty', sub: 'Comprehensive coverage', iconBg: '#F0F7FF' },
   { icon: '🔬', title: 'Anti-Dust Mite & Fungus', sub: 'Hypoallergenic certified', iconBg: '#F0F9FF' },
   { icon: '💤', title: 'Zero Disturbance', sub: 'Independent pocket springs', iconBg: '#FFF5F5' },
   { icon: '🚚', title: 'Doorstep Delivery Available', sub: 'Across all major cities', iconBg: '#F8FAFC' },
 ]
 
 const slides = [
-  { src: '/images/hero.png', alt: 'TopSleep Premium Luxury Mattress', pill: '7 Years Full Warranty', icon: '😴', title: 'Medical & Orthopaedic', sub: 'Certified Back Pain Relief' },
+  { src: '/images/hero.png', alt: 'TopSleep Premium Luxury Mattress', pill: '10 Years Full Warranty', icon: '😴', title: 'Medical & Orthopaedic', sub: 'Certified Back Pain Relief' },
   { src: '/images/products/medicated_memory.jpg', alt: 'Medicated Memory Foam Mattress', pill: 'Orthopaedic Memory', icon: '🧠', title: 'Medicated Memory Foam', sub: 'Contours to Every Pressure Point' },
   { src: '/images/products/helixa_latex.jpg', alt: 'Helixa Latex Mattress', pill: 'Natural Latex', icon: '🌿', title: 'Helixa Natural Latex', sub: 'Buoyant, Breathable Comfort' },
   { src: '/images/products/pocketed_spring.jpg', alt: 'Pocketed Spring Mattress', pill: 'Zero Disturbance', icon: '💤', title: 'Pocketed Spring', sub: 'Independent Spring Support' },
