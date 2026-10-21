@@ -31,7 +31,7 @@ export default function Hero() {
   useEffect(() => {
     const id = setInterval(() => setActive((i) => (i + 1) % slides.length), 4000)
     return () => clearInterval(id)
-  }, [])
+  }, [active])
 
   const slide = slides[active]
 
@@ -94,42 +94,26 @@ export default function Hero() {
         className="hero-grid"
       >
         {/* LEFT: Image Showcase */}
-        <div
+        <figure
           className="hero-image-col"
           style={{
-            position: 'relative',
+            width: '100%',
+            maxWidth: '560px',
+            justifySelf: 'center',
             opacity: visible ? 1 : 0,
-            transform: visible ? 'translateX(0) scale(1)' : 'translateX(-24px) scale(0.97)',
-            transition: 'all 0.9s cubic-bezier(0.16, 1, 0.3, 1) 0.1s',
-            display: 'flex',
-            alignItems: 'center',
-            justifyContent: 'center',
+            transform: visible ? 'translateY(0)' : 'translateY(16px)',
+            transition: 'opacity 0.8s ease 0.1s, transform 0.8s ease 0.1s',
           }}
         >
-          {/* Subtle architectural halo accent */}
-          <div
-            style={{
-              position: 'absolute',
-              inset: '-10px',
-              borderRadius: '30px',
-              background: 'linear-gradient(135deg, rgba(229, 29, 36, 0.07) 0%, rgba(229, 29, 36, 0.02) 100%)',
-              border: '1px solid rgba(229, 29, 36, 0.14)',
-              pointerEvents: 'none',
-            }}
-          />
-
           {/* Main Image Frame */}
           <div
             style={{
               width: '100%',
-              maxWidth: '540px',
               aspectRatio: '4/3',
-              borderRadius: '24px',
+              borderRadius: '6px',
               overflow: 'hidden',
-              boxShadow: '0 25px 60px -12px rgba(0,0,0,0.13), 0 10px 25px -6px rgba(229,29,36,0.10)',
               position: 'relative',
-              border: '1px solid rgba(229, 29, 36, 0.16)',
-              background: '#fff',
+              background: '#F1F1F1',
             }}
           >
             {slides.map((s, i) => (
@@ -138,7 +122,7 @@ export default function Hero() {
                 src={s.src}
                 alt={s.alt}
                 fill
-                sizes="540px"
+                sizes="(max-width: 990px) 100vw, 560px"
                 style={{
                   objectFit: 'cover',
                   opacity: i === active ? 1 : 0,
@@ -148,54 +132,100 @@ export default function Hero() {
               />
             ))}
 
-            {/* Overlay badge 1: Top Right Warranty Pill */}
+            {/* Slide tag */}
             <div
               style={{
                 position: 'absolute',
-                top: '16px',
-                right: '16px',
-                background: '#E51D24',
-                borderRadius: '4px',
-                padding: '6px 12px',
-                color: '#fff',
+                top: 0,
+                left: 0,
+                background: '#fff',
+                borderBottomRightRadius: '6px',
+                padding: '8px 14px',
+                color: '#1A1A1A',
                 fontSize: '11px',
                 fontWeight: 700,
-                letterSpacing: '0.08em',
+                letterSpacing: '0.1em',
                 textTransform: 'uppercase',
-              }}
-            >
-              {slide.pill}
-            </div>
-
-            {/* Overlay badge 2: Bottom Orthopaedic Glass Card */}
-            <div
-              style={{
-                position: 'absolute',
-                bottom: '16px',
-                left: '16px',
-                right: '16px',
-                background: '#fff',
-                borderRadius: '4px',
-                borderLeft: '3px solid #E51D24',
-                padding: '10px 14px',
                 display: 'flex',
                 alignItems: 'center',
-                justifyContent: 'space-between',
+                gap: '8px',
               }}
             >
-              <div style={{ display: 'flex', alignItems: 'center', gap: '10px' }}>
-                <div>
-                  <div style={{ fontWeight: 700, color: '#1A1A1A', fontSize: '13px', lineHeight: 1.2 }}>
-                    {slide.title}
-                  </div>
-                  <div style={{ color: '#E51D24', fontWeight: 800, fontSize: '14px', lineHeight: 1.2 }}>
-                    {slide.sub}
-                  </div>
-                </div>
-              </div>
+              <span style={{ width: '6px', height: '6px', borderRadius: '50%', background: '#E51D24' }} />
+              {slide.pill}
             </div>
           </div>
-        </div>
+
+          {/* Caption */}
+          <figcaption
+            style={{
+              display: 'flex',
+              alignItems: 'flex-end',
+              justifyContent: 'space-between',
+              gap: '16px',
+              marginTop: '16px',
+              textAlign: 'left',
+            }}
+          >
+            <div>
+              <div
+                style={{
+                  fontFamily: "'Playfair Display', Georgia, serif",
+                  fontSize: '20px',
+                  fontWeight: 600,
+                  color: '#1A1A1A',
+                  lineHeight: 1.25,
+                }}
+              >
+                {slide.title}
+              </div>
+              <div style={{ color: '#6B6B6B', fontSize: '14px', marginTop: '2px' }}>{slide.sub}</div>
+            </div>
+            <div
+              style={{
+                fontSize: '13px',
+                fontWeight: 600,
+                color: '#9A9A9A',
+                fontVariantNumeric: 'tabular-nums',
+                whiteSpace: 'nowrap',
+              }}
+            >
+              <span style={{ color: '#1A1A1A' }}>{String(active + 1).padStart(2, '0')}</span> / {String(slides.length).padStart(2, '0')}
+            </div>
+          </figcaption>
+
+          {/* Slide indicators */}
+          <div style={{ display: 'flex', gap: '6px', marginTop: '14px' }}>
+            {slides.map((s, i) => (
+              <button
+                key={s.src}
+                type="button"
+                onClick={() => setActive(i)}
+                aria-label={`Show ${s.title}`}
+                style={{
+                  flex: 1,
+                  height: '14px',
+                  padding: 0,
+                  border: 'none',
+                  background: 'transparent',
+                  cursor: 'pointer',
+                  display: 'flex',
+                  alignItems: 'center',
+                }}
+              >
+                <span
+                  style={{
+                    display: 'block',
+                    width: '100%',
+                    height: '2px',
+                    background: i === active ? '#E51D24' : '#DCDCDC',
+                    transition: 'background 0.3s ease',
+                  }}
+                />
+              </button>
+            ))}
+          </div>
+        </figure>
 
         {/* RIGHT: Writings & Call to Action */}
         <div
