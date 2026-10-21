@@ -250,7 +250,6 @@ export default function Hero() {
               boxShadow: '0 2px 8px rgba(229,29,36,0.04)',
             }}
           >
-            <span style={{ fontSize: '12px' }}>✦</span>
             <span>Luxury Mattress Collection</span>
           </div>
 
@@ -404,32 +403,14 @@ export default function Hero() {
               <div
                 key={badge.title}
                 style={{
-                  display: 'flex',
-                  alignItems: 'center',
-                  gap: '10px',
-                  background: 'rgba(255, 255, 255, 0.90)',
-                  padding: '9px 12px',
-                  borderRadius: '12px',
-                  border: '1px solid #EAEAEA',
-                  boxShadow: '0 2px 6px rgba(0,0,0,0.02)',
-                  transition: 'all 0.2s ease',
+                  background: '#fff',
+                  padding: '10px 14px',
+                  borderRadius: '4px',
+                  border: '1px solid #E4E4E4',
+                  borderLeft: '2px solid #E51D24',
+                  textAlign: 'left',
                 }}
               >
-                <div
-                  style={{
-                    width: '32px',
-                    height: '32px',
-                    borderRadius: '8px',
-                    background: badge.iconBg,
-                    display: 'flex',
-                    alignItems: 'center',
-                    justifyContent: 'center',
-                    fontSize: '16px',
-                    flexShrink: 0,
-                  }}
-                >
-                  {badge.icon}
-                </div>
                 <div>
                   <div style={{ color: '#1A1A1A', fontSize: '12px', fontWeight: 700, lineHeight: 1.25 }}>
                     {badge.title}

@@ -867,7 +867,7 @@ export const collectionSections: CollectionSection[] = [
 ]
 
 const collectionTabs = [
-  { id: 'all', label: 'All Models', count: 10, icon: '✦' },
+  { id: 'all', label: 'All Models', count: 10, icon: '' },
   { id: 'medicated', label: 'Medicated Ortho', count: 4, icon: '🏥' },
   { id: 'helixa', label: 'Helixa Series', count: 3, icon: '🌿' },
   { id: 'spring', label: 'Spring Systems', count: 2, icon: '🌀' },
@@ -984,7 +984,7 @@ export default function ProductsSection() {
                 marginBottom: '14px',
               }}
             >
-              ✦ Official Brochure Collection &bull; 10 Signature Models
+              Official Brochure Collection &bull; 10 Signature Models
             </span>
             <h2
               style={{
@@ -1031,7 +1031,7 @@ export default function ProductsSection() {
                     boxShadow: isActive ? '0 4px 12px rgba(229,29,36,0.2)' : 'none',
                   }}
                 >
-                  <span>{tab.icon}</span>
+                  {tab.icon && <span>{tab.icon}</span>}
                   <span>{tab.label}</span>
                   <span
                     style={{
@@ -1137,12 +1137,11 @@ export default function ProductsSection() {
                       justifyContent: 'space-between',
                       flexWrap: 'wrap',
                       gap: '12px',
-                      padding: '16px 24px',
+                      padding: '18px 24px',
                       background: '#FFFFFF',
-                      borderRadius: '16px',
-                      borderLeft: '4px solid #E51D24',
-                      border: '1px solid #ECECEC',
-                      boxShadow: '0 2px 8px rgba(0,0,0,0.02)',
+                      borderRadius: '6px',
+                      border: '1px solid #E4E4E4',
+                      borderLeft: '3px solid #E51D24',
                     }}
                   >
                     <div>
@@ -1316,10 +1315,9 @@ export default function ProductsSection() {
             className="product-detail-card"
             style={{
               background: '#fff',
-              borderRadius: '24px',
-              border: '2px solid #F0F0F0',
+              borderRadius: '8px',
+              border: '1px solid #E4E4E4',
               padding: '40px',
-              boxShadow: '0 12px 48px rgba(0,0,0,0.06)',
               marginBottom: '32px',
             }}
           >
@@ -1748,13 +1746,13 @@ function ProductCard({
       onMouseLeave={() => setHovered(false)}
       style={{
         background: '#fff',
-        borderRadius: '20px',
+        borderRadius: '6px',
         overflow: 'hidden',
         cursor: 'pointer',
-        border: `2px solid ${selected ? '#E51D24' : hovered ? '#E51D24' : '#F0F0F0'}`,
-        transition: 'all 0.3s cubic-bezier(0.16, 1, 0.3, 1)',
-        transform: hovered ? 'translateY(-6px)' : 'translateY(0)',
-        boxShadow: hovered || selected ? '0 20px 60px rgba(229,29,36,0.15)' : '0 2px 12px rgba(0,0,0,0.05)',
+        border: `1px solid ${selected ? '#E51D24' : hovered ? '#1A1A1A' : '#E4E4E4'}`,
+        boxShadow: selected ? 'inset 0 0 0 1px #E51D24' : 'none',
+        transition: 'border-color 0.25s ease, opacity 0.6s ease',
+        transitionDelay: visible ? '0s' : `${index * 0.05}s`,
         opacity: visible ? 1 : 0,
         display: 'flex',
         flexDirection: 'column',
@@ -1764,65 +1762,59 @@ function ProductCard({
       <div
         style={{
           position: 'relative',
-          background: '#FFFFFF',
+          background: '#F4F4F4',
           height: '240px',
-          display: 'flex',
-          alignItems: 'center',
-          justifyContent: 'center',
           overflow: 'hidden',
-          padding: '0px',
-          borderBottom: '1px solid #F0F0F0',
         }}
       >
-        <div style={{ position: 'relative', width: '100%', height: '100%' }}>
-          <Image
-            src={product.image}
-            alt={product.name}
-            fill
-            sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 25vw"
-            style={{
-              objectFit: 'cover',
-              transition: 'transform 0.4s',
-              transform: hovered ? 'scale(1.04)' : 'scale(1)',
-            }}
-          />
-        </div>
-        {/* Warranty Badge */}
-        {product.warranty && (
-        <span
+        <Image
+          src={product.image}
+          alt={product.name}
+          fill
+          sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 25vw"
           style={{
-            position: 'absolute',
-            top: '12px',
-            left: '12px',
-            zIndex: 2,
-            background: product.warrantyBadgeColor,
-            color: '#fff',
-            fontSize: '10px',
-            fontWeight: 700,
-            padding: '3px 9px',
-            borderRadius: '50px',
-            letterSpacing: '0.04em',
-            boxShadow: '0 2px 8px rgba(0,0,0,0.15)',
+            objectFit: 'cover',
+            transition: 'transform 0.6s ease',
+            transform: hovered ? 'scale(1.03)' : 'scale(1)',
           }}
-        >
-          {product.warranty}
-        </span>
+        />
+        {/* Warranty tag */}
+        {product.warranty && (
+          <span
+            style={{
+              position: 'absolute',
+              left: 0,
+              bottom: 0,
+              zIndex: 2,
+              background: '#fff',
+              color: '#1A1A1A',
+              fontSize: '11px',
+              fontWeight: 700,
+              padding: '6px 10px 6px 12px',
+              borderTopRightRadius: '4px',
+              display: 'inline-flex',
+              alignItems: 'center',
+              gap: '6px',
+            }}
+          >
+            <span style={{ width: '6px', height: '6px', borderRadius: '50%', background: product.warrantyBadgeColor }} />
+            {product.warranty}
+          </span>
         )}
         {selected && (
           <span
             style={{
               position: 'absolute',
-              top: '12px',
-              right: '12px',
+              top: 0,
+              right: 0,
               zIndex: 2,
               background: '#E51D24',
               color: '#fff',
-              fontSize: '10px',
+              fontSize: '11px',
               fontWeight: 700,
-              padding: '3px 9px',
-              borderRadius: '50px',
+              padding: '6px 10px',
+              borderBottomLeftRadius: '4px',
               letterSpacing: '0.04em',
-              boxShadow: '0 2px 8px rgba(229,29,36,0.3)',
             }}
           >
             Active ✓
@@ -1831,90 +1823,78 @@ function ProductCard({
       </div>
 
       {/* Info */}
-      <div style={{ padding: '20px', display: 'flex', flexDirection: 'column', flex: 1 }}>
-        <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', marginBottom: '8px' }}>
-          <span
-            style={{
-              fontSize: '10px',
-              fontWeight: 700,
-              color: '#E51D24',
-              textTransform: 'uppercase',
-              letterSpacing: '0.08em',
-              background: 'rgba(229,29,36,0.08)',
-              padding: '3px 8px',
-              borderRadius: '50px',
-            }}
-          >
-            {product.category}
-          </span>
-          <span style={{ fontSize: '10px', fontWeight: 600, color: '#888' }}>
-            {product.seriesBadge}
-          </span>
+      <div style={{ padding: '20px 20px 18px', display: 'flex', flexDirection: 'column', flex: 1 }}>
+        <div
+          style={{
+            display: 'flex',
+            alignItems: 'baseline',
+            justifyContent: 'space-between',
+            gap: '10px',
+            marginBottom: '10px',
+            fontSize: '10px',
+            fontWeight: 700,
+            textTransform: 'uppercase',
+            letterSpacing: '0.1em',
+          }}
+        >
+          <span style={{ color: '#E51D24' }}>{product.category}</span>
+          <span style={{ color: '#9A9A9A', textAlign: 'right' }}>{product.seriesBadge}</span>
         </div>
 
-        <h3 style={{ fontSize: '18px', fontWeight: 700, color: '#1A1A1A', marginBottom: '6px' }}>
+        <h3
+          style={{
+            fontFamily: "'Playfair Display', Georgia, serif",
+            fontSize: '22px',
+            fontWeight: 600,
+            color: '#1A1A1A',
+            marginBottom: '6px',
+            lineHeight: 1.2,
+          }}
+        >
           {product.name}
         </h3>
-        <p style={{ fontSize: '12px', color: '#666', marginBottom: '12px', lineHeight: 1.5 }}>
+        <p style={{ fontSize: '13px', color: '#666', marginBottom: '14px', lineHeight: 1.55 }}>
           {product.tagline}
         </p>
 
-        {/* Materials Chips */}
-        <div style={{ display: 'flex', gap: '5px', flexWrap: 'wrap', marginBottom: '14px' }}>
-          {product.materials.map((m) => (
-            <span
-              key={m.name}
-              style={{
-                fontSize: '10px',
-                fontWeight: 600,
-                background: '#F5F5F7',
-                color: '#374151',
-                padding: '2px 7px',
-                borderRadius: '6px',
-                border: '1px solid #E5E7EB',
-                display: 'inline-flex',
-                alignItems: 'center',
-                gap: '4px',
-              }}
-            >
-              <span style={{ color: '#E51D24', fontSize: '7px' }}>●</span>
-              {m.name}
-            </span>
-          ))}
-        </div>
+        {/* Materials */}
+        <p style={{ fontSize: '12px', fontWeight: 600, color: '#333', marginBottom: '14px', lineHeight: 1.5 }}>
+          {product.materials.map((m) => m.name).join('  ·  ')}
+        </p>
 
         {/* Feature bullets */}
-        <ul style={{ listStyle: 'none', padding: 0, margin: '0 0 16px', display: 'flex', flexDirection: 'column', gap: '5px' }}>
+        <ul
+          style={{
+            listStyle: 'none',
+            padding: '12px 0 0',
+            margin: '0 0 18px',
+            display: 'flex',
+            flexDirection: 'column',
+            gap: '6px',
+            borderTop: '1px solid #EFEFEF',
+          }}
+        >
           {product.features.slice(0, 2).map((feat, idx) => (
-            <li key={idx} style={{ fontSize: '11px', color: '#555', display: 'flex', alignItems: 'flex-start', gap: '5px', lineHeight: 1.4 }}>
-              <span style={{ color: '#E51D24', fontWeight: 700 }}>✓</span>
+            <li key={idx} style={{ fontSize: '12px', color: '#555', display: 'flex', alignItems: 'flex-start', gap: '8px', lineHeight: 1.5 }}>
+              <span style={{ color: '#E51D24', flexShrink: 0 }}>—</span>
               <span>{feat}</span>
             </li>
           ))}
         </ul>
 
         {/* Price on Request & Action */}
-        <div style={{ marginTop: 'auto', paddingTop: '14px', borderTop: '1px solid #F0F0F0' }}>
-          <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', marginBottom: '14px' }}>
-            <span
-              style={{
-                display: 'inline-flex',
-                alignItems: 'center',
-                gap: '5px',
-                fontSize: '12px',
-                fontWeight: 600,
-                color: '#166534',
-                background: '#F0FDF4',
-                padding: '4px 10px',
-                borderRadius: '20px',
-                border: '1px solid #DCFCE7',
-              }}
-            >
-              <span>🏷️</span> Price on Request
-            </span>
-            <span style={{ fontSize: '12px', color: '#666', background: '#F5F5F5', padding: '3px 8px', borderRadius: '6px' }}>
-              {product.styles.length} Styles Available
-            </span>
+        <div style={{ marginTop: 'auto' }}>
+          <div
+            style={{
+              display: 'flex',
+              alignItems: 'center',
+              justifyContent: 'space-between',
+              marginBottom: '12px',
+              fontSize: '12px',
+            }}
+          >
+            <span style={{ fontWeight: 700, color: '#1A1A1A' }}>Price on Request</span>
+            <span style={{ color: '#888' }}>{product.styles.length} Styles Available</span>
           </div>
 
           <div style={{ display: 'flex', gap: '8px' }}>
@@ -1927,14 +1907,14 @@ function ProductCard({
               }}
               style={{
                 padding: '11px 14px',
-                background: selected ? '#FFF0F0' : '#FAFAFA',
-                color: selected ? '#E51D24' : '#4B5563',
-                border: `1.5px solid ${selected ? '#E51D24' : '#E5E7EB'}`,
-                borderRadius: '10px',
+                background: '#fff',
+                color: selected ? '#E51D24' : '#1A1A1A',
+                border: `1px solid ${selected ? '#E51D24' : '#D6D6D6'}`,
+                borderRadius: '4px',
                 fontWeight: 600,
                 fontSize: '12px',
                 cursor: 'pointer',
-                transition: 'all 0.2s',
+                transition: 'border-color 0.2s',
                 whiteSpace: 'nowrap',
               }}
             >
@@ -1950,29 +1930,26 @@ function ProductCard({
               style={{
                 flex: 1,
                 padding: '11px 14px',
-                background: '#25D366',
+                background: '#1A1A1A',
                 color: '#fff',
-                borderRadius: '10px',
-                fontWeight: 700,
+                borderRadius: '4px',
+                fontWeight: 600,
                 fontSize: '13px',
                 textDecoration: 'none',
                 display: 'inline-flex',
                 alignItems: 'center',
                 justifyContent: 'center',
                 gap: '7px',
-                boxShadow: '0 4px 14px rgba(37, 211, 102, 0.25)',
-                transition: 'all 0.2s ease',
+                transition: 'background 0.2s ease',
               }}
               onMouseEnter={(e) => {
-                ;(e.currentTarget as HTMLElement).style.background = '#20BA5A'
-                ;(e.currentTarget as HTMLElement).style.transform = 'translateY(-1px)'
+                ;(e.currentTarget as HTMLElement).style.background = '#25D366'
               }}
               onMouseLeave={(e) => {
-                ;(e.currentTarget as HTMLElement).style.background = '#25D366'
-                ;(e.currentTarget as HTMLElement).style.transform = 'translateY(0)'
+                ;(e.currentTarget as HTMLElement).style.background = '#1A1A1A'
               }}
             >
-              <WhatsAppIcon size={16} />
+              <WhatsAppIcon size={15} />
               <span>Price Details</span>
             </a>
           </div>

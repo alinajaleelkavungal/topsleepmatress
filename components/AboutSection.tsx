@@ -57,7 +57,7 @@ export default function AboutSection() {
                 marginBottom: '16px',
               }}
             >
-              ✦ About Top Sleep
+              About Top Sleep
             </span>
             <h2
               style={{

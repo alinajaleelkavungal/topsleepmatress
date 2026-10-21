@@ -1,7 +1,9 @@
 'use client'
 
 import { useEffect, useRef, useState } from 'react'
+import { Mail, MapPin } from 'lucide-react'
 import PhoneIcon from './PhoneIcon'
+import { WhatsAppIcon } from './ProductsSection'
 
 function useInView(threshold = 0.1) {
   const ref = useRef<HTMLElement>(null)
@@ -77,7 +79,7 @@ export default function ContactSection() {
               marginBottom: '14px',
             }}
           >
-            ✦ Get In Touch
+            Get In Touch
           </span>
           <h2
             style={{
@@ -114,11 +116,11 @@ export default function ContactSection() {
           <div
             className="contact-card"
             style={{
-              background: 'linear-gradient(135deg, #E51D24 0%, #B71218 100%)',
-              borderRadius: '24px',
+              background: '#1A1A1A',
+              borderRadius: '8px',
+              borderTop: '3px solid #E51D24',
               padding: '48px 40px',
               color: '#fff',
-              boxShadow: '0 20px 48px rgba(229,29,36,0.25)',
             }}
           >
             <h3
@@ -136,18 +138,19 @@ export default function ContactSection() {
             </p>
 
             {[
-              { icon: '💬', title: 'WhatsApp Support', detail: '+91 9061612539', href: 'https://wa.me/919061612539' },
-              { icon: <PhoneIcon size={20} />, title: 'Direct Phone / Call', detail: '+91 98473 17211', href: 'tel:+919847317211' },
-              { icon: '✉️', title: 'Email Support', detail: 'topglobalgroup1@gmail.com', href: 'mailto:topglobalgroup1@gmail.com' },
-              { icon: '📍', title: 'Corporate Office', detail: 'Top Sleep Mattress Headquarters, India', extra: '+91 99468 62203' },
+              { icon: <WhatsAppIcon size={17} />, title: 'WhatsApp Support', detail: '+91 9061612539', href: 'https://wa.me/919061612539' },
+              { icon: <PhoneIcon size={17} />, title: 'Direct Phone / Call', detail: '+91 98473 17211', href: 'tel:+919847317211' },
+              { icon: <Mail size={17} strokeWidth={1.75} />, title: 'Email Support', detail: 'topglobalgroup1@gmail.com', href: 'mailto:topglobalgroup1@gmail.com' },
+              { icon: <MapPin size={17} strokeWidth={1.75} />, title: 'Corporate Office', detail: 'Top Sleep Mattress Headquarters, India', extra: '+91 99468 62203' },
             ].map((item) => (
-              <div key={item.title} style={{ display: 'flex', gap: '16px', marginBottom: '24px' }}>
+              <div key={item.title} style={{ display: 'flex', gap: '16px', paddingBottom: '18px', marginBottom: '18px', borderBottom: '1px solid rgba(255,255,255,0.10)' }}>
                 <div
                   style={{
-                    width: '42px',
-                    height: '42px',
-                    background: 'rgba(255,255,255,0.18)',
-                    borderRadius: '12px',
+                    width: '40px',
+                    height: '40px',
+                    border: '1px solid rgba(255,255,255,0.18)',
+                    color: 'rgba(255,255,255,0.75)',
+                    borderRadius: '4px',
                     display: 'flex',
                     alignItems: 'center',
                     justifyContent: 'center',
@@ -250,10 +253,10 @@ export default function ContactSection() {
           <div
             className="contact-card"
             style={{
-              background: '#FAF9F9',
-              borderRadius: '24px',
+              background: '#fff',
+              borderRadius: '8px',
               padding: '44px 40px',
-              border: '1.5px solid #F0F0F0',
+              border: '1px solid #E4E4E4',
             }}
           >
             {submitted ? (

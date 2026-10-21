@@ -96,7 +96,7 @@ export default function ServicesSection() {
               marginBottom: '14px',
             }}
           >
-            ✦ Engineered For Your Well-Being
+            Engineered For Your Well-Being
           </span>
           <h2
             style={{
@@ -153,77 +153,80 @@ function ServiceCard({
   visible: boolean
 }) {
   const [hovered, setHovered] = useState(false)
-  const isFeatured = index === 0 || index === 1
 
   return (
     <div
       onMouseEnter={() => setHovered(true)}
       onMouseLeave={() => setHovered(false)}
       style={{
-        background: hovered ? '#E51D24' : isFeatured ? '#FFF8F8' : '#fff',
-        border: `1.5px solid ${hovered ? '#E51D24' : '#EBEBEB'}`,
-        borderRadius: '20px',
-        padding: '36px 32px',
+        background: '#fff',
+        border: `1px solid ${hovered ? '#1A1A1A' : '#E4E4E4'}`,
+        borderRadius: '6px',
+        padding: '32px 28px 28px',
         cursor: 'default',
-        transition: 'all 0.35s cubic-bezier(0.16, 1, 0.3, 1)',
-        transitionDelay: `${index * 0.07}s`,
-        transform: hovered ? 'translateY(-6px)' : 'translateY(0)',
-        boxShadow: hovered ? '0 20px 60px rgba(229,29,36,0.20)' : '0 2px 12px rgba(0,0,0,0.04)',
+        transition: 'border-color 0.25s ease, opacity 0.6s ease',
+        transitionDelay: visible ? '0s' : `${index * 0.07}s`,
         opacity: visible ? 1 : 0,
         position: 'relative',
         overflow: 'hidden',
       }}
     >
-      {/* Tag */}
+      {/* Top accent line */}
       <span
         style={{
-          display: 'inline-block',
-          background: hovered
-            ? 'rgba(255,255,255,0.20)'
-            : service.accent === '#1D4ED8'
-            ? 'rgba(29, 78, 216, 0.08)'
-            : 'rgba(229,29,36,0.10)',
-          color: hovered
-            ? '#fff'
-            : service.accent === '#1D4ED8'
-            ? '#1D4ED8'
-            : '#E51D24',
-          border: hovered
-            ? 'none'
-            : service.accent === '#1D4ED8'
-            ? '1px solid rgba(29, 78, 216, 0.22)'
-            : 'none',
-          fontSize: '11px',
-          fontWeight: 700,
-          letterSpacing: '0.1em',
-          textTransform: 'uppercase',
-          padding: '4px 12px',
-          borderRadius: '50px',
-          marginBottom: '20px',
+          position: 'absolute',
+          top: 0,
+          left: 0,
+          height: '3px',
+          width: hovered ? '100%' : '48px',
+          background: service.accent,
+          transition: 'width 0.4s ease',
         }}
-      >
-        {service.tag}
-      </span>
+      />
 
-      {/* Icon */}
+      {/* Number + tag */}
       <div
         style={{
-          fontSize: '40px',
-          marginBottom: '16px',
-          lineHeight: 1,
+          display: 'flex',
+          alignItems: 'baseline',
+          justifyContent: 'space-between',
+          gap: '12px',
+          marginBottom: '28px',
         }}
       >
-        {service.icon}
+        <span
+          style={{
+            fontFamily: "'Playfair Display', Georgia, serif",
+            fontSize: '28px',
+            fontWeight: 600,
+            color: '#D4D4D4',
+            lineHeight: 1,
+          }}
+        >
+          {String(index + 1).padStart(2, '0')}
+        </span>
+        <span
+          style={{
+            color: service.accent,
+            fontSize: '11px',
+            fontWeight: 700,
+            letterSpacing: '0.12em',
+            textTransform: 'uppercase',
+          }}
+        >
+          {service.tag}
+        </span>
       </div>
 
       {/* Title */}
       <h3
         style={{
-          fontSize: '20px',
-          fontWeight: 700,
-          color: hovered ? '#fff' : '#1A1A1A',
+          fontFamily: "'Playfair Display', Georgia, serif",
+          fontSize: '22px',
+          fontWeight: 600,
+          color: '#1A1A1A',
           marginBottom: '12px',
-          transition: 'color 0.2s',
+          lineHeight: 1.25,
         }}
       >
         {service.title}
@@ -233,29 +236,29 @@ function ServiceCard({
       <p
         style={{
           fontSize: '14px',
-          color: hovered ? 'rgba(255,255,255,0.85)' : '#6B6B6B',
-          lineHeight: 1.7,
-          transition: 'color 0.2s',
+          color: '#5F5F5F',
+          lineHeight: 1.75,
         }}
       >
         {service.desc}
       </p>
 
-      {/* Bottom arrow */}
+      {/* Bottom link */}
       <div
         style={{
           marginTop: '24px',
+          paddingTop: '16px',
+          borderTop: '1px solid #EFEFEF',
           display: 'flex',
           alignItems: 'center',
           gap: '6px',
           fontSize: '13px',
           fontWeight: 600,
-          color: hovered ? 'rgba(255,255,255,0.90)' : '#E51D24',
-          transition: 'all 0.3s',
+          color: '#1A1A1A',
         }}
       >
         Learn more
-        <span style={{ transform: hovered ? 'translateX(4px)' : 'translateX(0)', transition: 'transform 0.3s' }}>
+        <span style={{ transform: hovered ? 'translateX(4px)' : 'translateX(0)', transition: 'transform 0.3s', color: service.accent }}>
           →
         </span>
       </div>
