@@ -317,7 +317,7 @@ export default function ContactSection() {
             ) : (
               <form onSubmit={handleSubmit} style={{ display: 'flex', flexDirection: 'column', gap: '20px' }}>
                 <h3 style={{ fontSize: '20px', fontWeight: 700, color: '#1A1A1A', marginBottom: '4px' }}>
-                  Request Brochure Quote / Custom Sizing
+                  For Enquiry and Request Pricing
                 </h3>
 
                 <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '16px' }} className="form-row">
