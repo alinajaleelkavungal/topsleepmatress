@@ -96,6 +96,7 @@ export default function Navbar({ view }: { view: string }) {
           }}
         >
           <Image
+            quality={95}
             src="/images/logo.png"
             alt="TopSleep Mattress"
             width={180}

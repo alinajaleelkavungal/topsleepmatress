@@ -118,6 +118,7 @@ export default function Hero() {
           >
             {slides.map((s, i) => (
               <Image
+                quality={95}
                 key={s.src}
                 src={s.src}
                 alt={s.alt}

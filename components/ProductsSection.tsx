@@ -1458,9 +1458,11 @@ export default function ProductsSection() {
                 >
                   <div style={{ position: 'relative', width: '100%', height: '340px' }}>
                     <Image
+                      quality={95}
                       src={selectedProduct.image}
                       alt={selectedProduct.name}
                       fill
+                      sizes="(max-width: 992px) 100vw, 560px"
                       style={{
                         objectFit: 'cover',
                       }}
@@ -1791,6 +1793,7 @@ function ProductCard({
         }}
       >
         <Image
+          quality={95}
           src={product.image}
           alt={product.name}
           fill

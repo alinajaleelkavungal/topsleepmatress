@@ -42,6 +42,7 @@ export default function Footer() {
           <div>
             <div style={{ display: 'flex', alignItems: 'center', marginBottom: '20px' }}>
               <Image
+                quality={95}
                 src="/images/logo.png"
                 alt="TopSleep Mattress"
                 width={180}
