@@ -23,13 +23,6 @@ export default function Footer() {
       'Warranty Registration',
       'Contact Us',
     ],
-    Support: [
-      'Brochure Pricing',
-      '100-Night Trial',
-      'Back Pain Consultation',
-      'Care & Cleaning Guide',
-      'Store Locator',
-    ],
   }
 
   return (
@@ -39,7 +32,7 @@ export default function Footer() {
         <div
           style={{
             display: 'grid',
-            gridTemplateColumns: '1.8fr 1fr 1fr 1fr',
+            gridTemplateColumns: '1.8fr 1fr 1fr',
             gap: '48px',
             marginBottom: '64px',
           }}
