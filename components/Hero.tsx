@@ -5,12 +5,12 @@ import { useEffect, useState } from 'react'
 
 
 const slides = [
-  { src: '/images/hero.png', alt: 'TopSleep Premium Luxury Mattress', pill: '10 Years Full Warranty', icon: '😴', title: 'Medical & Orthopaedic', sub: 'Certified Back Pain Relief' },
-  { src: '/images/products/medicated_memory.jpg', alt: 'Medicated Memory Foam Mattress', pill: 'Orthopaedic Memory', icon: '🧠', title: 'Medicated Memory Foam', sub: 'Contours to Every Pressure Point' },
-  { src: '/images/products/helixa_latex.jpg', alt: 'Helixa Latex Mattress', pill: 'Natural Latex', icon: '🌿', title: 'Helixa Natural Latex', sub: 'Buoyant, Breathable Comfort' },
-  { src: '/images/products/pocketed_spring.jpg', alt: 'Pocketed Spring Mattress', pill: 'Zero Disturbance', icon: '💤', title: 'Pocketed Spring', sub: 'Independent Spring Support' },
-  { src: '/images/products/bonnell_spring.jpg', alt: 'Bonnell Spring Mattress', pill: 'Firm Support', icon: '🛏️', title: 'Bonnell Spring', sub: 'Durable, Firm & Supportive' },
-  { src: '/images/products/hr_mattress.jpg', alt: 'HR Foam Mattress', pill: 'High Resilience', icon: '✨', title: 'HR Foam Mattress', sub: 'Strong Support, Lasting Comfort' },
+  { src: '/images/hero.png', alt: 'TopSleep Premium Luxury Mattress', pill: '10 Years Full Warranty', title: 'Medical & Orthopaedic', sub: 'Certified Back Pain Relief' },
+  { src: '/images/products/medicated_memory.jpg', alt: 'Medicated Memory Foam Mattress', pill: 'Orthopaedic Memory', title: 'Medicated Memory Foam', sub: 'Contours to Every Pressure Point' },
+  { src: '/images/products/helixa_latex.jpg', alt: 'Helixa Latex Mattress', pill: 'Natural Latex', title: 'Helixa Natural Latex', sub: 'Buoyant, Breathable Comfort' },
+  { src: '/images/products/pocketed_spring.jpg', alt: 'Pocketed Spring Mattress', pill: 'Zero Disturbance', title: 'Pocketed Spring', sub: 'Independent Spring Support' },
+  { src: '/images/products/bonnell_spring.jpg', alt: 'Bonnell Spring Mattress', pill: 'Firm Support', title: 'Bonnell Spring', sub: 'Durable, Firm & Supportive' },
+  { src: '/images/products/hr_mattress.jpg', alt: 'HR Foam Mattress', pill: 'High Resilience', title: 'HR Foam Mattress', sub: 'Strong Support, Lasting Comfort' },
 ]
 
 export default function Hero() {
@@ -143,10 +143,8 @@ export default function Hero() {
                 textTransform: 'uppercase',
                 display: 'flex',
                 alignItems: 'center',
-                gap: '8px',
               }}
             >
-              <span style={{ width: '6px', height: '6px', borderRadius: '50%', background: '#E51D24' }} />
               {slide.pill}
             </div>
           </div>
@@ -241,8 +239,7 @@ export default function Hero() {
             style={{
               display: 'inline-flex',
               alignItems: 'center',
-              gap: '8px',
-              padding: '6px 14px',
+              padding: '6px 16px',
               borderRadius: '9999px',
               background: 'rgba(229, 29, 36, 0.06)',
               border: '1px solid rgba(229, 29, 36, 0.18)',
@@ -254,15 +251,6 @@ export default function Hero() {
               marginBottom: '16px',
             }}
           >
-            <span
-              style={{
-                width: '6px',
-                height: '6px',
-                borderRadius: '50%',
-                background: '#E51D24',
-                boxShadow: '0 0 8px rgba(229, 29, 36, 0.6)',
-              }}
-            />
             <span>Luxury Mattress Collection</span>
           </div>
 

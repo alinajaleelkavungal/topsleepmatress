@@ -2,6 +2,7 @@
 
 import Image from 'next/image'
 import { useCallback, useEffect, useRef, useState } from 'react'
+import { Check } from 'lucide-react'
 
 function useInView(threshold = 0.05) {
   const ref = useRef<HTMLElement>(null)
@@ -851,7 +852,6 @@ export interface CollectionSection {
   title: string
   badge: string
   subtitle: string
-  icon: string
   productIds: string[]
 }
 
@@ -859,25 +859,22 @@ export const collectionSections: CollectionSection[] = [
   {
     id: 'medicated-ortho',
     title: 'Medicated Orthopaedic Line',
-    badge: '🏥 Certified Orthopaedic Care (4 Models)',
+    badge: 'Certified Orthopaedic Care (4 Models)',
     subtitle: 'High-Density Rebonded Foam foundation engineered for therapeutic spinal alignment, joint pressure relief, and posture correction.',
-    icon: '🏥',
     productIds: ['medicated-latex', 'medicated-memory', 'medicated', 'semi-medicated'],
   },
   {
     id: 'helixa-series',
     title: 'Helixa Signature Luxury Series',
-    badge: '🌿 Pin-Core Airflow Matrix (3 Models)',
+    badge: 'Pin-Core Airflow Matrix (3 Models)',
     subtitle: 'Aerated High-Resilience Helixa core with pinhole matrix ventilation for active cooling, cloud-soft contouring, and organic fabric luxury.',
-    icon: '🌿',
     productIds: ['helixa-latex', 'helixa-memory', 'helixa-mattress'],
   },
   {
     id: 'spring-comfort',
     title: 'Spring Systems & Everyday Comfort',
-    badge: '🌀 Dynamic Coil & HR Foam (3 Models)',
+    badge: 'Dynamic Coil & HR Foam (3 Models)',
     subtitle: 'Interconnected Bonnell spring coils, zero partner disturbance independent pocket coils, and high-resilience foundational comfort.',
-    icon: '🌀',
     productIds: ['bonnell-spring', 'pocketed-spring', 'hr-mattress'],
   },
 ]
@@ -1688,8 +1685,9 @@ export default function ProductsSection() {
                         Price Details on Request
                       </span>
                       {selectedProduct.warranty && (
-                        <span style={{ color: '#BDBDBD', fontSize: '12px', fontWeight: 600 }}>
-                          ✓ {selectedProduct.warranty}
+                        <span style={{ color: '#BDBDBD', fontSize: '12px', fontWeight: 600, display: 'inline-flex', alignItems: 'center', gap: '5px' }}>
+                          <Check size={13} strokeWidth={2.5} />
+                          {selectedProduct.warranty}
                         </span>
                       )}
                     </div>
@@ -1749,8 +1747,8 @@ export default function ProductsSection() {
               }}
             >
               <div>
-                <h4 style={{ fontSize: '16px', fontWeight: 700, color: '#14532D', marginBottom: '4px', display: 'flex', alignItems: 'center', gap: '8px' }}>
-                  <span>📲</span> Looking for Complete Brochure &amp; Custom Size Quotations?
+                <h4 style={{ fontSize: '16px', fontWeight: 700, color: '#14532D', marginBottom: '4px' }}>
+                  Looking for Complete Brochure &amp; Custom Size Quotations?
                 </h4>
                 <p style={{ fontSize: '13px', color: '#166534', margin: 0, lineHeight: 1.5 }}>
                   Chat with our team directly on WhatsApp for official pricing sheets, bulk orders, and custom dimension advice.
@@ -2086,14 +2084,12 @@ function ProductCard({
               color: '#1A1A1A',
               fontSize: '11px',
               fontWeight: 700,
-              padding: '6px 10px 6px 12px',
+              padding: '6px 12px',
               borderTopRightRadius: '4px',
               display: 'inline-flex',
               alignItems: 'center',
-              gap: '6px',
             }}
           >
-            <span style={{ width: '6px', height: '6px', borderRadius: '50%', background: product.warrantyBadgeColor }} />
             {product.warranty}
           </span>
         )}
@@ -2113,7 +2109,10 @@ function ProductCard({
               letterSpacing: '0.04em',
             }}
           >
-            Active ✓
+            <span style={{ display: 'inline-flex', alignItems: 'center', gap: '4px' }}>
+              Active
+              <Check size={12} strokeWidth={3} />
+            </span>
           </span>
         )}
       </div>
@@ -2214,7 +2213,14 @@ function ProductCard({
                 whiteSpace: 'nowrap',
               }}
             >
-              {selected ? '✓ Sizes' : 'View Sizes'}
+              {selected ? (
+                <span style={{ display: 'inline-flex', alignItems: 'center', gap: '4px' }}>
+                  <Check size={13} strokeWidth={3} />
+                  Sizes
+                </span>
+              ) : (
+                'View Sizes'
+              )}
             </button>
 
             <a

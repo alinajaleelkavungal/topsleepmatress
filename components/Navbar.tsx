@@ -3,6 +3,7 @@
 import { useState, useEffect, useRef } from 'react'
 import Link from 'next/link'
 import Image from 'next/image'
+import { Menu, X, Phone } from 'lucide-react'
 
 const navLinks = [
   { label: 'Home', href: '#hero', view: 'home' },
@@ -56,7 +57,7 @@ export default function Navbar({ view }: { view: string }) {
           gap: '8px',
         }}
       >
-        <span>🛏️ Doorstep Delivery Available</span>
+        <span>Doorstep Delivery Available</span>
         <span style={{ opacity: 0.6 }}>|</span>
         <a
           href="tel:+919847317211"
@@ -71,7 +72,8 @@ export default function Navbar({ view }: { view: string }) {
           onMouseEnter={(e) => { ;(e.currentTarget as HTMLElement).style.textDecoration = 'underline' }}
           onMouseLeave={(e) => { ;(e.currentTarget as HTMLElement).style.textDecoration = 'none' }}
         >
-          <span>📞 Call: +91 98473 17211</span>
+          <Phone size={14} strokeWidth={2} />
+          <span>Call: +91 98473 17211</span>
         </a>
       </div>
 
@@ -190,11 +192,13 @@ export default function Navbar({ view }: { view: string }) {
             color: '#1A1A1A',
             fontSize: '24px',
             padding: '4px',
+            alignItems: 'center',
+            justifyContent: 'center',
           }}
           className="hamburger"
           aria-label="Toggle menu"
         >
-          {menuOpen ? '✕' : '☰'}
+          {menuOpen ? <X size={24} strokeWidth={2} /> : <Menu size={24} strokeWidth={2} />}
         </button>
       </nav>
 
@@ -250,7 +254,7 @@ export default function Navbar({ view }: { view: string }) {
       <style>{`
         @media (max-width: 768px) {
           .desktop-nav { display: none !important; }
-          .hamburger { display: block !important; }
+          .hamburger { display: inline-flex !important; align-items: center; justify-content: center; }
         }
         @media (min-width: 769px) {
           .mobile-menu { display: none !important; }

@@ -1,7 +1,7 @@
 'use client'
 
 import { useEffect, useRef, useState } from 'react'
-import { Mail, MapPin } from 'lucide-react'
+import { Mail, MapPin, Check } from 'lucide-react'
 import PhoneIcon from './PhoneIcon'
 import { WhatsAppIcon } from './ProductsSection'
 
@@ -234,7 +234,9 @@ export default function ContactSection() {
                 onMouseEnter={(e) => { ;(e.currentTarget as HTMLElement).style.background = '#25D366' }}
                 onMouseLeave={(e) => { ;(e.currentTarget as HTMLElement).style.background = 'rgba(37, 211, 102, 0.35)' }}
               >
-                💬 WhatsApp
+                <span style={{ display: 'inline-flex', alignItems: 'center', gap: '6px' }}>
+                  <WhatsAppIcon size={14} /> WhatsApp
+                </span>
               </a>
               <a
                 href="mailto:topglobalgroup1@gmail.com"
@@ -251,7 +253,9 @@ export default function ContactSection() {
                 onMouseEnter={(e) => { ;(e.currentTarget as HTMLElement).style.background = 'rgba(255,255,255,0.30)' }}
                 onMouseLeave={(e) => { ;(e.currentTarget as HTMLElement).style.background = 'rgba(255,255,255,0.18)' }}
               >
-                ✉️ Email Us
+                <span style={{ display: 'inline-flex', alignItems: 'center', gap: '6px' }}>
+                  <Mail size={14} strokeWidth={1.75} /> Email Us
+                </span>
               </a>
             </div>
           </div>
@@ -282,12 +286,11 @@ export default function ContactSection() {
                     display: 'flex',
                     alignItems: 'center',
                     justifyContent: 'center',
-                    fontSize: '32px',
                     margin: '0 auto 20px',
                     color: '#E51D24',
                   }}
                 >
-                  ✓
+                  <Check size={30} strokeWidth={2.5} />
                 </div>
                 <h3 style={{ fontFamily: "'Playfair Display', Georgia, serif", fontSize: '26px', fontWeight: 700, color: '#1A1A1A', marginBottom: '10px' }}>
                   Thank you, {form.name}!
@@ -368,23 +371,23 @@ export default function ContactSection() {
                         outline: 'none',
                       }}
                     >
-                      <optgroup label="🏥 Medicated Orthopaedic Collection">
+                      <optgroup label="Medicated Orthopaedic Collection">
                         <option value="Semi Medicated">Semi Medicated — Rebonded, EPE & Organic Fabric</option>
                         <option value="Medicated">Medicated — Rebonded, Super Soft & Organic Fabric</option>
                         <option value="Medicated Memory">Medicated Memory — Rebonded, Memory & Bamboo Fabric</option>
                         <option value="Medicated Latex">Medicated Latex — Rebonded, Latex & Bamboo Fabric</option>
                       </optgroup>
-                      <optgroup label="🌿 Helixa Signature Luxury Series">
+                      <optgroup label="Helixa Signature Luxury Series">
                         <option value="Helixa Mattress">Helixa Mattress — Helixa Foam, Super Soft & Organic Fabric</option>
                         <option value="Helixa Memory">Helixa Memory — Helixa Foam, Memory Foam & Bamboo Fabric</option>
                         <option value="Helixa Latex">Helixa Latex — Helixa Foam, Latex & Bamboo Fabric</option>
                       </optgroup>
-                      <optgroup label="🌀 Spring Systems & Everyday Comfort">
+                      <optgroup label="Spring Systems & Everyday Comfort">
                         <option value="Bonnell Spring">Bonnell Spring — Bonnell Coil & Organic Fabric</option>
                         <option value="Pocketed Spring">Pocketed Spring — Zero Disturbance & Organic Fabric</option>
                         <option value="HR Mattress">HR Mattress — HD Foam, Super Soft & Organic Fabric</option>
                       </optgroup>
-                      <optgroup label="✨ Bespoke Dimensions">
+                      <optgroup label="Bespoke Dimensions">
                         <option value="Custom Bespoke">Custom / Bespoke Dimension Order</option>
                       </optgroup>
                     </select>

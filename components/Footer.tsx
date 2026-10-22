@@ -1,7 +1,14 @@
 'use client'
 
 import Image from 'next/image'
-import { BUSINESS_WHATSAPP_NUMBER, products, requestProduct } from './ProductsSection'
+import { Bed, Mail, MapPin, Microscope, Phone, Shield } from 'lucide-react'
+import { BUSINESS_WHATSAPP_NUMBER, products, requestProduct, WhatsAppIcon } from './ProductsSection'
+
+const trustBadges = [
+  { icon: Shield, label: 'Up to 15 Yrs Warranty' },
+  { icon: Microscope, label: 'Anti-Dust Mite' },
+  { icon: Bed, label: 'Zero Partner Disturbance' },
+]
 
 type FooterLink = { label: string; href: string; external?: boolean; onClick?: () => void }
 
@@ -76,9 +83,9 @@ export default function Footer() {
             </p>
             {/* Awards & Certifications from Brochure */}
             <div style={{ display: 'flex', gap: '8px', flexWrap: 'wrap' }}>
-              {['🛡️ Up to 15 Yrs Warranty', '🔬 Anti-Dust Mite', '🛏️ Zero Partner Disturbance'].map((a) => (
+              {trustBadges.map(({ icon: Icon, label }) => (
                 <span
-                  key={a}
+                  key={label}
                   style={{
                     background: 'rgba(255,255,255,0.06)',
                     border: '1px solid rgba(255,255,255,0.12)',
@@ -87,9 +94,13 @@ export default function Footer() {
                     padding: '5px 10px',
                     borderRadius: '6px',
                     fontWeight: 500,
+                    display: 'inline-flex',
+                    alignItems: 'center',
+                    gap: '6px',
                   }}
                 >
-                  {a}
+                  <Icon size={13} strokeWidth={1.75} />
+                  {label}
                 </span>
               ))}
             </div>
@@ -102,7 +113,7 @@ export default function Footer() {
                 onMouseEnter={(e) => { ;(e.currentTarget as HTMLElement).style.color = '#fff' }}
                 onMouseLeave={(e) => { ;(e.currentTarget as HTMLElement).style.color = '#aaa' }}
               >
-                <span>✉️</span> <span>topglobalgroup1@gmail.com</span>
+                <span style={{ display: 'inline-flex', flexShrink: 0 }}><Mail size={15} strokeWidth={1.75} /></span> <span>topglobalgroup1@gmail.com</span>
               </a>
               <a
                 href="tel:+919847317211"
@@ -111,7 +122,7 @@ export default function Footer() {
                 onMouseEnter={(e) => { ;(e.currentTarget as HTMLElement).style.color = '#fff' }}
                 onMouseLeave={(e) => { ;(e.currentTarget as HTMLElement).style.color = '#aaa' }}
               >
-                <span>📞</span> <span>+91 98473 17211 (Direct Call)</span>
+                <span style={{ display: 'inline-flex', flexShrink: 0 }}><Phone size={15} strokeWidth={1.75} /></span> <span>+91 98473 17211 (Direct Call)</span>
               </a>
               <a
                 href="https://wa.me/919061612539"
@@ -122,10 +133,10 @@ export default function Footer() {
                 onMouseEnter={(e) => { ;(e.currentTarget as HTMLElement).style.color = '#fff' }}
                 onMouseLeave={(e) => { ;(e.currentTarget as HTMLElement).style.color = '#aaa' }}
               >
-                <span>💬</span> <span>+91 9061612539 (WhatsApp)</span>
+                <span style={{ display: 'inline-flex', flexShrink: 0 }}><WhatsAppIcon size={15} /></span> <span>+91 9061612539 (WhatsApp)</span>
               </a>
               <div style={{ color: '#aaa', display: 'flex', alignItems: 'flex-start', gap: '8px' }}>
-                <span>📍</span>
+                <span style={{ display: 'inline-flex', flexShrink: 0, marginTop: '2px' }}><MapPin size={15} strokeWidth={1.75} /></span>
                 <div>
                   <div>Top Sleep Mattress Headquarters, India</div>
                   <a
