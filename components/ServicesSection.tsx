@@ -18,42 +18,36 @@ function useInView(threshold = 0.1) {
 
 const services = [
   {
-    icon: '🛏️',
     title: 'Custom Size Mattresses',
     desc: 'Every bed frame is unique. We manufacture mattresses in any custom dimension — 72x36, 75x36, 72x48, 72x60, 75x60, 72x72, 75x72 or bespoke cuts tailored to your space.',
     tag: 'Made to Order',
     accent: '#E51D24',
   },
   {
-    icon: '🛡️',
     title: 'Up to 15 Years Warranty',
     desc: 'Top Sleep mattresses come with official manufacturer warranty (15 Years on Helixa series models; 10 Years on Medicated, Medicated Memory, and Medicated Latex; 5 Years on Bonnell Spring, Pocketed Spring, and HR Mattress; 4 Years on Semi Medicated).',
     tag: 'Official Warranty',
     accent: '#E51D24',
   },
   {
-    icon: '🔬',
     title: 'Medical & Ortho Consultation',
     desc: 'Specially engineered for persistent back pain relief. Our specialists guide you on high-density rebonded foam, memory foam contouring, and spinal ergonomics.',
     tag: 'Back Pain Relief',
     accent: '#1D4ED8',
   },
   {
-    icon: '✨',
     title: 'Anti-Dust Mite & Fungus Shield',
     desc: 'All our top-layer knitted fabrics are certified and chemically treated against fungus, bacteria, and house dust mites for long-lasting hygienic sleep.',
     tag: 'Certified Protection',
     accent: '#E51D24',
   },
   {
-    icon: '🚚',
     title: 'Direct Doorstep Delivery',
     desc: 'Reliable and safe delivery directly from our manufacturing facilities to your home, ensuring your mattress arrives in pristine condition.',
     tag: 'Doorstep Care',
     accent: '#E51D24',
   },
   {
-    icon: '💤',
     title: 'Zero Partner Disturbance',
     desc: 'Our Pocketed Spring line isolates localized weight transfers completely, allowing you and your partner uninterrupted, peaceful rest.',
     tag: 'Pocketed Springs',

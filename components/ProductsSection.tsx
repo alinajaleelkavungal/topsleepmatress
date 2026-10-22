@@ -2171,7 +2171,16 @@ function ProductCard({
         >
           {product.features.slice(0, 2).map((feat, idx) => (
             <li key={idx} style={{ fontSize: '12px', color: '#555', display: 'flex', alignItems: 'flex-start', gap: '8px', lineHeight: 1.5 }}>
-              <span style={{ color: '#E51D24', flexShrink: 0 }}>—</span>
+              <span
+                style={{
+                  width: '5px',
+                  height: '5px',
+                  borderRadius: '50%',
+                  background: '#E51D24',
+                  marginTop: '6px',
+                  flexShrink: 0,
+                }}
+              />
               <span>{feat}</span>
             </li>
           ))}
