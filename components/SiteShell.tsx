@@ -31,11 +31,12 @@ export default function SiteShell() {
     return () => window.removeEventListener('popstate', fromHash)
   }, [])
 
-  // Section links (#about, #products, ...) switch the visible sections
+  // Section links (#about, /#products, ...) switch the visible sections
   useEffect(() => {
     const onClick = (e: MouseEvent) => {
-      const anchor = (e.target as HTMLElement).closest('a[href^="#"]')
-      const hash = anchor?.getAttribute('href') ?? ''
+      const anchor = (e.target as HTMLElement).closest('a[href^="#"], a[href^="/#"]')
+      const href = anchor?.getAttribute('href') ?? ''
+      const hash = href.startsWith('/') ? href.slice(1) : href
       const next = hashToView[hash]
       if (!next) return
       e.preventDefault()

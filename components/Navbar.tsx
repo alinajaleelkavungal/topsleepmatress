@@ -3,20 +3,26 @@
 import { useState, useEffect, useRef } from 'react'
 import Link from 'next/link'
 import Image from 'next/image'
+import { usePathname } from 'next/navigation'
 import { Menu, X, Phone } from 'lucide-react'
 
 const navLinks = [
-  { label: 'Home', href: '#hero', view: 'home' },
-  { label: 'About Us', href: '#about', view: 'about' },
-  { label: 'Services', href: '#services', view: 'services' },
-  { label: 'Products', href: '#products', view: 'products' },
-  { label: 'Contact', href: '#contact', view: 'contact' },
+  { label: 'Home', hash: '#hero', view: 'home' },
+  { label: 'About Us', hash: '#about', view: 'about' },
+  { label: 'Services', hash: '#services', view: 'services' },
+  { label: 'Products', hash: '#products', view: 'products' },
+  { label: 'Contact', hash: '#contact', view: 'contact' },
 ]
 
 export default function Navbar({ view }: { view: string }) {
   const [scrolled, setScrolled] = useState(false)
   const [menuOpen, setMenuOpen] = useState(false)
   const menuRef = useRef<HTMLDivElement>(null)
+  const pathname = usePathname()
+
+  // Section views live on the home route, so links are absolute from any other page
+  const isHome = pathname === '/'
+  const sectionHref = (hash: string) => (isHome ? hash : `/${hash}`)
 
   useEffect(() => {
     const onScroll = () => setScrolled(window.scrollY > 40)
@@ -90,7 +96,7 @@ export default function Navbar({ view }: { view: string }) {
       >
         {/* Logo */}
         <Link
-          href="#"
+          href="/"
           style={{
             display: 'flex',
             alignItems: 'center',
@@ -125,9 +131,9 @@ export default function Navbar({ view }: { view: string }) {
           className="desktop-nav"
         >
           {navLinks.map((link) => (
-            <li key={link.href}>
+            <li key={link.hash}>
               <a
-                href={link.href}
+                href={sectionHref(link.hash)}
                 style={{
                   color: link.view === view ? '#E51D24' : '#1A1A1A',
                   textDecoration: 'none',
@@ -153,7 +159,7 @@ export default function Navbar({ view }: { view: string }) {
           ))}
           <li>
             <a
-              href="#products"
+              href={sectionHref('#products')}
               style={{
                 background: '#E51D24',
                 color: '#fff',
@@ -215,8 +221,8 @@ export default function Navbar({ view }: { view: string }) {
         >
           {navLinks.map((link) => (
             <a
-              key={link.href}
-              href={link.href}
+              key={link.hash}
+              href={sectionHref(link.hash)}
               onClick={() => setMenuOpen(false)}
               style={{
                 display: 'block',
@@ -232,7 +238,7 @@ export default function Navbar({ view }: { view: string }) {
             </a>
           ))}
           <a
-            href="#products"
+            href={sectionHref('#products')}
             onClick={() => setMenuOpen(false)}
             style={{
               display: 'inline-block',

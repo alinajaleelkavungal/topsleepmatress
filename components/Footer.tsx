@@ -1,6 +1,8 @@
 'use client'
 
 import Image from 'next/image'
+import Link from 'next/link'
+import { usePathname } from 'next/navigation'
 import { Bed, Mail, MapPin, Microscope, Phone, Shield } from 'lucide-react'
 import { BUSINESS_WHATSAPP_NUMBER, products, requestProduct, WhatsAppIcon } from './ProductsSection'
 
@@ -10,13 +12,20 @@ const trustBadges = [
   { icon: Bed, label: 'Zero Partner Disturbance' },
 ]
 
-type FooterLink = { label: string; href: string; external?: boolean; onClick?: () => void }
+type FooterLink = { label: string; href: string; external?: boolean; internal?: boolean; onClick?: () => void }
 
-const productLink = (name: string): FooterLink => {
+const linkStyle: React.CSSProperties = {
+  color: '#888',
+  textDecoration: 'none',
+  fontSize: '14px',
+  transition: 'color 0.2s',
+}
+
+const productLink = (name: string, href: string): FooterLink => {
   const product = products.find((p) => p.name === name)
   return {
     label: name,
-    href: '#products',
+    href,
     onClick: product ? () => requestProduct({ productId: product.id }) : undefined,
   }
 }
@@ -26,25 +35,36 @@ const WARRANTY_URL = `https://wa.me/${BUSINESS_WHATSAPP_NUMBER}?text=${encodeURI
 )}`
 
 export default function Footer() {
+  const pathname = usePathname()
+
+  // Section views live on the home route, so links are absolute from any other page
+  const isHome = pathname === '/'
+  const sectionHref = (hash: string) => (isHome ? hash : `/${hash}`)
+
   const links: Record<string, FooterLink[]> = {
     Products: [
-      productLink('Semi Medicated'),
-      productLink('Medicated'),
-      productLink('Bonnell Spring'),
-      productLink('Pocketed Spring'),
-      productLink('HR Mattress'),
-      productLink('Helixa Mattress'),
-      productLink('Helixa Memory'),
-      productLink('Helixa Latex'),
-      productLink('Medicated Memory'),
-      productLink('Medicated Latex'),
-      { label: 'Custom Sizing', href: '#products', onClick: () => requestProduct({ customSize: true }) },
+      productLink('Semi Medicated', sectionHref('#products')),
+      productLink('Medicated', sectionHref('#products')),
+      productLink('Bonnell Spring', sectionHref('#products')),
+      productLink('Pocketed Spring', sectionHref('#products')),
+      productLink('HR Mattress', sectionHref('#products')),
+      productLink('Helixa Mattress', sectionHref('#products')),
+      productLink('Helixa Memory', sectionHref('#products')),
+      productLink('Helixa Latex', sectionHref('#products')),
+      productLink('Medicated Memory', sectionHref('#products')),
+      productLink('Medicated Latex', sectionHref('#products')),
+      {
+        label: 'Custom Sizing',
+        href: sectionHref('#products'),
+        onClick: () => requestProduct({ customSize: true }),
+      },
     ],
     Company: [
-      { label: 'About Top Sleep', href: '#about' },
-      { label: 'Manufacturing Quality', href: '#services' },
+      { label: 'About Top Sleep', href: sectionHref('#about') },
+      { label: 'Manufacturing Quality', href: sectionHref('#services') },
       { label: 'Warranty Registration', href: WARRANTY_URL, external: true },
-      { label: 'Contact Us', href: '#contact' },
+      { label: 'Contact Us', href: sectionHref('#contact') },
+      { label: 'Privacy Policy', href: '/privacy-policy', internal: true },
     ],
   }
 
@@ -171,22 +191,28 @@ export default function Footer() {
               <ul style={{ listStyle: 'none' }}>
                 {items.map((item) => (
                   <li key={item.label} style={{ marginBottom: '10px' }}>
-                    <a
-                      href={item.href}
-                      onClick={item.onClick}
-                      target={item.external ? '_blank' : undefined}
-                      rel={item.external ? 'noopener noreferrer' : undefined}
-                      style={{
-                        color: '#888',
-                        textDecoration: 'none',
-                        fontSize: '14px',
-                        transition: 'color 0.2s',
-                      }}
-                      onMouseEnter={(e) => { ;(e.currentTarget as HTMLElement).style.color = '#E51D24' }}
-                      onMouseLeave={(e) => { ;(e.currentTarget as HTMLElement).style.color = '#888' }}
-                    >
-                      {item.label}
-                    </a>
+                    {item.internal ? (
+                      <Link
+                        href={item.href}
+                        style={linkStyle}
+                        onMouseEnter={(e) => { ;(e.currentTarget as HTMLElement).style.color = '#E51D24' }}
+                        onMouseLeave={(e) => { ;(e.currentTarget as HTMLElement).style.color = '#888' }}
+                      >
+                        {item.label}
+                      </Link>
+                    ) : (
+                      <a
+                        href={item.href}
+                        onClick={item.onClick}
+                        target={item.external ? '_blank' : undefined}
+                        rel={item.external ? 'noopener noreferrer' : undefined}
+                        style={linkStyle}
+                        onMouseEnter={(e) => { ;(e.currentTarget as HTMLElement).style.color = '#E51D24' }}
+                        onMouseLeave={(e) => { ;(e.currentTarget as HTMLElement).style.color = '#888' }}
+                      >
+                        {item.label}
+                      </a>
+                    )}
                   </li>
                 ))}
               </ul>
@@ -209,17 +235,25 @@ export default function Footer() {
           <span style={{ color: '#666', fontSize: '13px' }}>
             © 2024 Top Sleep Mattress &bull; All rights reserved.
           </span>
-          <div style={{ display: 'flex', gap: '24px' }}>
-            {['Privacy Policy', 'Terms of Service', 'Warranty Policy', 'Sitemap'].map((l) => (
-              <a
-                key={l}
-                href="#"
+          <div style={{ display: 'flex', gap: '24px', flexWrap: 'wrap' }}>
+            {[
+              { label: 'Privacy Policy', href: '/privacy-policy' },
+              { label: 'Terms of Service', href: '#' },
+              { label: 'Warranty Policy', href: '#' },
+              { label: 'Sitemap', href: '#' },
+            ].map((l) => (
+              <Link
+                key={l.label}
+                href={l.href}
                 style={{ color: '#666', textDecoration: 'none', fontSize: '13px', transition: 'color 0.2s' }}
                 onMouseEnter={(e) => { ;(e.currentTarget as HTMLElement).style.color = '#E51D24' }}
                 onMouseLeave={(e) => { ;(e.currentTarget as HTMLElement).style.color = '#666' }}
+                onClick={(e) => {
+                  if (l.href === '#') e.preventDefault()
+                }}
               >
-                {l}
-              </a>
+                {l.label}
+              </Link>
             ))}
           </div>
         </div>
