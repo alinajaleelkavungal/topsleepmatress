@@ -65,6 +65,7 @@ export default function Footer() {
       { label: 'Warranty Registration', href: WARRANTY_URL, external: true },
       { label: 'Contact Us', href: sectionHref('#contact') },
       { label: 'Privacy Policy', href: '/privacy-policy', internal: true },
+      { label: 'Terms of Service', href: '/terms-of-service', internal: true },
     ],
   }
 
@@ -238,7 +239,7 @@ export default function Footer() {
           <div style={{ display: 'flex', gap: '24px', flexWrap: 'wrap' }}>
             {[
               { label: 'Privacy Policy', href: '/privacy-policy' },
-              { label: 'Terms of Service', href: '#' },
+              { label: 'Terms of Service', href: '/terms-of-service' },
               { label: 'Warranty Policy', href: '#' },
               { label: 'Sitemap', href: '#' },
             ].map((l) => (
