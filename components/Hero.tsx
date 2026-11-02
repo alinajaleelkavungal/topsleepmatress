@@ -429,10 +429,6 @@ export default function Hero() {
               >
                 <div
                   style={{
-                    width: '36px',
-                    height: '36px',
-                    borderRadius: '8px',
-                    background: '#FEF2F2',
                     color: '#E51D24',
                     display: 'flex',
                     alignItems: 'center',
@@ -440,7 +436,7 @@ export default function Hero() {
                     flexShrink: 0,
                   }}
                 >
-                  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                  <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
                     <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z" />
                     <path d="m9 12 2 2 4-4" />
                   </svg>
@@ -485,10 +481,6 @@ export default function Hero() {
               >
                 <div
                   style={{
-                    width: '36px',
-                    height: '36px',
-                    borderRadius: '8px',
-                    background: '#FEF2F2',
                     color: '#E51D24',
                     display: 'flex',
                     alignItems: 'center',
@@ -496,7 +488,7 @@ export default function Hero() {
                     flexShrink: 0,
                   }}
                 >
-                  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                  <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
                     <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z" />
                     <line x1="12" y1="8" x2="12" y2="14" />
                     <line x1="9" y1="11" x2="15" y2="11" />
@@ -542,10 +534,6 @@ export default function Hero() {
               >
                 <div
                   style={{
-                    width: '36px',
-                    height: '36px',
-                    borderRadius: '8px',
-                    background: '#FEF2F2',
                     color: '#E51D24',
                     display: 'flex',
                     alignItems: 'center',
@@ -553,7 +541,7 @@ export default function Hero() {
                     flexShrink: 0,
                   }}
                 >
-                  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                  <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
                     <path d="M2 4v16" />
                     <path d="M2 8h18a2 2 0 0 1 2 2v10" />
                     <path d="M2 17h20" />
@@ -600,10 +588,6 @@ export default function Hero() {
               >
                 <div
                   style={{
-                    width: '36px',
-                    height: '36px',
-                    borderRadius: '8px',
-                    background: '#FEF2F2',
                     color: '#E51D24',
                     display: 'flex',
                     alignItems: 'center',
@@ -611,7 +595,7 @@ export default function Hero() {
                     flexShrink: 0,
                   }}
                 >
-                  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                  <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
                     <path d="M5 18H3c-.6 0-1-.4-1-1V7c0-.6.4-1 1-1h10c.6 0 1 .4 1 1v11" />
                     <path d="M14 9h4l4 4v4c0 .6-.4 1-1 1h-2" />
                     <circle cx="7" cy="18" r="2" />
