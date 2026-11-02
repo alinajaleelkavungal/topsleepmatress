@@ -233,27 +233,6 @@ export default function Hero() {
             justifyContent: 'center',
           }}
         >
-          {/* Eyebrow Pill Badge */}
-          <div
-            className="hero-eyebrow"
-            style={{
-              display: 'inline-flex',
-              alignItems: 'center',
-              padding: '6px 16px',
-              borderRadius: '9999px',
-              background: 'rgba(229, 29, 36, 0.06)',
-              border: '1px solid rgba(229, 29, 36, 0.18)',
-              color: '#E51D24',
-              fontSize: '11px',
-              fontWeight: 700,
-              letterSpacing: '0.12em',
-              textTransform: 'uppercase',
-              marginBottom: '16px',
-            }}
-          >
-            <span>Luxury Mattress Collection</span>
-          </div>
-
           {/* Main Title: Top Sleep */}
           <h1
             className="hero-title"
@@ -286,19 +265,9 @@ export default function Hero() {
             style={{
               display: 'inline-flex',
               alignItems: 'center',
-              gap: '12px',
               marginBottom: '18px',
             }}
           >
-            <span
-              style={{
-                width: '28px',
-                height: '2px',
-                background: '#E51D24',
-                borderRadius: '2px',
-                flexShrink: 0,
-              }}
-            />
             <span
               style={{
                 fontFamily: "'Playfair Display', Georgia, serif",
