@@ -242,17 +242,16 @@ export default function Footer() {
               { label: 'Privacy Policy', href: '/privacy-policy' },
               { label: 'Terms of Service', href: '/terms-of-service' },
               { label: 'Warranty Policy', href: '/warranty-policy' },
-              { label: 'Sitemap', href: '#' },
+              { label: 'Sitemap', href: '/sitemap.xml' },
             ].map((l) => (
               <Link
                 key={l.label}
                 href={l.href}
+                target={l.href.endsWith('.xml') ? '_blank' : undefined}
+                rel={l.href.endsWith('.xml') ? 'noopener noreferrer' : undefined}
                 style={{ color: '#666', textDecoration: 'none', fontSize: '13px', transition: 'color 0.2s' }}
                 onMouseEnter={(e) => { ;(e.currentTarget as HTMLElement).style.color = '#E51D24' }}
                 onMouseLeave={(e) => { ;(e.currentTarget as HTMLElement).style.color = '#666' }}
-                onClick={(e) => {
-                  if (l.href === '#') e.preventDefault()
-                }}
               >
                 {l.label}
               </Link>
