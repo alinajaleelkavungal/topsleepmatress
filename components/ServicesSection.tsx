@@ -277,10 +277,20 @@ function ServiceCard({
         {service.desc}
       </p>
 
-      {/* Options: Sizes chips */}
+      {/* Options: Sizes text list */}
       {service.sizes && (
-        <div style={{ display: 'flex', flexWrap: 'wrap', gap: '6px', marginTop: '14px' }}>
-          {service.sizes.map((s) => {
+        <div
+          style={{
+            display: 'flex',
+            flexWrap: 'wrap',
+            alignItems: 'center',
+            gap: '6px 10px',
+            marginTop: '14px',
+            fontSize: '12.5px',
+            lineHeight: 1.6,
+          }}
+        >
+          {service.sizes.map((s, idx) => {
             const isCustom = s === 'Bespoke Cuts'
             return (
               <span
@@ -288,17 +298,15 @@ function ServiceCard({
                 style={{
                   display: 'inline-flex',
                   alignItems: 'center',
-                  padding: '4px 9px',
-                  borderRadius: '4px',
-                  fontSize: '11.5px',
-                  fontWeight: 600,
-                  background: isCustom ? 'rgba(229, 29, 36, 0.08)' : '#F5F5F5',
+                  gap: '10px',
+                  fontWeight: isCustom ? 700 : 600,
                   color: isCustom ? '#E51D24' : '#2D3748',
-                  border: isCustom ? '1px solid rgba(229, 29, 36, 0.25)' : '1px solid #E5E7EB',
-                  letterSpacing: '0.01em',
                 }}
               >
-                {isCustom ? '+ Bespoke Cuts' : s}
+                <span>{isCustom ? '+ Bespoke Cuts' : s}</span>
+                {idx < (service.sizes?.length ?? 0) - 1 && (
+                  <span style={{ color: '#D1D5DB', fontWeight: 400 }}>&bull;</span>
+                )}
               </span>
             )
           })}
@@ -307,25 +315,22 @@ function ServiceCard({
 
       {/* Options: Warranty Tiers */}
       {service.warrantyTiers && (
-        <div style={{ display: 'flex', flexDirection: 'column', gap: '6px', marginTop: '14px' }}>
+        <div style={{ display: 'flex', flexDirection: 'column', gap: '7px', marginTop: '14px' }}>
           {service.warrantyTiers.map((tier) => (
             <div
               key={tier.period}
               style={{
                 display: 'flex',
-                alignItems: 'center',
+                alignItems: 'baseline',
                 justifyContent: 'space-between',
-                padding: '6px 10px',
-                borderRadius: '4px',
-                background: '#FAF9F9',
-                border: '1px solid #EEEEEE',
-                fontSize: '11.5px',
+                fontSize: '12px',
+                lineHeight: 1.5,
               }}
             >
               <span style={{ fontWeight: 700, color: '#E51D24', whiteSpace: 'nowrap' }}>
                 {tier.period}
               </span>
-              <span style={{ color: '#555', textAlign: 'right', fontSize: '11px', marginLeft: '8px' }}>
+              <span style={{ color: '#555555', textAlign: 'right', fontSize: '12px', marginLeft: '10px' }}>
                 {tier.label}
               </span>
             </div>
