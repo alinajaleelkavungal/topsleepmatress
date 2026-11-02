@@ -16,42 +16,79 @@ function useInView(threshold = 0.1) {
   return { ref, visible }
 }
 
-const services = [
+type ServiceItem = {
+  title: string
+  desc: string
+  tag: string
+  accent: string
+  sizes?: string[]
+  warrantyTiers?: { period: string; label: string }[]
+  highlights?: string[]
+}
+
+const services: ServiceItem[] = [
   {
     title: 'Custom Size Mattresses',
-    desc: 'Every bed frame is unique. We manufacture mattresses in any custom dimension — 72x36, 75x36, 72x48, 72x60, 75x60, 72x72, 75x72 or bespoke cuts tailored to your space.',
+    desc: 'Every bed frame is unique. We manufacture standard dimensions and custom cuts tailored to your space:',
     tag: 'Made to Order',
     accent: '#E51D24',
+    sizes: ['72 × 36', '75 × 36', '72 × 48', '72 × 60', '75 × 60', '72 × 72', '75 × 72', 'Bespoke Cuts'],
   },
   {
     title: 'Up to 15 Years Warranty',
-    desc: 'Top Sleep mattresses come with official manufacturer warranty (15 Years on Helixa series models; 10 Years on Medicated, Medicated Memory, and Medicated Latex; 5 Years on Bonnell Spring, Pocketed Spring, and HR Mattress; 4 Years on Semi Medicated).',
+    desc: 'Top Sleep mattresses come with official manufacturer warranty backing across every model tier:',
     tag: 'Official Warranty',
     accent: '#E51D24',
+    warrantyTiers: [
+      { period: '15 Years', label: 'Helixa Series Luxury Models' },
+      { period: '10 Years', label: 'Medicated, Memory & Latex' },
+      { period: '5 Years', label: 'Bonnell, Pocketed Spring & HR' },
+      { period: '4 Years', label: 'Semi Medicated Core' },
+    ],
   },
   {
     title: 'Medical & Ortho Consultation',
-    desc: 'Specially engineered for persistent back pain relief. Our specialists guide you on high-density rebonded foam, memory foam contouring, and spinal ergonomics.',
+    desc: 'Specially engineered for persistent back pain relief. Personalized guidance on:',
     tag: 'Back Pain Relief',
     accent: '#1D4ED8',
+    highlights: [
+      'High-Density Rebonded Foam Cores',
+      'Memory Foam Pressure Contouring',
+      'Spinal Ergonomics & Ortho Alignment',
+    ],
   },
   {
     title: 'Anti-Dust Mite & Fungus Shield',
-    desc: 'All our top-layer knitted fabrics are certified and chemically treated against fungus, bacteria, and house dust mites for long-lasting hygienic sleep.',
+    desc: 'All our top-layer knitted fabrics are certified and chemically treated against allergens:',
     tag: 'Certified Protection',
     accent: '#E51D24',
+    highlights: [
+      'Anti-Dust Mite Barrier Defense',
+      'Anti-Bacterial & Anti-Fungal Treatment',
+      'Certified Hypoallergenic Knitted Fabric',
+    ],
   },
   {
     title: 'Direct Doorstep Delivery',
-    desc: 'Reliable and safe delivery directly from our manufacturing facilities to your home, ensuring your mattress arrives in pristine condition.',
+    desc: 'Reliable and safe delivery directly from our manufacturing facilities to your home:',
     tag: 'Doorstep Care',
     accent: '#E51D24',
+    highlights: [
+      'Direct Factory Dispatch',
+      'Multi-Layer Hygienic Packaging',
+      'Safe Transit Across Major Cities',
+    ],
   },
   {
     title: 'Zero Partner Disturbance',
-    desc: 'Our Pocketed Spring line isolates localized weight transfers completely, allowing you and your partner uninterrupted, peaceful rest.',
+    desc: 'Our Pocketed Spring line isolates localized weight transfers completely:',
     tag: 'Pocketed Springs',
     accent: '#E51D24',
+    highlights: [
+      'Independent Pocketed Spring Coils',
+      'Zero Motion Transfer Isolation',
+      'Peaceful, Undisturbed Partner Rest',
+    ],
   },
 ]
 
@@ -142,7 +179,7 @@ function ServiceCard({
   index,
   visible,
 }: {
-  service: (typeof services)[0]
+  service: ServiceItem
   index: number
   visible: boolean
 }) {
@@ -163,6 +200,8 @@ function ServiceCard({
         opacity: visible ? 1 : 0,
         position: 'relative',
         overflow: 'hidden',
+        display: 'flex',
+        flexDirection: 'column',
       }}
     >
       {/* Top accent line */}
@@ -226,16 +265,107 @@ function ServiceCard({
         {service.title}
       </h3>
 
-      {/* Desc */}
+      {/* Desc / Intro */}
       <p
         style={{
-          fontSize: '14px',
+          fontSize: '13.5px',
           color: '#5F5F5F',
-          lineHeight: 1.75,
+          lineHeight: 1.6,
+          margin: 0,
         }}
       >
         {service.desc}
       </p>
+
+      {/* Options: Sizes chips */}
+      {service.sizes && (
+        <div style={{ display: 'flex', flexWrap: 'wrap', gap: '6px', marginTop: '14px' }}>
+          {service.sizes.map((s) => {
+            const isCustom = s === 'Bespoke Cuts'
+            return (
+              <span
+                key={s}
+                style={{
+                  display: 'inline-flex',
+                  alignItems: 'center',
+                  padding: '4px 9px',
+                  borderRadius: '4px',
+                  fontSize: '11.5px',
+                  fontWeight: 600,
+                  background: isCustom ? 'rgba(229, 29, 36, 0.08)' : '#F5F5F5',
+                  color: isCustom ? '#E51D24' : '#2D3748',
+                  border: isCustom ? '1px solid rgba(229, 29, 36, 0.25)' : '1px solid #E5E7EB',
+                  letterSpacing: '0.01em',
+                }}
+              >
+                {isCustom ? '+ Bespoke Cuts' : s}
+              </span>
+            )
+          })}
+        </div>
+      )}
+
+      {/* Options: Warranty Tiers */}
+      {service.warrantyTiers && (
+        <div style={{ display: 'flex', flexDirection: 'column', gap: '6px', marginTop: '14px' }}>
+          {service.warrantyTiers.map((tier) => (
+            <div
+              key={tier.period}
+              style={{
+                display: 'flex',
+                alignItems: 'center',
+                justifyContent: 'space-between',
+                padding: '6px 10px',
+                borderRadius: '4px',
+                background: '#FAF9F9',
+                border: '1px solid #EEEEEE',
+                fontSize: '11.5px',
+              }}
+            >
+              <span style={{ fontWeight: 700, color: '#E51D24', whiteSpace: 'nowrap' }}>
+                {tier.period}
+              </span>
+              <span style={{ color: '#555', textAlign: 'right', fontSize: '11px', marginLeft: '8px' }}>
+                {tier.label}
+              </span>
+            </div>
+          ))}
+        </div>
+      )}
+
+      {/* Options: Feature highlights */}
+      {service.highlights && (
+        <ul style={{ listStyle: 'none', padding: 0, margin: '14px 0 0', display: 'flex', flexDirection: 'column', gap: '8px' }}>
+          {service.highlights.map((item) => (
+            <li
+              key={item}
+              style={{
+                display: 'flex',
+                alignItems: 'center',
+                gap: '8px',
+                fontSize: '12.5px',
+                color: '#4A4A4A',
+                lineHeight: 1.4,
+              }}
+            >
+              <svg
+                width="13"
+                height="13"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke={service.accent}
+                strokeWidth="2.5"
+                strokeLinecap="round"
+                strokeLinejoin="round"
+                style={{ flexShrink: 0 }}
+              >
+                <polyline points="20 6 9 17 4 12" />
+              </svg>
+              <span>{item}</span>
+            </li>
+          ))}
+        </ul>
+      )}
     </div>
   )
 }
